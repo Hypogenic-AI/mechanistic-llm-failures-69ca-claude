@@ -1,0 +1,31 @@
+idea:
+  title: Mechanistic Interpretability of Commonsense Reasoning Failures in LLMs
+  domain: nlp
+  hypothesis: 'Commonsense reasoning failures in large language models are not solely
+    due to missing knowledge, but arise from specific breakdowns in the integration
+    of goal-action coherence within the model''s internal mechanisms. Identifying
+    where and how these failures occur will clarify whether they are architectural,
+    representational, or training-induced.
+
+    '
+  background:
+    description: "Large language models increasingly fail at commonsense reasoning\
+      \ tasks that humans find trivial \u2014 not because they lack relevant facts,\
+      \ but because they fail to integrate goal-action coherence into their predictions.\
+      \ A model may know that a car wash exists nearby and that walking is slow, yet\
+      \ still recommend driving to a location five minutes away on foot. Existing\
+      \ benchmarks such as Com2Sense document these failures behaviorally, but the\
+      \ internal mechanisms underlying them remain unexplained. Current work treats\
+      \ commonsense failure as a knowledge or data problem, without asking where in\
+      \ the network the breakdown occurs. Understanding where and how these failures\
+      \ arise is important not only for debugging but for identifying whether such\
+      \ failures are architectural, representational, or training-induced.\n"
+  metadata:
+    author: Mido Sang
+    source: IdeaHub
+    source_url: https://hypogenic.ai/ideahub/idea/zOHWJcTdyEUMZPPyJPHV
+    idea_id: mechanistic_interpretability_o_20260222_203716_afb1434f
+    created_at: '2026-02-22T20:37:16.201810'
+    status: submitted
+    github_repo_name: mechanistic-llm-failures-69ca-claude
+    github_repo_url: https://github.com/Hypogenic-AI/mechanistic-llm-failures-69ca-claude

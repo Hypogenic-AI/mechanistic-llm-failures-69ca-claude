@@ -1,0 +1,8 @@
+{
+  "python": "3.12.8 (main, Dec 19 2024, 14:33:20) [Clang 18.1.8 ]",
+  "torch": "2.10.0+cu128",
+  "cuda": true,
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "model": "gpt2",
+  "seed": 42
+}

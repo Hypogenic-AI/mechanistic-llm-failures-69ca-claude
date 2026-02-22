@@ -1,0 +1,14 @@
+Resource finding completed successfully.
+
+Topic: Mechanistic Interpretability of Commonsense Reasoning Failures in LLMs
+Hypothesis: Commonsense reasoning failures in LLMs arise from specific breakdowns in goal-action coherence integration within the model's internal mechanisms.
+
+Deliverables:
+- papers/: 26 PDFs covering mechanistic interpretability, commonsense reasoning, probing, SAEs, and reasoning analysis
+- datasets/: 4 datasets (PIQA, CommonsenseQA, HellaSwag, WinoGrande) with 106K+ training examples total
+- code/: 5 repositories (TransformerLens, SAELens, SAE-Reasoning, ACDC, rome)
+- literature_review.md: Comprehensive 289-line literature review with 7 sections + references
+- resources.md: Comprehensive 398-line resource catalog with 5 sections + appendix
+- papers/README.md: Paper catalog with 26 entries organized by category
+- datasets/README.md: Dataset documentation with download instructions
+- code/README.md: Repository documentation with usage notes

@@ -1,0 +1,13 @@
+PDF: /workspaces/mechanistic-llm-failures-69ca-claude/papers/galichin2025_interpreting_reasoning_features_SAE.pdf
+Total pages: 22
+Pages per chunk: 3
+
+Chunks:
+  galichin2025_interpreting_reasoning_features_SAE_chunk_001.pdf: pages 1-3
+  galichin2025_interpreting_reasoning_features_SAE_chunk_002.pdf: pages 4-6
+  galichin2025_interpreting_reasoning_features_SAE_chunk_003.pdf: pages 7-9
+  galichin2025_interpreting_reasoning_features_SAE_chunk_004.pdf: pages 10-12
+  galichin2025_interpreting_reasoning_features_SAE_chunk_005.pdf: pages 13-15
+  galichin2025_interpreting_reasoning_features_SAE_chunk_006.pdf: pages 16-18
+  galichin2025_interpreting_reasoning_features_SAE_chunk_007.pdf: pages 19-21
+  galichin2025_interpreting_reasoning_features_SAE_chunk_008.pdf: page 22

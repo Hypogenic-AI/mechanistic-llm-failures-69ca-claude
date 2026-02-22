@@ -1,0 +1,32 @@
+[
+  {
+    "goal": "When boiling butter, when it's ready, you can",
+    "sol1": "Pour it onto a plate",
+    "sol2": "Pour it into a jar",
+    "label": 1
+  },
+  {
+    "goal": "To permanently attach metal legs to a chair, you can",
+    "sol1": "Weld the metal together to get it to stay firmly in place",
+    "sol2": "Nail the metal together to get it to stay firmly in place",
+    "label": 0
+  },
+  {
+    "goal": "how do you indent something?",
+    "sol1": "leave a space before starting the writing",
+    "sol2": "press the spacebar",
+    "label": 0
+  },
+  {
+    "goal": "how do you shake something?",
+    "sol1": "move it up and down and side to side quickly.",
+    "sol2": "stir it very quickly.",
+    "label": 0
+  },
+  {
+    "goal": "Clean tires",
+    "sol1": "Pour water, cape off caked on dirt. Use  speed wool to clean out crevices and sparrow spaces.",
+    "sol2": "Pour water, scrape off caked on dirt. Use a steel wool to clean out crevices and narrow spaces.",
+    "label": 1
+  }
+]

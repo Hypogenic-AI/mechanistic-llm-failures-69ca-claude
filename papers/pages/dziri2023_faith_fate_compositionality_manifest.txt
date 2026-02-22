@@ -1,0 +1,14 @@
+PDF: /workspaces/mechanistic-llm-failures-69ca-claude/papers/dziri2023_faith_fate_compositionality.pdf
+Total pages: 26
+Pages per chunk: 3
+
+Chunks:
+  dziri2023_faith_fate_compositionality_chunk_001.pdf: pages 1-3
+  dziri2023_faith_fate_compositionality_chunk_002.pdf: pages 4-6
+  dziri2023_faith_fate_compositionality_chunk_003.pdf: pages 7-9
+  dziri2023_faith_fate_compositionality_chunk_004.pdf: pages 10-12
+  dziri2023_faith_fate_compositionality_chunk_005.pdf: pages 13-15
+  dziri2023_faith_fate_compositionality_chunk_006.pdf: pages 16-18
+  dziri2023_faith_fate_compositionality_chunk_007.pdf: pages 19-21
+  dziri2023_faith_fate_compositionality_chunk_008.pdf: pages 22-24
+  dziri2023_faith_fate_compositionality_chunk_009.pdf: pages 25-26

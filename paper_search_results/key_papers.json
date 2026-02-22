@@ -1,0 +1,552 @@
+[
+  {
+    "paperId": "6edd112383ad494f5f2eba72b6f4ffae122ce61f",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2211-00593",
+      "ArXiv": "2211.00593",
+      "DOI": "10.48550/arXiv.2211.00593",
+      "CorpusId": 253244237
+    },
+    "url": "https://www.semanticscholar.org/paper/6edd112383ad494f5f2eba72b6f4ffae122ce61f",
+    "title": "Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small",
+    "year": 2022,
+    "citationCount": 830,
+    "openAccessPdf": {
+      "url": "https://arxiv.org/pdf/2211.00593",
+      "status": "GREEN",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2211.00593, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2144759142",
+        "name": "Kevin Wang"
+      },
+      {
+        "authorId": "2030991782",
+        "name": "Alexandre Variengien"
+      },
+      {
+        "authorId": "2131632310",
+        "name": "Arthur Conmy"
+      },
+      {
+        "authorId": "79384063",
+        "name": "Buck Shlegeris"
+      },
+      {
+        "authorId": "5164568",
+        "name": "J. Steinhardt"
+      }
+    ],
+    "abstract": "Research in mechanistic interpretability seeks to explain behaviors of machine learning models in terms of their internal components. However, most previous work either focuses on simple behaviors in small models, or describes complicated behaviors in larger models with broad strokes. In this work, we bridge this gap by presenting an explanation for how GPT-2 small performs a natural language task called indirect object identification (IOI). Our explanation encompasses 26 attention heads grouped into 7 main classes, which we discovered using a combination of interpretability approaches relying on causal interventions. To our knowledge, this investigation is the largest end-to-end attempt at reverse-engineering a natural behavior\"in the wild\"in a language model. We evaluate the reliability of our explanation using three quantitative criteria--faithfulness, completeness and minimality. Though these criteria support our explanation, they also point to remaining gaps in our understanding. Our work provides evidence that a mechanistic understanding of large ML models is feasible, opening opportunities to scale our understanding to both larger models and more complex tasks.",
+    "arxiv_id": "2211.00593"
+  },
+  {
+    "paperId": "9f20b0aa426c18512e820d1c1311378f71114d8a",
+    "externalIds": {
+      "ArXiv": "2310.17230",
+      "DBLP": "journals/corr/abs-2310-17230",
+      "DOI": "10.48550/arXiv.2310.17230",
+      "CorpusId": 264490402
+    },
+    "url": "https://www.semanticscholar.org/paper/9f20b0aa426c18512e820d1c1311378f71114d8a",
+    "title": "Codebook Features: Sparse and Discrete Interpretability for Neural Networks",
+    "year": 2023,
+    "citationCount": 41,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2310.17230, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "88726969",
+        "name": "Alex Tamkin"
+      },
+      {
+        "authorId": "2261733431",
+        "name": "Mohammad Taufeeque"
+      },
+      {
+        "authorId": "2259927468",
+        "name": "Noah D. Goodman"
+      }
+    ],
+    "abstract": "Understanding neural networks is challenging in part because of the dense, continuous nature of their hidden states. We explore whether we can train neural networks to have hidden states that are sparse, discrete, and more interpretable by quantizing their continuous features into what we call codebook features. Codebook features are produced by finetuning neural networks with vector quantization bottlenecks at each layer, producing a network whose hidden features are the sum of a small number of discrete vector codes chosen from a larger codebook. Surprisingly, we find that neural networks can operate under this extreme bottleneck with only modest degradation in performance. This sparse, discrete bottleneck also provides an intuitive way of controlling neural network behavior: first, find codes that activate when the desired behavior is present, then activate those same codes during generation to elicit that behavior. We validate our approach by training codebook Transformers on several different datasets. First, we explore a finite state machine dataset with far more hidden states than neurons. In this setting, our approach overcomes the superposition problem by assigning states to distinct codes, and we find that we can make the neural network behave as if it is in a different state by activating the code for that state. Second, we train Transformer language models with up to 410M parameters on two natural language datasets. We identify codes in these models representing diverse, disentangled concepts (ranging from negative emotions to months of the year) and find that we can guide the model to generate different topics by activating the appropriate codes during inference. Overall, codebook features appear to be a promising unit of analysis and control for neural networks and interpretability. Our codebase and models are open-sourced at https://github.com/taufeeque9/codebook-features.",
+    "arxiv_id": "2310.17230"
+  },
+  {
+    "paperId": "133b97e40017a9bbbadd10bcd7f13088a97ca3cc",
+    "externalIds": {
+      "DBLP": "conf/emnlp/GevaBFG23",
+      "ArXiv": "2304.14767",
+      "DOI": "10.48550/arXiv.2304.14767",
+      "CorpusId": 258417932
+    },
+    "url": "https://www.semanticscholar.org/paper/133b97e40017a9bbbadd10bcd7f13088a97ca3cc",
+    "title": "Dissecting Recall of Factual Associations in Auto-Regressive Language Models",
+    "year": 2023,
+    "citationCount": 436,
+    "openAccessPdf": {
+      "url": "https://arxiv.org/pdf/2304.14767",
+      "status": "GREEN",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2304.14767, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "22245981",
+        "name": "Mor Geva"
+      },
+      {
+        "authorId": "1994065972",
+        "name": "Jasmijn Bastings"
+      },
+      {
+        "authorId": "3017324",
+        "name": "Katja Filippova"
+      },
+      {
+        "authorId": "1786843",
+        "name": "A. Globerson"
+      }
+    ],
+    "abstract": "Transformer-based language models (LMs) are known to capture factual knowledge in their parameters. While previous work looked into where factual associations are stored, only little is known about how they are retrieved internally during inference. We investigate this question through the lens of information flow. Given a subject-relation query, we study how the model aggregates information about the subject and relation to predict the correct attribute. With interventions on attention edges, we first identify two critical points where information propagates to the prediction: one from the relation positions followed by another from the subject positions. Next, by analyzing the information at these points, we unveil a three-step internal mechanism for attribute extraction. First, the representation at the last-subject position goes through an enrichment process, driven by the early MLP sublayers, to encode many subject-related attributes. Second, information from the relation propagates to the prediction. Third, the prediction representation\"queries\"the enriched subject to extract the attribute. Perhaps surprisingly, this extraction is typically done via attention heads, which often encode subject-attribute mappings in their parameters. Overall, our findings introduce a comprehensive view of how factual associations are stored and extracted internally in LMs, facilitating future research on knowledge localization and editing.",
+    "arxiv_id": "2304.14767"
+  },
+  {
+    "paperId": "9c0a434b240299cec0029a1be93ab263d7ec9963",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2301-04213",
+      "ArXiv": "2301.04213",
+      "DOI": "10.48550/arXiv.2301.04213",
+      "CorpusId": 255595518
+    },
+    "url": "https://www.semanticscholar.org/paper/9c0a434b240299cec0029a1be93ab263d7ec9963",
+    "title": "Does Localization Inform Editing? Surprising Differences in Causality-Based Localization vs. Knowledge Editing in Language Models",
+    "year": 2023,
+    "citationCount": 238,
+    "openAccessPdf": {
+      "url": "http://arxiv.org/pdf/2301.04213",
+      "status": "GREEN",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2301.04213, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "144625004",
+        "name": "Peter Hase"
+      },
+      {
+        "authorId": "143977268",
+        "name": "Mohit Bansal"
+      },
+      {
+        "authorId": "3351164",
+        "name": "Been Kim"
+      },
+      {
+        "authorId": "2214185",
+        "name": "Asma Ghandeharioun"
+      }
+    ],
+    "abstract": "Language models learn a great quantity of factual information during pretraining, and recent work localizes this information to specific model weights like mid-layer MLP weights. In this paper, we find that we can change how a fact is stored in a model by editing weights that are in a different location than where existing methods suggest that the fact is stored. This is surprising because we would expect that localizing facts to specific model parameters would tell us where to manipulate knowledge in models, and this assumption has motivated past work on model editing methods. Specifically, we show that localization conclusions from representation denoising (also known as Causal Tracing) do not provide any insight into which model MLP layer would be best to edit in order to override an existing stored fact with a new one. This finding raises questions about how past work relies on Causal Tracing to select which model layers to edit. Next, we consider several variants of the editing problem, including erasing and amplifying facts. For one of our editing problems, editing performance does relate to localization results from representation denoising, but we find that which layer we edit is a far better predictor of performance. Our results suggest, counterintuitively, that better mechanistic understanding of how pretrained language models work may not always translate to insights about how to best change their behavior. Our code is available at https://github.com/google/belief-localization",
+    "arxiv_id": "2301.04213"
+  },
+  {
+    "paperId": "29c7f009df21d0112c48dec254ff80cc45fac3af",
+    "externalIds": {
+      "DBLP": "conf/nips/SchaefferMK23",
+      "ArXiv": "2304.15004",
+      "DOI": "10.48550/arXiv.2304.15004",
+      "CorpusId": 258418299
+    },
+    "url": "https://www.semanticscholar.org/paper/29c7f009df21d0112c48dec254ff80cc45fac3af",
+    "title": "Are Emergent Abilities of Large Language Models a Mirage?",
+    "year": 2023,
+    "citationCount": 591,
+    "openAccessPdf": {
+      "url": "http://arxiv.org/pdf/2304.15004",
+      "status": "GREEN",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2304.15004, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "1749176844",
+        "name": "Rylan Schaeffer"
+      },
+      {
+        "authorId": "33528206",
+        "name": "B. Miranda"
+      },
+      {
+        "authorId": "143812875",
+        "name": "Oluwasanmi Koyejo"
+      }
+    ],
+    "abstract": "Recent work claims that large language models display emergent abilities, abilities not present in smaller-scale models that are present in larger-scale models. What makes emergent abilities intriguing is two-fold: their sharpness, transitioning seemingly instantaneously from not present to present, and their unpredictability, appearing at seemingly unforeseeable model scales. Here, we present an alternative explanation for emergent abilities: that for a particular task and model family, when analyzing fixed model outputs, emergent abilities appear due to the researcher's choice of metric rather than due to fundamental changes in model behavior with scale. Specifically, nonlinear or discontinuous metrics produce apparent emergent abilities, whereas linear or continuous metrics produce smooth, continuous predictable changes in model performance. We present our alternative explanation in a simple mathematical model, then test it in three complementary ways: we (1) make, test and confirm three predictions on the effect of metric choice using the InstructGPT/GPT-3 family on tasks with claimed emergent abilities; (2) make, test and confirm two predictions about metric choices in a meta-analysis of emergent abilities on BIG-Bench; and (3) show to choose metrics to produce never-before-seen seemingly emergent abilities in multiple vision tasks across diverse deep networks. Via all three analyses, we provide evidence that alleged emergent abilities evaporate with different metrics or with better statistics, and may not be a fundamental property of scaling AI models.",
+    "arxiv_id": "2304.15004"
+  },
+  {
+    "paperId": "04f4e55e14150b7c48b0287ba77c7443df76ed45",
+    "externalIds": {
+      "DBLP": "conf/aaai/BiskZLGC20",
+      "MAG": "2998617917",
+      "ArXiv": "1911.11641",
+      "DOI": "10.1609/AAAI.V34I05.6239",
+      "CorpusId": 208290939
+    },
+    "url": "https://www.semanticscholar.org/paper/04f4e55e14150b7c48b0287ba77c7443df76ed45",
+    "title": "PIQA: Reasoning about Physical Commonsense in Natural Language",
+    "year": 2019,
+    "citationCount": 2661,
+    "openAccessPdf": {
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/download/6239/6095",
+      "status": "GOLD",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/1911.11641, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "3312309",
+        "name": "Yonatan Bisk"
+      },
+      {
+        "authorId": "2545335",
+        "name": "Rowan Zellers"
+      },
+      {
+        "authorId": "39227408",
+        "name": "Ronan Le Bras"
+      },
+      {
+        "authorId": "48441311",
+        "name": "Jianfeng Gao"
+      },
+      {
+        "authorId": "1699545",
+        "name": "Yejin Choi"
+      }
+    ],
+    "abstract": "To apply eyeshadow without a brush, should I use a cotton swab or a toothpick? Questions requiring this kind of physical commonsense pose a challenge to today's natural language understanding systems. While recent pretrained models (such as BERT) have made progress on question answering over more abstract domains \u2013 such as news articles and encyclopedia entries, where text is plentiful \u2013 in more physical domains, text is inherently limited due to reporting bias. Can AI systems learn to reliably answer physical commonsense questions without experiencing the physical world?In this paper, we introduce the task of physical commonsense reasoning and a corresponding benchmark dataset Physical Interaction: Question Answering or PIQA. Though humans find the dataset easy (95% accuracy), large pretrained models struggle (\u223c75%). We provide analysis about the dimensions of knowledge that existing models lack, which offers significant opportunities for future research.",
+    "arxiv_id": "1911.11641"
+  },
+  {
+    "paperId": "c21a4d70d83e0f6eb2a9e1c41d034842dd561e47",
+    "externalIds": {
+      "MAG": "2952331680",
+      "ACL": "N19-1421",
+      "DBLP": "journals/corr/abs-1811-00937",
+      "ArXiv": "1811.00937",
+      "DOI": "10.18653/v1/N19-1421",
+      "CorpusId": 53296520
+    },
+    "url": "https://www.semanticscholar.org/paper/c21a4d70d83e0f6eb2a9e1c41d034842dd561e47",
+    "title": "CommonsenseQA: A Question Answering Challenge Targeting Commonsense Knowledge",
+    "year": 2019,
+    "citationCount": 2244,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/1811.00937, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "12371246",
+        "name": "Alon Talmor"
+      },
+      {
+        "authorId": "47426264",
+        "name": "Jonathan Herzig"
+      },
+      {
+        "authorId": "35219984",
+        "name": "Nicholas Lourie"
+      },
+      {
+        "authorId": "1750652",
+        "name": "Jonathan Berant"
+      }
+    ],
+    "abstract": "When answering a question, people often draw upon their rich world knowledge in addition to the particular context. Recent work has focused primarily on answering questions given some relevant document or context, and required very little general background. To investigate question answering with prior knowledge, we present CommonsenseQA: a challenging new dataset for commonsense question answering. To capture common sense beyond associations, we extract from ConceptNet (Speer et al., 2017) multiple target concepts that have the same semantic relation to a single source concept. Crowd-workers are asked to author multiple-choice questions that mention the source concept and discriminate in turn between each of the target concepts. This encourages workers to create questions with complex semantics that often require prior knowledge. We create 12,247 questions through this procedure and demonstrate the difficulty of our task with a large number of strong baselines. Our best baseline is based on BERT-large (Devlin et al., 2018) and obtains 56% accuracy, well below human performance, which is 89%.",
+    "arxiv_id": "1811.00937"
+  },
+  {
+    "paperId": "401dc39c2c8c910253d47980cfa3b4d2f7790d9b",
+    "externalIds": {
+      "MAG": "2963259903",
+      "ArXiv": "1907.10641",
+      "DBLP": "conf/aaai/SakaguchiBBC20",
+      "DOI": "10.1145/3474381",
+      "CorpusId": 198893658
+    },
+    "url": "https://www.semanticscholar.org/paper/401dc39c2c8c910253d47980cfa3b4d2f7790d9b",
+    "title": "WinoGrande",
+    "year": 2019,
+    "citationCount": 287,
+    "openAccessPdf": {
+      "url": "https://dl.acm.org/doi/pdf/10.1145/3474381",
+      "status": "BRONZE",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/1907.10641, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2325708",
+        "name": "Keisuke Sakaguchi"
+      },
+      {
+        "authorId": "39227408",
+        "name": "Ronan Le Bras"
+      },
+      {
+        "authorId": "1857797",
+        "name": "Chandra Bhagavatula"
+      },
+      {
+        "authorId": "1699545",
+        "name": "Yejin Choi"
+      }
+    ],
+    "abstract": "Commonsense reasoning remains a major challenge in AI, and yet, recent progresses on benchmarks may seem to suggest otherwise. In particular, the recent neural language models have reported above 90% accuracy on the Winograd Schema Challenge (WSC), a commonsense benchmark originally designed to be unsolvable for statistical models that rely simply on word associations. This raises an important question---whether these models have truly acquired robust commonsense capabilities or they rely on spurious biases in the dataset that lead to an overestimation of the true capabilities of machine commonsense. To investigate this question, we introduce WinoGrande, a large-scale dataset of 44k problems, inspired by the original WSC, but adjusted to improve both the scale and the hardness of the dataset. The key steps of the dataset construction consist of (1) large-scale crowdsourcing, followed by (2) systematic bias reduction using a novel AFLITE algorithm that generalizes human-detectable word associations to machine-detectable embedding associations. Our experiments demonstrate that state-of-the-art models achieve considerably lower accuracy (59.4%-79.1%) on WINOGRANDE compared to humans (94%), confirming that the high performance on the original WSC was inflated by spurious biases in the dataset. Furthermore, we report new state-of-the-art results on five related benchmarks with emphasis on their dual implications. On the one hand, they demonstrate the effectiveness of WINOGRANDE when used as a resource for transfer learning. On the other hand, the high performance on all these benchmarks suggests the extent to which spurious biases are prevalent in all such datasets, which motivates further research on algorithmic bias reduction.",
+    "arxiv_id": "1907.10641"
+  },
+  {
+    "paperId": "199ff73d2f728e997f860b62a2322823d3e3d9e8",
+    "externalIds": {
+      "ArXiv": "1909.03368",
+      "MAG": "2972296365",
+      "ACL": "D19-1275",
+      "DBLP": "journals/corr/abs-1909-03368",
+      "DOI": "10.18653/v1/D19-1275",
+      "CorpusId": 202538609
+    },
+    "url": "https://www.semanticscholar.org/paper/199ff73d2f728e997f860b62a2322823d3e3d9e8",
+    "title": "Designing and Interpreting Probes with Control Tasks",
+    "year": 2019,
+    "citationCount": 608,
+    "openAccessPdf": {
+      "url": "https://www.aclweb.org/anthology/D19-1275.pdf",
+      "status": "HYBRID",
+      "license": "CCBY",
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/1909.03368, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "145430120",
+        "name": "John Hewitt"
+      },
+      {
+        "authorId": "145419642",
+        "name": "Percy Liang"
+      }
+    ],
+    "abstract": "Probes, supervised models trained to predict properties (like parts-of-speech) from representations (like ELMo), have achieved high accuracy on a range of linguistic tasks. But does this mean that the representations encode linguistic structure or just that the probe has learned the linguistic task? In this paper, we propose control tasks, which associate word types with random outputs, to complement linguistic tasks. By construction, these tasks can only be learned by the probe itself. So a good probe, (one that reflects the representation), should be selective, achieving high linguistic task accuracy and low control task accuracy. The selectivity of a probe puts linguistic task accuracy in context with the probe\u2019s capacity to memorize from word types. We construct control tasks for English part-of-speech tagging and dependency edge prediction, and show that popular probes on ELMo representations are not selective. We also find that dropout, commonly used to control probe complexity, is ineffective for improving selectivity of MLPs, but that other forms of regularization are effective. Finally, we find that while probes on the first layer of ELMo yield slightly better part-of-speech tagging accuracy than the second, probes on the second layer are substantially more selective, which raises the question of which layer better represents parts-of-speech.",
+    "arxiv_id": "1909.03368"
+  },
+  {
+    "paperId": "12910786da7a34c9ee26798fd81b0ed7b0e38789",
+    "externalIds": {
+      "DBLP": "journals/tmlr/GurneeNPHTB23",
+      "ArXiv": "2305.01610",
+      "DOI": "10.48550/arXiv.2305.01610",
+      "CorpusId": 258437237
+    },
+    "url": "https://www.semanticscholar.org/paper/12910786da7a34c9ee26798fd81b0ed7b0e38789",
+    "title": "Finding Neurons in a Haystack: Case Studies with Sparse Probing",
+    "year": 2023,
+    "citationCount": 302,
+    "openAccessPdf": {
+      "url": "http://arxiv.org/pdf/2305.01610",
+      "status": "CLOSED",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2305.01610, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2056771333",
+        "name": "Wes Gurnee"
+      },
+      {
+        "authorId": "2051128902",
+        "name": "Neel Nanda"
+      },
+      {
+        "authorId": "2215896930",
+        "name": "Matthew Pauly"
+      },
+      {
+        "authorId": "10145633",
+        "name": "Katherine Harvey"
+      },
+      {
+        "authorId": "2215904970",
+        "name": "Dmitrii Troitskii"
+      },
+      {
+        "authorId": "1713217",
+        "name": "D. Bertsimas"
+      }
+    ],
+    "abstract": "Despite rapid adoption and deployment of large language models (LLMs), the internal computations of these models remain opaque and poorly understood. In this work, we seek to understand how high-level human-interpretable features are represented within the internal neuron activations of LLMs. We train $k$-sparse linear classifiers (probes) on these internal activations to predict the presence of features in the input; by varying the value of $k$ we study the sparsity of learned representations and how this varies with model scale. With $k=1$, we localize individual neurons which are highly relevant for a particular feature, and perform a number of case studies to illustrate general properties of LLMs. In particular, we show that early layers make use of sparse combinations of neurons to represent many features in superposition, that middle layers have seemingly dedicated neurons to represent higher-level contextual features, and that increasing scale causes representational sparsity to increase on average, but there are multiple types of scaling dynamics. In all, we probe for over 100 unique features comprising 10 different categories in 7 different models spanning 70 million to 6.9 billion parameters.",
+    "arxiv_id": "2305.01610"
+  },
+  {
+    "paperId": "08a4d598edbbd7c5eb5806820e65e62292cec823",
+    "externalIds": {
+      "ArXiv": "2309.16688",
+      "CorpusId": 263310901
+    },
+    "url": "https://www.semanticscholar.org/paper/08a4d598edbbd7c5eb5806820e65e62292cec823",
+    "title": "Extreme cases: Math education within the U.S. prison system",
+    "year": 2023,
+    "citationCount": 1,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2309.16688, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2249533211",
+        "name": "Katherine J. Pearce"
+      }
+    ],
+    "abstract": "This paper summarizes the author's insights and experiences of teaching mathematics to incarcerated students within the U.S. prison system.",
+    "arxiv_id": "2309.16688"
+  },
+  {
+    "paperId": "b8f280d8bf685f8da7c83068e73f000528072d6b",
+    "externalIds": {
+      "ArXiv": "2403.19647",
+      "DBLP": "conf/iclr/MarksRMBBM25",
+      "DOI": "10.48550/arXiv.2403.19647",
+      "CorpusId": 268732732
+    },
+    "url": "https://www.semanticscholar.org/paper/b8f280d8bf685f8da7c83068e73f000528072d6b",
+    "title": "Sparse Feature Circuits: Discovering and Editing Interpretable Causal Graphs in Language Models",
+    "year": 2024,
+    "citationCount": 269,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2403.19647, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2225941937",
+        "name": "Samuel Marks"
+      },
+      {
+        "authorId": "2257034392",
+        "name": "Can Rager"
+      },
+      {
+        "authorId": "2293723716",
+        "name": "Eric J. Michaud"
+      },
+      {
+        "authorId": "2083259",
+        "name": "Yonatan Belinkov"
+      },
+      {
+        "authorId": "2284996653",
+        "name": "David Bau"
+      },
+      {
+        "authorId": "2261670263",
+        "name": "Aaron Mueller"
+      }
+    ],
+    "abstract": "We introduce methods for discovering and applying sparse feature circuits. These are causally implicated subnetworks of human-interpretable features for explaining language model behaviors. Circuits identified in prior work consist of polysemantic and difficult-to-interpret units like attention heads or neurons, rendering them unsuitable for many downstream applications. In contrast, sparse feature circuits enable detailed understanding of unanticipated mechanisms. Because they are based on fine-grained units, sparse feature circuits are useful for downstream tasks: We introduce SHIFT, where we improve the generalization of a classifier by ablating features that a human judges to be task-irrelevant. Finally, we demonstrate an entirely unsupervised and scalable interpretability pipeline by discovering thousands of sparse feature circuits for automatically discovered model behaviors.",
+    "arxiv_id": "2403.19647"
+  },
+  {
+    "paperId": "d59523889679aee15992c4bf6e52b134186d07d3",
+    "externalIds": {
+      "ArXiv": "2310.06824",
+      "DBLP": "journals/corr/abs-2310-06824",
+      "DOI": "10.48550/arXiv.2310.06824",
+      "CorpusId": 263831277
+    },
+    "url": "https://www.semanticscholar.org/paper/d59523889679aee15992c4bf6e52b134186d07d3",
+    "title": "The Geometry of Truth: Emergent Linear Structure in Large Language Model Representations of True/False Datasets",
+    "year": 2023,
+    "citationCount": 396,
+    "openAccessPdf": {
+      "url": "https://arxiv.org/pdf/2310.06824",
+      "status": "CLOSED",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2310.06824, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2225941937",
+        "name": "Samuel Marks"
+      },
+      {
+        "authorId": "2253461466",
+        "name": "Max Tegmark"
+      }
+    ],
+    "abstract": "Large Language Models (LLMs) have impressive capabilities, but are prone to outputting falsehoods. Recent work has developed techniques for inferring whether a LLM is telling the truth by training probes on the LLM's internal activations. However, this line of work is controversial, with some authors pointing out failures of these probes to generalize in basic ways, among other conceptual issues. In this work, we use high-quality datasets of simple true/false statements to study in detail the structure of LLM representations of truth, drawing on three lines of evidence: 1. Visualizations of LLM true/false statement representations, which reveal clear linear structure. 2. Transfer experiments in which probes trained on one dataset generalize to different datasets. 3. Causal evidence obtained by surgically intervening in a LLM's forward pass, causing it to treat false statements as true and vice versa. Overall, we present evidence that at sufficient scale, LLMs linearly represent the truth or falsehood of factual statements. We also show that simple difference-in-mean probes generalize as well as other probing techniques while identifying directions which are more causally implicated in model outputs.",
+    "arxiv_id": "2310.06824"
+  },
+  {
+    "paperId": "88f9af8b0a28e14c42d4f70ce2d911b51a06cd16",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2406-11717",
+      "ArXiv": "2406.11717",
+      "DOI": "10.48550/arXiv.2406.11717",
+      "CorpusId": 270560489
+    },
+    "url": "https://www.semanticscholar.org/paper/88f9af8b0a28e14c42d4f70ce2d911b51a06cd16",
+    "title": "Refusal in Language Models Is Mediated by a Single Direction",
+    "year": 2024,
+    "citationCount": 473,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2406.11717, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2307010235",
+        "name": "Andy Arditi"
+      },
+      {
+        "authorId": "2307010353",
+        "name": "Oscar Obeso"
+      },
+      {
+        "authorId": "2201328926",
+        "name": "Aaquib Syed"
+      },
+      {
+        "authorId": "2387793732",
+        "name": "Daniel Paleka"
+      },
+      {
+        "authorId": "2273681212",
+        "name": "Nina Rimsky"
+      },
+      {
+        "authorId": "2056771333",
+        "name": "Wes Gurnee"
+      },
+      {
+        "authorId": "2051128902",
+        "name": "Neel Nanda"
+      }
+    ],
+    "abstract": "Conversational large language models are fine-tuned for both instruction-following and safety, resulting in models that obey benign requests but refuse harmful ones. While this refusal behavior is widespread across chat models, its underlying mechanisms remain poorly understood. In this work, we show that refusal is mediated by a one-dimensional subspace, across 13 popular open-source chat models up to 72B parameters in size. Specifically, for each model, we find a single direction such that erasing this direction from the model's residual stream activations prevents it from refusing harmful instructions, while adding this direction elicits refusal on even harmless instructions. Leveraging this insight, we propose a novel white-box jailbreak method that surgically disables refusal with minimal effect on other capabilities. Finally, we mechanistically analyze how adversarial suffixes suppress propagation of the refusal-mediating direction. Our findings underscore the brittleness of current safety fine-tuning methods. More broadly, our work showcases how an understanding of model internals can be leveraged to develop practical methods for controlling model behavior.",
+    "arxiv_id": "2406.11717"
+  }
+]

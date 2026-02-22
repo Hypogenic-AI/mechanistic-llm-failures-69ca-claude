@@ -1,0 +1,982 @@
+You are an academic paper writer. Generate a complete NEURIPS style paper
+based on the experiment results provided.
+
+════════════════════════════════════════════════════════════════════════════════
+                         IMPORTANT: BEFORE YOU START
+════════════════════════════════════════════════════════════════════════════════
+
+Before writing any content, you MUST complete these steps:
+
+1. READ THE SKILL: Review the paper-writer skill at .claude/skills/paper-writer/SKILL.md
+2. READ THE STYLE GUIDE: Study templates/paper_writing/lab_style_guide.md carefully
+3. REVIEW EXAMPLES: Browse paper_examples/ for formatting and language patterns:
+   - Look at sections/1.introduction.tex for language style
+   - Look at tables/*.tex for table formatting
+   - Look at commands/*.tex for macro usage
+4. VERIFY COMMAND TEMPLATES: Command templates (math.tex, general.tex, macros.tex) are pre-copied to paper_draft/commands/
+
+CRITICAL: Reference example papers for FORMATTING and LANGUAGE STYLE only.
+Do NOT copy content, phrasing, or narrative structure from the example papers.
+The examples are in a different research domain - focus only on presentation style.
+
+════════════════════════════════════════════════════════════════════════════════
+                            EXPERIMENT REPORT
+════════════════════════════════════════════════════════════════════════════════
+
+# REPORT: Mechanistic Interpretability of Commonsense Reasoning Failures in LLMs
+
+## 1. Executive Summary
+
+We investigated where commonsense reasoning failures originate in GPT-2 Small&#39;s transformer architecture by applying mechanistic interpretability methods to PIQA (Physical Interaction Question Answering). GPT-2 Small achieves 64% accuracy on PIQA (above the 50% chance baseline), providing sufficient correct and incorrect predictions for comparative analysis. Our key finding is that **commonsense reasoning failures are primarily associated with disruptions in mid-layer MLP processing (layers 2-4)**, consistent with the enrichment stage of the Geva et al. three-step retrieval framework. When we ablate layers 2-3, correct predictions are disproportionately harmed while incorrect predictions are relatively unaffected or even improved, suggesting that these layers perform commonsense knowledge integration that is absent or counterproductive for failure cases. Linear probes trained on goal representations fail to predict the correct answer at any layer (near-chance accuracy), indicating that commonsense knowledge in GPT-2 Small is not linearly decodable from the goal alone -- the model must compose goal and solution information to make its judgment. This is the first study applying mechanistic interpretability tools to commonsense reasoning in LLMs.
+
+## 2. Goal
+
+**Hypothesis:** Commonsense reasoning failures in LLMs are not solely due to missing knowledge but arise from specific breakdowns in the integration of goal-action coherence within the model&#39;s internal mechanisms.
+
+**Importance:** Current work treats commonsense failure as a knowledge or data problem. Understanding the mechanistic origins of these failures distinguishes between architectural, representational, and training-induced causes, each requiring different interventions.
+
+**Expected Impact:** This research establishes a methodology for mechanistic analysis of commonsense reasoning, identifies the computational stages most vulnerable to failure, and provides evidence for which failure hypothesis (enrichment vs. propagation vs. extraction) best explains commonsense breakdowns.
+
+## 3. Data Construction
+
+### Dataset Description
+- **Source:** PIQA (Physical Interaction Question Answering), Bisk et al. 2020
+- **Loaded from:** HuggingFace `piqa` dataset, pre-downloaded
+- **Validation set:** 1,838 examples; we used 500 for evaluation, subsets for each experiment
+- **Format:** Goal + two candidate solutions (binary choice, label 0 or 1)
+- **Domain:** Physical commonsense reasoning
+
+### Example Samples
+
+| Goal | Solution 1 | Solution 2 | Label |
+|------|-----------|-----------|-------|
+| &#34;How do I ready a guinea pig cage for its new occupants?&#34; | &#34;Provide the guinea pig with a cage full of bedding made of ripped paper strips...&#34; | &#34;...bedding made of ripped jeans material...&#34; | 0 |
+| &#34;To permanently attach metal legs to a chair, you can&#34; | &#34;Weld the metal together...&#34; | &#34;Nail the metal together...&#34; | 0 |
+| &#34;When boiling butter, when it&#39;s ready, you can&#34; | &#34;Pour it onto a plate&#34; | &#34;Pour it into a jar&#34; | 1 |
+
+### Preprocessing
+Each PIQA example was formatted as: `&#34;Goal: {goal}\nSolution: {solution}&#34;` and tokenized by GPT-2&#39;s BPE tokenizer. Sequences longer than 100 tokens were excluded from mechanistic analyses (~5% of examples).
+
+### Data Split
+- **Evaluation:** 500 examples from PIQA validation set
+- **Causal tracing:** 40 correct + 40 incorrect predictions (80 total)
+- **Activation patching:** 40 correct + 40 incorrect predictions (80 total)
+- **Probing:** 150 correct + 150 incorrect predictions (300 total)
+- **Attention analysis:** 30 correct + 30 incorrect predictions (60 total)
+
+## 4. Experiment Description
+
+### Methodology
+
+#### High-Level Approach
+We applied four complementary mechanistic interpretability methods to GPT-2 Small (124M parameters, 12 layers, 12 heads per layer, 768-dimensional residual stream) using TransformerLens. For each method, we compared internal mechanisms between examples the model answered correctly versus incorrectly on PIQA, to identify where in the network commonsense reasoning breaks down.
+
+#### Why This Method?
+GPT-2 Small is the best-understood model in the mechanistic interpretability literature, with known circuits (IOI) serving as calibration benchmarks. PIQA&#39;s binary-choice format maps cleanly to the logit-difference metric standard in circuit analysis. This is the first application of these methods to commonsense reasoning.
+
+### Implementation Details
+
+#### Tools and Libraries
+| Library | Version | Purpose |
+|---------|---------|---------|
+| PyTorch | 2.10.0+cu128 | Tensor computation |
+| TransformerLens | 2.17.0 | Model hooks, activation caching |
+| scikit-learn | 1.8.0 | Linear probing |
+| datasets | latest | PIQA data loading |
+| matplotlib | latest | Visualization |
+
+#### Hardware
+- GPU: NVIDIA RTX 3090 (24GB VRAM)
+- Total execution time: 6.9 minutes
+
+#### Hyperparameters
+| Parameter | Value | Selection Method |
+|-----------|-------|------------------|
+| Random seed | 42 | Standard |
+| Noise std (causal tracing) | 3.0 | Following Meng et al. |
+| Probe regularization (C) | 1.0 | Default |
+| Max sequence length | 100 tokens | Empirical |
+| Cross-validation folds | 5 | Standard |
+
+### Experimental Protocol
+
+Seven experiments were conducted:
+
+**Experiment 1: Baseline Evaluation + Logit Lens** (n=500)
+- Scored both solutions by mean log-probability of tokens
+- Predicted the solution with higher log-probability
+- Tracked probability of last token at each layer via logit lens
+
+**Experiment 2: Layer-wise Causal Tracing** (n=80)
+- For each layer: zero-ablated the residual stream output
+- Measured the change in logit difference between correct and incorrect solutions
+- Compared ablation effects between model-correct and model-incorrect predictions
+
+**Experiment 3: Activation Patching** (n=80)
+- Zero-ablated each MLP layer and measured the effect on log-probability of the last token
+- Also attempted attention head ablation
+
+**Experiment 4: Layer-wise Linear Probing** (n=300)
+- Extracted residual stream activations at the last token of the goal text
+- Trained logistic regression probes at each layer to predict which solution is correct
+- Compared probe accuracy for model-correct vs. model-incorrect subsets
+
+**Experiment 5: Attention Pattern Analysis** (n=60)
+- Measured attention from the last token to goal-region tokens
+- Compared attention patterns between correct and incorrect predictions
+
+**Experiment 6: Logit Difference Trajectory** (n=150)
+- Tracked the mean logit difference between correct and incorrect solution representations at each layer using the logit lens
+- Compared trajectories for model-correct vs. model-incorrect predictions
+
+**Experiment 7: Noise-based Causal Tracing** (n=40)
+- Corrupted embeddings with Gaussian noise, restored clean activations at each layer
+- Measured recovery fraction for correct vs. incorrect predictions
+
+### Raw Results
+
+#### Baseline Accuracy
+
+| Metric | Value |
+|--------|-------|
+| Accuracy | 64.0% (320/500) |
+| Chance | 50% |
+| Above chance | +14 percentage points |
+
+The 64% accuracy confirms GPT-2 Small has non-trivial but imperfect commonsense reasoning ability on PIQA, providing a good distribution of correct (n=320) and incorrect (n=180) predictions for comparative analysis.
+
+#### Causal Tracing Results (Layer-wise Ablation Effects)
+
+| Layer | Effect (Correct) | Effect (Incorrect) | Difference |
+|-------|-----------------|-------------------|------------|
+| 0 | -0.165 | +0.205 | -0.370 |
+| 1 | -0.069 | +0.172 | -0.241 |
+| **2** | **-0.742** | **+0.200** | **-0.942** |
+| **3** | **-0.750** | **+0.247** | **-0.997** |
+| 4 | -0.353 | +0.308 | -0.661 |
+| **5** | **+0.234** | **-0.406** | **+0.640** |
+| 6 | -0.285 | -0.068 | -0.217 |
+| 7 | -0.088 | +0.117 | -0.205 |
+| 8 | -0.413 | +0.157 | -0.570 |
+| 9 | -0.321 | +0.279 | -0.600 |
+| 10 | -0.325 | +0.226 | -0.551 |
+| 11 | -0.143 | +0.191 | -0.334 |
+
+**Key Finding:** Layers 2-3 show the largest causal importance for correct predictions (ablation effect of -0.74 to -0.75) while having a *positive* ablation effect for incorrect predictions (+0.20 to +0.25). This means:
+- For correct predictions, ablating layers 2-3 dramatically hurts performance
+- For incorrect predictions, ablating layers 2-3 *helps* (or is neutral)
+
+This pattern is consistent with an **enrichment failure**: layers 2-3 are performing commonsense knowledge enrichment that succeeds for correct predictions and either fails or produces counterproductive representations for incorrect predictions.
+
+Layer 5 shows the opposite pattern: ablation *helps* correct predictions (+0.234) but *hurts* incorrect predictions (-0.406), suggesting layer 5 may perform some form of refinement or correction that is more critical for failure cases.
+
+#### MLP Importance Results
+
+| Layer | MLP Importance (Correct) | MLP Importance (Incorrect) |
+|-------|-------------------------|--------------------------|
+| 0 | -3.656 | -3.311 |
+| 1 | -0.118 | -0.089 |
+| 2-5 | -0.08 to -0.13 | -0.03 to -0.15 |
+| 6 | -0.347 | -0.169 |
+| 9 | -0.539 | -0.633 |
+| 10 | -0.990 | -0.883 |
+| 11 | -1.093 | -1.019 |
+
+MLP layers 0, 10, and 11 are the most important overall, with the largest absolute importance values. The difference between correct and incorrect is most pronounced at layer 0 (correct: -3.656 vs. incorrect: -3.311) and layer 6 (correct: -0.347 vs. incorrect: -0.169).
+
+#### Probing Results
+
+| Layer | Overall Accuracy | Model-Correct Subset | Model-Incorrect Subset |
+|-------|-----------------|---------------------|----------------------|
+| 0 | 51.7% | 52.0% | 53.3% |
+| 4 | 54.0% | 48.7% | 44.7% |
+| 7 | 51.7% | 43.3% | 45.3% |
+| 11 | 50.0% | 45.3% | 46.0% |
+
+**Key Finding:** Linear probes achieve near-chance accuracy (~50%) at all layers, with no layer exceeding 54%. This indicates that the correct answer to a PIQA question is **not linearly decodable from the goal representation alone**. The model must compose goal and solution information together to discriminate between solutions. This rules out the hypothesis that commonsense knowledge is simply &#34;read off&#34; from enriched goal representations.
+
+#### Attention Analysis
+Attention patterns from the last token to goal tokens are remarkably similar between correct and incorrect predictions (differences &lt; 0.005 on average per head). No individual attention head shows a significant difference in goal-attending behavior between correct and incorrect predictions. This suggests that **propagation (information routing via attention) is not the primary failure point** -- both correct and incorrect predictions route information from the goal similarly.
+
+## 5. Result Analysis
+
+### Key Findings
+
+**Finding 1: Commonsense failures are concentrated in mid-layer MLP processing (layers 2-4).**
+The causal tracing experiment reveals that layers 2-3 have the largest differential causal effect between correct and incorrect predictions (ablation effect difference of ~1.0 logit units). These layers are critical for correct commonsense reasoning but counterproductive for failure cases. This aligns with the &#34;subject enrichment&#34; stage of Geva et al.&#39;s three-step framework, localized at the same early-to-mid layers where factual knowledge enrichment occurs.
+
+**Finding 2: Commonsense knowledge is not linearly decodable from goal representations.**
+Probing experiments show that a linear classifier cannot predict the correct answer from the goal&#39;s residual stream representation at any layer (max accuracy: 54%, not significantly above chance with n=300). This means GPT-2 Small does not build a simple &#34;answer direction&#34; for commonsense queries the way it does for factual recall (where probes achieve 80%+ accuracy). Commonsense reasoning requires compositional integration of goal and solution.
+
+**Finding 3: Attention-based propagation is not the primary failure point.**
+Attention patterns from the last token to goal tokens are nearly identical between correct and incorrect predictions. The model routes information from goals similarly regardless of whether it succeeds or fails. This rules out the Propagation Hypothesis (H2) as the dominant failure mode.
+
+**Finding 4: Late-layer MLPs (9-11) are important for final answer selection but do not differentiate success from failure.**
+MLP layers 9-11 have high importance for both correct and incorrect predictions (importance &gt; -0.5), but the difference between groups is small. This suggests that extraction-stage processing is largely shared, ruling out the Extraction Hypothesis (H3) as the primary failure mode.
+
+### Hypothesis Testing Results
+
+| Hypothesis | Supported? | Evidence |
+|-----------|-----------|---------|
+| **H1 (Enrichment)** | **Partially supported** | Layers 2-3 show the largest differential between correct/incorrect; these correspond to the enrichment stage |
+| H2 (Propagation) | Not supported | Attention patterns are nearly identical between correct and incorrect |
+| H3 (Extraction) | Not supported | Late-layer MLP importance is similar for both groups |
+| **H4 (Distributed)** | **Partially supported** | While enrichment shows the strongest signal, there are contributions at layers 8-10 as well |
+
+### Comparison to Factual Knowledge Localization
+
+Meng et al. (2022) found that factual knowledge is primarily stored in mid-layer MLPs (layers 7-12 in GPT-J, scaling to approximately layers 3-6 in GPT-2 Small). Our finding that commonsense reasoning failures concentrate in layers 2-3 is **consistent with the same localization regime as factual knowledge enrichment**, suggesting a shared storage mechanism. However, the failure mode is different: for factual recall, the knowledge is either present or absent. For commonsense reasoning, the relevant knowledge may be present but the compositional integration fails.
+
+### Surprises and Insights
+
+1. **Layer 5 shows a reversed pattern**: Ablating layer 5 *helps* correct predictions and *hurts* incorrect ones. This is unexpected and may indicate that layer 5 performs a &#34;correction&#34; step that is more critical when the initial enrichment (layers 2-3) produces an incorrect intermediate representation.
+
+2. **Zero attention head importance**: Our attention head ablation experiment yielded zero importance for all heads. This is a methodological artifact -- we measured log-probability of a single token rather than the full logit difference. However, this result, combined with the near-identical attention patterns, reinforces the finding that attention mechanisms are not the primary differentiator between success and failure.
+
+3. **Probing at chance**: The most surprising finding is that probes cannot extract commonsense answer information from goal representations at *any* layer. This contrasts sharply with factual recall, where probes easily extract stored knowledge. It suggests that commonsense reasoning in GPT-2 Small is fundamentally more compositional than factual recall.
+
+### Error Analysis
+
+Examining individual failure cases reveals common patterns:
+- Failures often involve goals requiring multi-step physical reasoning (e.g., understanding material properties + how they interact)
+- Simple word-matching heuristics (choosing the solution with more words overlapping the goal) fail because PIQA is designed to be adversarial to such strategies
+- The model tends to favor solutions with lower perplexity (more &#34;natural&#34; language) rather than solutions that are physically correct
+
+### Limitations
+
+1. **Model scale**: GPT-2 Small (124M parameters) may lack the capacity for commonsense reasoning that larger models develop. The failure mechanisms may differ in larger models.
+2. **Prompt format**: We used a simple &#34;Goal:...Solution:...&#34; format. Different prompting strategies might elicit different internal mechanisms.
+3. **Binary metric**: We used mean log-probability across all tokens for scoring, which may not be the optimal way to extract commonsense judgments from an autoregressive model.
+4. **Attention head patching**: The zero-importance results for attention heads are a methodological limitation of our specific metric (single-token log-probability), not a true finding about attention head irrelevance.
+5. **Sample sizes**: The causal tracing experiments used 40 examples per group, which limits statistical power for detecting subtle layer-wise differences.
+6. **Noise-based causal tracing**: Restoring the full residual stream at any layer fully recovers performance, which is uninformative. A position-specific or component-specific restoration would be needed for finer-grained localization.
+
+## 6. Conclusions
+
+### Summary
+Commonsense reasoning failures in GPT-2 Small primarily originate in the enrichment stage (layers 2-3), where the model must integrate physical/causal knowledge into its representations. The model routes information similarly for both correct and incorrect predictions (ruling out propagation failure), and late-layer extraction is comparably effective for both. The key failure is **compositional enrichment**: the model fails to build the right intermediate representation that integrates goal context with physical commonsense knowledge.
+
+### Implications
+
+**Practical:** Targeted interventions at mid-layer MLPs (layers 2-4) are the most promising avenue for improving commonsense reasoning. Techniques like ROME-style editing or activation steering at these layers could selectively enhance commonsense enrichment.
+
+**Theoretical:** Commonsense reasoning failures share localization patterns with factual knowledge (mid-layer MLPs) but differ in their failure mode. Factual knowledge is either stored or missing; commonsense knowledge requires compositional integration that the model handles inconsistently. This suggests the failures are primarily **training-induced** (the model learned some but not all commonsense patterns) rather than architectural (the architecture can handle commonsense when the weights support it).
+
+**Who should care:** Researchers working on commonsense reasoning benchmarks, mechanistic interpretability, and knowledge editing in LLMs.
+
+### Confidence in Findings
+
+- **High confidence** in the baseline accuracy result (n=500, well above chance)
+- **Moderate confidence** in the causal tracing findings (n=80, consistent pattern across layers)
+- **High confidence** in the probing result (n=300, consistently near-chance across all layers)
+- **Low confidence** in attention head importance (methodological limitations)
+- **Moderate confidence** in the overall conclusion favoring enrichment failure (consistent across multiple methods)
+
+Additional evidence needed: Replication in larger models (Pythia-1.4B, GPT-2 Medium), more examples for causal tracing, and corrected attention head importance measurement using logit difference rather than single-token probability.
+
+## 7. Next Steps
+
+### Immediate Follow-ups
+1. **Fix attention head patching metric** to use the logit difference between correct and incorrect solutions rather than single-token log-probability
+2. **Scale to Pythia-1.4B** to test whether enrichment failure persists in larger models with better commonsense performance
+3. **Position-specific causal tracing** to identify whether the failure localizes to goal tokens, solution tokens, or the connector (&#34;Solution:&#34;)
+
+### Alternative Approaches
+- **SAE feature analysis** to identify specific interpretable features associated with commonsense reasoning at layers 2-3
+- **Activation steering** at layers 2-3 to test whether amplifying commonsense features rescues incorrect predictions
+- **ROME-style editing** to insert missing commonsense knowledge at identified critical layers
+
+### Broader Extensions
+- Apply same methodology to HellaSwag and WinoGrande to test generalization beyond physical commonsense
+- Study how commonsense enrichment mechanisms change with model scale (Pythia 70M to 6.9B)
+- Compare commonsense enrichment with factual recall enrichment in the same model to identify shared vs. distinct circuits
+
+### Open Questions
+1. What specific knowledge is encoded at layers 2-3 that succeeds for correct predictions? Can SAE features reveal this?
+2. Does the reversed pattern at layer 5 represent a genuine correction mechanism, and can it be strengthened?
+3. Why is commonsense knowledge not linearly decodable from goal representations when factual knowledge is? What does this tell us about the nature of commonsense representation?
+
+## References
+
+- Bisk, Y., Zellers, R., Le Bras, R., Gao, J., &amp; Choi, Y. (2020). PIQA: Reasoning about Physical Commonsense in Natural Language. AAAI 2020.
+- Geva, M., Bastings, J., Filippova, K., &amp; Globerson, A. (2023). Dissecting Recall of Factual Associations in Auto-Regressive Language Models. EMNLP 2023.
+- Meng, K., Bau, D., Mitchell, A., &amp; Yun, C. (2022). Locating and Editing Factual Associations in GPT. NeurIPS 2022.
+- Wang, K., Variengien, A., Conmy, A., Shlegeris, B., &amp; Steinhardt, J. (2022). Interpretability in the Wild: A Circuit for Indirect Object Identification in GPT-2 Small. ICLR 2023.
+- Conmy, A., Mavor-Parker, A. N., Lynch, A., Heimersheim, S., &amp; Garriga-Alonso, A. (2023). Towards Automated Circuit Discovery for Mechanistic Interpretability. NeurIPS 2023.
+- Galichin, N., Kovalev, N., Ershov, E., Goncharov, A., &amp; Panov, M. (2025). Interpreting Reasoning Features in Large Language Models via Sparse Autoencoders.
+- Bricken, T., et al. (2023). Towards Monosemanticity. Transformer Circuits Thread.
+- Dziri, N., et al. (2023). Faith and Fate: Limits of Transformers on Compositionality. NeurIPS 2023.
+
+
+════════════════════════════════════════════════════════════════════════════════
+                            RESEARCH PLAN
+════════════════════════════════════════════════════════════════════════════════
+
+# Research Plan: Mechanistic Interpretability of Commonsense Reasoning Failures in LLMs
+
+## Motivation &amp; Novelty Assessment
+
+### Why This Research Matters
+Large language models fail at commonsense reasoning tasks that humans find trivial -- recommending driving to a location five minutes away on foot, or suggesting physically implausible solutions to everyday problems. These failures are dangerous in deployed systems because they are unpredictable: a model may demonstrate sophisticated reasoning on complex tasks while failing on simple physical intuitions. Understanding the *mechanistic* origin of these failures -- not just cataloguing them -- is essential for determining whether fixes require more data, better training objectives, or architectural changes.
+
+### Gap in Existing Work
+Based on the literature review, there is a clear gap at the intersection of mechanistic interpretability and commonsense reasoning:
+1. **No mechanistic interpretability work targets commonsense reasoning.** Circuit discovery has focused on syntactic tasks (IOI in GPT-2), knowledge localization on simple factual recall (capital cities). Nobody has applied causal tracing, circuit discovery, or SAE feature analysis to commonsense tasks.
+2. **The three-step retrieval mechanism (enrichment → propagation → extraction) from Geva et al. has never been tested for commonsense knowledge.** Factual and commonsense knowledge may use fundamentally different mechanisms.
+3. **SAE-based reasoning features have only been studied for math.** Whether commonsense-specific features exist and whether they behave differently from math-reasoning features is unknown.
+4. **PIQA&#39;s goal-solution structure is ideal but unexploited** for mechanistic study of goal-action coherence.
+
+### Our Novel Contribution
+We apply mechanistic interpretability tools -- specifically causal tracing, logit lens analysis, layer-wise probing, and activation patching -- to understand *where* in the transformer network commonsense reasoning breaks down. We compare internal mechanisms between correct and incorrect PIQA predictions in GPT-2 Small to diagnose whether failures arise from:
+- **Enrichment failures** (relevant commonsense knowledge never activated)
+- **Propagation failures** (knowledge activated but not routed to decision point)
+- **Extraction failures** (knowledge arrives but wrong answer extracted)
+
+This is the first study to apply the Geva et al. three-stage retrieval framework to commonsense reasoning.
+
+### Experiment Justification
+- **Experiment 1 (Baseline Evaluation + Logit Lens):** Needed to establish which PIQA examples GPT-2 gets right vs wrong, and to track where in the layer stack the correct answer probability diverges. This identifies the *layers* where failure occurs.
+- **Experiment 2 (Causal Tracing):** Needed to localize where commonsense knowledge is stored -- in which layers and at which token positions. Direct comparison with factual knowledge localization (mid-layer MLPs) tests whether commonsense uses the same storage mechanism.
+- **Experiment 3 (Activation Patching by Component):** Needed to identify which specific components (attention heads, MLP layers) are causally responsible for commonsense reasoning. Comparing component importance between correct and incorrect predictions reveals which components fail.
+- **Experiment 4 (Layer-wise Probing):** Needed to test whether commonsense-relevant features (physical properties, causal relations) are linearly represented at each layer, and whether probe accuracy differs between examples the model gets right vs wrong. This distinguishes representational from extraction failures.
+
+---
+
+## Research Question
+Where in the transformer architecture do commonsense reasoning failures originate, and are these failures primarily due to missing knowledge representation (enrichment), failed information routing (propagation), or incorrect answer extraction?
+
+## Background and Motivation
+LLMs fail at commonsense tasks not because they lack relevant facts, but because they fail to integrate goal-action coherence. PIQA provides an ideal testbed: its goal-solution format explicitly separates goals from candidate actions, enabling mechanistic study of how models integrate these components. Existing work on mechanistic interpretability has focused on syntactic and factual tasks, leaving commonsense reasoning unexplored.
+
+## Hypothesis Decomposition
+
+**H1 (Enrichment Hypothesis):** Commonsense failures occur because the model fails to enrich goal representations with relevant physical/causal knowledge in early-to-mid MLP layers.
+- Testable via: Probing early/mid layers for commonsense properties; causal tracing showing critical layers.
+
+**H2 (Propagation Hypothesis):** The model encodes commonsense knowledge but fails to propagate it from goal tokens to the prediction position.
+- Testable via: Attention pattern analysis; logit lens showing knowledge present at goal positions but absent at prediction position.
+
+**H3 (Extraction Hypothesis):** Commonsense knowledge reaches the prediction position but the extraction mechanism selects the wrong answer.
+- Testable via: Logit lens showing correct answer briefly favored then overwritten; activation patching of upper-layer attention heads.
+
+**H4 (Distributed Failure):** Failures are not localized to a single stage but involve degraded processing across multiple stages.
+- Testable via: Comparing causal trace profiles between correct and incorrect predictions.
+
+## Proposed Methodology
+
+### Approach
+Use GPT-2 Small (124M parameters) via TransformerLens as our primary model. GPT-2 Small is the best-understood model in the mechanistic interpretability literature, with known circuits (IOI) as calibration benchmarks. We use PIQA as the primary benchmark, processing examples in a prompt format that produces a binary choice. We apply four complementary mechanistic analysis methods.
+
+### Experimental Steps
+
+1. **Baseline Evaluation** (~15 min)
+   - Load GPT-2 Small via TransformerLens
+   - Evaluate on PIQA validation set using log-probability scoring
+   - Partition into correct/incorrect predictions
+   - Compute baseline accuracy and confidence distributions
+
+2. **Logit Lens Analysis** (~20 min)
+   - For correct and incorrect PIQA examples, compute logit lens at every layer
+   - Track probability of correct vs incorrect solution across layers
+   - Identify divergence layers (where correct examples start favoring the right answer and incorrect ones don&#39;t)
+   - Visualize layer-by-layer probability trajectories
+
+3. **Causal Tracing** (~30 min)
+   - Corrupt goal token embeddings with Gaussian noise
+   - Restore clean activations at each (layer, position) pair
+   - Measure recovery of correct-answer logit difference
+   - Produce causal trace heatmaps for correct vs incorrect predictions
+   - Compare with known factual knowledge localization patterns
+
+4. **Activation Patching by Component** (~30 min)
+   - For each attention head and MLP layer: patch from corrupted to clean run
+   - Measure effect on logit difference for correct answer
+   - Identify most important attention heads and MLP layers
+   - Compare importance rankings between correct and incorrect predictions
+
+5. **Layer-wise Linear Probing** (~20 min)
+   - Extract residual stream activations at each layer for PIQA examples
+   - Train linear probes to predict correct solution from goal representation
+   - Measure probe accuracy at each layer for correct vs incorrect model predictions
+   - Determine at which layer the model &#34;knows&#34; the answer and whether this differs for failures
+
+### Baselines
+- Random baseline (50% for PIQA binary choice)
+- GPT-2 Small zero-shot performance (expected ~55-60%)
+- Known factual knowledge causal trace patterns from Meng et al. as reference
+
+### Evaluation Metrics
+- **Logit Difference:** logit(correct_sol) - logit(incorrect_sol) -- primary metric for all mechanistic analyses
+- **Accuracy:** fraction of correctly answered PIQA questions
+- **Causal Importance:** change in logit difference when restoring/patching each component
+- **Probe Accuracy:** linear probe classification accuracy at each layer
+- **Divergence Layer:** first layer where correct/incorrect predictions statistically separate
+
+### Statistical Analysis Plan
+- Bootstrap confidence intervals (n=1000) for accuracy and logit differences
+- Paired t-tests comparing causal importance between correct/incorrect sets
+- Effect sizes (Cohen&#39;s d) for correct vs incorrect differences at each layer
+- Significance level: α = 0.05 with Bonferroni correction for layer-wise comparisons
+
+## Expected Outcomes
+- **If H1 (Enrichment):** Causal tracing will show failures concentrated in early/mid MLP layers; probes will show lower accuracy in early layers for incorrect predictions.
+- **If H2 (Propagation):** Logit lens will show correct answer knowledge at goal token positions but not at prediction position; attention patterns will show weaker goal→prediction attention in failures.
+- **If H3 (Extraction):** Logit lens will show correct answer briefly favored then overwritten in upper layers; activation patching will show critical upper attention heads.
+- **If H4 (Distributed):** All stages will show moderate degradation with no single dominant failure point.
+
+## Timeline and Milestones
+1. Environment setup &amp; data loading: 10 min
+2. Baseline evaluation + logit lens: 30 min
+3. Causal tracing experiments: 30 min
+4. Activation patching: 30 min
+5. Linear probing: 20 min
+6. Analysis &amp; visualization: 30 min
+7. REPORT.md writing: 30 min
+**Total: ~3 hours**
+
+## Potential Challenges
+- GPT-2 Small may perform near-chance on PIQA, limiting the signal for correct/incorrect comparison → Mitigation: even near-chance performance produces enough correct/incorrect examples for comparison
+- Commonsense reasoning may be too distributed for clean localization → Mitigation: we treat this as a finding (H4) rather than a failure
+- PIQA prompt format for autoregressive models needs careful design → Mitigation: use multiple prompt templates and select best-performing one
+
+## Success Criteria
+1. Clear causal trace heatmaps showing where commonsense knowledge is stored
+2. Statistical comparison of internal mechanisms between correct and incorrect predictions
+3. Evidence supporting or refuting each of H1-H4
+4. At least one novel finding about commonsense failure mechanisms
+
+
+════════════════════════════════════════════════════════════════════════════════
+                          LITERATURE REVIEW
+════════════════════════════════════════════════════════════════════════════════
+
+# Literature Review: Mechanistic Interpretability of Commonsense Reasoning Failures in LLMs
+
+**Research Hypothesis:** Commonsense reasoning failures in LLMs arise from specific breakdowns in goal-action coherence integration within the model&#39;s internal mechanisms. By identifying where and how these failures occur mechanistically, we can determine whether they are fundamentally architectural, representational, or training-induced.
+
+---
+
+## 1. Research Area Overview
+
+The field of mechanistic interpretability seeks to reverse-engineer the internal computations of neural networks, moving beyond treating models as black boxes toward understanding the specific algorithms they implement. In parallel, commonsense reasoning has emerged as one of the most persistent and revealing failure modes of large language models (LLMs). Despite achieving human-level or near-human performance on many NLP benchmarks, LLMs continue to fail on tasks requiring everyday physical, social, and causal reasoning -- the kind of knowledge that humans acquire effortlessly through embodied experience and cultural participation. The intersection of these two fields represents a critical frontier: rather than merely documenting that LLMs fail at commonsense reasoning, mechanistic interpretability offers the tools to understand *why* they fail at the level of individual neurons, attention heads, and computational circuits.
+
+Understanding the internal mechanisms behind commonsense failures is important for several reasons. First, it can disambiguate between fundamentally different failure hypotheses. A model might fail at commonsense reasoning because the relevant knowledge was never encoded during training (a training-induced failure), because the knowledge is encoded but stored in a representation that cannot be effectively retrieved or composed (a representational failure), or because the transformer architecture itself lacks the computational primitives needed for certain kinds of reasoning (an architectural failure). Each of these failure modes demands a different intervention -- more or better training data, improved training objectives, or architectural innovations -- and mechanistic interpretability is uniquely positioned to distinguish between them. Second, commonsense reasoning failures are particularly dangerous in deployed systems because they are unpredictable: a model that appears competent on complex tasks may fail catastrophically on simple physical or social reasoning. Understanding the mechanistic roots of these failures is therefore essential for building reliable and trustworthy AI systems.
+
+The existing literature has made substantial progress on both mechanistic interpretability and commonsense reasoning independently, but has largely not connected the two. Circuit-level analyses have focused on syntactic tasks like indirect object identification, factual recall, and simple logical operations. Commonsense benchmarks have focused on behavioral evaluation -- measuring accuracy without probing the underlying mechanisms. This literature review surveys the key findings from both areas and identifies the specific gaps that our research aims to fill: applying the tools of mechanistic interpretability to understand the internal computations (and failures) behind commonsense reasoning, with a particular focus on goal-action coherence as tested by benchmarks like PIQA.
+
+---
+
+## 2. Key Papers and Findings
+
+### 2.1 Circuit-Level Mechanistic Interpretability
+
+#### Wang et al. (2022) -- &#34;Interpretability in the Wild: A Circuit for Indirect Object Identification in GPT-2 Small&#34; (arXiv: 2211.00593)
+
+This landmark paper represents the most comprehensive end-to-end reverse-engineering of a natural language behavior in a language model to date. Wang et al. identified a circuit of 26 attention heads grouped into 7 functional classes that together implement indirect object identification (IOI) in GPT-2 small. The IOI task involves sentences like &#34;When Mary and John went to the store, John gave a drink to ___,&#34; where the model must predict &#34;Mary&#34; -- the indirect object that is not the repeated name. The authors discovered that the circuit implements a four-step algorithm: (1) **Duplicate Token Heads** detect all names in the input and identify which name appears more than once; (2) **Previous Token Heads** and **Induction Heads** work together to identify the duplicated name (the &#34;S-inhibition&#34; signal); (3) **S-Inhibition Heads** use this signal to inhibit attention to the duplicated (subject) name at the final token position; and (4) **Name Mover Heads** copy the remaining (indirect object) name to the output. The study introduced path patching as a technique for tracing information flow through specific edges (attention head to attention head connections) in the computational graph, providing causal rather than merely correlational evidence for the circuit&#39;s structure.
+
+Critically, Wang et al. established three quantitative criteria for evaluating mechanistic explanations: **faithfulness** (the circuit&#39;s behavior matches the full model&#39;s behavior on the relevant task), **completeness** (the circuit accounts for all of the model&#39;s performance, meaning the complement of the circuit contributes negligibly), and **minimality** (no component of the circuit can be removed without degrading performance). The circuit achieved high faithfulness (recovering most of the logit difference between the correct and incorrect answers) and reasonable completeness, though some gaps remained -- suggesting that the model may use additional, as-yet-undiscovered mechanisms. This work is foundational for our research because it demonstrates that specific, interpretable circuits can be identified for natural language tasks, and because the IOI task shares structural similarities with commonsense reasoning tasks that require tracking entities and their relationships. The methodology of path patching and the faithfulness/completeness/minimality evaluation framework directly inform how we plan to study circuits for commonsense reasoning.
+
+#### Conmy et al. (2023) -- &#34;Towards Automated Circuit Discovery for Mechanistic Interpretability (ACDC)&#34; (arXiv: 2304.14004)
+
+While Wang et al.&#39;s IOI circuit discovery relied heavily on manual investigation and human intuition, Conmy et al. addressed the scalability challenge by developing ACDC (Automatic Circuit DisCovery), an automated method for identifying circuits in neural networks. ACDC works by iteratively testing whether each edge in the model&#39;s computational graph is important for a given task, using activation patching to measure the causal effect of corrupting each edge. The method starts from the full computational graph and prunes edges whose removal does not significantly affect the model&#39;s output on the task of interest. The authors validated ACDC by recovering known circuits (including the IOI circuit from Wang et al.) and discovering new circuits for tasks like greater-than comparison and docstring completion.
+
+ACDC is particularly relevant to our research because manually discovering circuits for commonsense reasoning -- which likely involves more complex and distributed computations than IOI -- would be prohibitively labor-intensive. The automation provided by ACDC, or methods inspired by it, will be essential for scaling circuit discovery to the richer computational structures we expect to find in commonsense reasoning. However, ACDC has limitations: it assumes a clean separation between task-relevant and task-irrelevant edges, which may not hold for diffuse computations like commonsense reasoning, and its computational cost grows with model size. These limitations will need to be addressed in our experimental design.
+
+### 2.2 Knowledge Storage and Retrieval Mechanisms
+
+#### Dai et al. (2022) -- &#34;Knowledge Neurons in Pretrained Transformers&#34; (arXiv: 2104.08696)
+
+Dai et al. introduced the concept of &#34;knowledge neurons&#34; -- individual neurons in the feed-forward network (FFN) layers of pretrained transformers that are responsible for expressing specific factual knowledge. Using a method based on integrated gradients (a gradient-based attribution technique), they identified neurons whose activation is causally linked to the model&#39;s ability to recall specific facts. Working primarily with BERT, they found that each factual association (e.g., &#34;The capital of France is Paris&#34;) is stored in a small, sparse set of neurons, averaging 4.13 knowledge neurons per fact. The causal role of these neurons was validated through intervention experiments: suppressing (zeroing out) identified knowledge neurons caused an average 29% decrease in the probability of the correct factual answer, while amplifying their activations (doubling their values) caused an average 31% increase. Furthermore, the study found that knowledge neurons are concentrated in the upper layers of the FFN modules, consistent with the general finding that higher layers in transformers encode more abstract, semantic information.
+
+This work is significant for our research because it establishes that factual knowledge has a sparse, localized representation in transformer FFN layers. A key question for our project is whether commonsense knowledge -- which is more diffuse, implicit, and relational than simple factual associations -- exhibits similar or different storage patterns. If commonsense knowledge is stored in analogous &#34;commonsense neurons,&#34; interventions on these neurons could reveal why specific commonsense reasoning fails. If, on the other hand, commonsense knowledge is stored more distributedly, this would suggest a fundamentally different representational strategy that may be more vulnerable to certain failure modes.
+
+#### Meng et al. (2022) -- &#34;Locating and Editing Factual Associations in GPT (ROME)&#34; (arXiv: 2202.05262)
+
+Meng et al. developed a causal tracing methodology to localize where factual associations are stored in autoregressive language models, specifically GPT-2 and GPT-J. Their approach involves three steps: (1) corrupting the subject tokens in the input by adding noise to their embeddings, which degrades the model&#39;s ability to recall the associated fact; (2) restoring clean activations at specific layers and positions one at a time; and (3) measuring which restorations recover the model&#39;s ability to produce the correct fact. This &#34;causal trace&#34; revealed that factual associations are primarily mediated by mid-layer MLP modules at the position of the last token of the subject entity. Based on this localization, the authors developed ROME (Rank-One Model Editing), a technique for directly editing factual associations by modifying the weights of the identified MLP layers, treating them as key-value stores where the key is the subject representation and the value is the associated attribute.
+
+ROME&#39;s causal tracing methodology is directly applicable to our research. We can use an analogous approach to localize where commonsense knowledge is processed: corrupt the goal description in a PIQA-style query, then systematically restore activations to identify which layers and positions are critical for goal-action coherence. If commonsense knowledge is localized similarly to factual associations (in mid-layer MLPs), this would suggest a shared storage mechanism; if it is localized differently (e.g., in attention heads or in different layers), this would reveal important differences between factual and commonsense knowledge representation. The ROME framework also provides a model for potential interventions: if we can identify where commonsense knowledge is stored, we may be able to edit or enhance it.
+
+#### Geva et al. (2023) -- &#34;Dissecting Recall of Factual Associations in Auto-Regressive Language Models&#34; (arXiv: 2304.14767)
+
+Building on the localization work of Meng et al., Geva et al. provided a much more detailed mechanistic account of how factual associations are retrieved during inference. Using careful interventions on attention edges in GPT-2 and LLaMA models, they identified a three-step internal mechanism for attribute extraction from factual queries (e.g., &#34;The Eiffel Tower is located in ___&#34;): **(A) Subject Enrichment:** In the early MLP layers, the representation at the last subject token position is enriched with many subject-related attributes. This enrichment process is driven by the early MLP sublayers and results in a representation that encodes not just the specific queried attribute but a broad set of facts about the subject. **(B) Relation Propagation:** Information about the relation (e.g., &#34;is located in&#34;) propagates from the relation token positions to the final prediction position via attention mechanisms. This step effectively tells the model what kind of attribute to extract. **(C) Attribute Extraction:** At the prediction position, upper-layer attention heads &#34;query&#34; the enriched subject representation to extract the specific attribute that matches the relation. These attention heads often encode subject-attribute mappings directly in their parameters, functioning as &#34;knowledge hub&#34; heads that each encode hundreds of distinct factual associations.
+
+This three-step framework -- enrichment, propagation, extraction -- is the most detailed mechanistic account of knowledge retrieval in LLMs and is central to our research design. We hypothesize that commonsense reasoning failures may occur at any of these three stages: the model may fail to adequately enrich the goal representation with relevant physical/causal knowledge (Stage A failure), the relation between goal and action may not propagate correctly (Stage B failure), or the extraction of the appropriate action may fail even when the enriched representation contains the necessary information (Stage C failure). By applying Geva et al.&#39;s framework to PIQA-style goal-action queries, we can systematically test at which stage commonsense reasoning breaks down.
+
+### 2.3 Sparse Autoencoders for Feature Discovery
+
+#### Bricken et al. (2023) -- &#34;Towards Monosemanticity&#34; (arXiv: 2309.10312)
+
+Bricken et al. addressed one of the fundamental challenges in mechanistic interpretability: the polysemanticity problem, where individual neurons respond to multiple, semantically unrelated concepts (a phenomenon linked to superposition, where models represent more features than they have dimensions). The authors trained sparse autoencoders (SAEs) on the activations of a one-layer transformer, decomposing the model&#39;s internal representations into a larger set of sparse, more interpretable features. Each SAE feature ideally corresponds to a single, coherent concept. The key insight is that while the model&#39;s neurons are polysemantic (each neuron participates in representing many different concepts simultaneously), the directions in activation space identified by the SAE are more monosemantic (each direction corresponds to a single interpretable concept). The authors demonstrated that SAE features are more interpretable than raw neurons, that they can be used to understand model behavior, and that intervening on individual features produces predictable effects on model outputs.
+
+This foundational work is critical for our research because commonsense knowledge is likely represented in superposition -- distributed across many neurons rather than localized in individual ones. If we attempt to study commonsense representations using raw neurons, we will face severe polysemanticity problems. SAEs provide a principled way to decompose these distributed representations into interpretable features, potentially revealing &#34;commonsense features&#34; that are not visible at the neuron level. The methodology of training SAEs on intermediate activations and then analyzing the resulting features is a core component of our planned experimental pipeline.
+
+#### Templeton et al. (2024) -- &#34;Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet&#34; (arXiv: 2406.04093)
+
+Templeton et al. scaled the sparse autoencoder approach from Bricken et al.&#39;s one-layer transformer to Claude 3 Sonnet, a production-scale language model. This work demonstrated that SAEs can extract interpretable features even from very large models, identifying features corresponding to a remarkable range of concepts -- from specific entities (Golden Gate Bridge, Rosalind Franklin) to abstract concepts (code errors, deceptive behavior, gender bias). The authors found that features at different scales of the SAE dictionary correspond to different levels of abstraction, with larger dictionaries capturing more fine-grained concepts. Critically, the features are not just interpretable but causally meaningful: intervening on specific features (clamping them to high or low values) produces predictable changes in model behavior. For example, amplifying the &#34;Golden Gate Bridge&#34; feature caused the model to insert references to the bridge into unrelated conversations.
+
+The scaling results from Templeton et al. validate SAEs as a viable approach for studying representations in models of practical interest, not just toy models. For our research, this work suggests that we should be able to find commonsense-relevant features in medium-scale models (like GPT-2 medium or Pythia models) using SAEs, and that these features will be causally meaningful -- allowing us to test whether amplifying commonsense features improves commonsense reasoning and whether suppressing them induces failures.
+
+#### Galichin et al. (2025) -- &#34;Interpreting Reasoning Features in Large Language Models via Sparse Autoencoders&#34; (arXiv: 2503.18878)
+
+Galichin et al. applied SAEs specifically to study reasoning capabilities, training them on DeepSeek-R1-Llama-8B, a model fine-tuned for mathematical reasoning. They introduced the **ReasonScore** metric for identifying features specifically associated with reasoning behavior: features that activate significantly more during reasoning traces than during non-reasoning text. Using this metric, they identified 46 reasoning-specific features that cluster into three behavioral modes: **uncertainty** (features active when the model expresses doubt or considers alternatives), **exploration** (features active during hypothesis generation and search), and **reflection** (features active during self-evaluation and error-checking). Remarkably, steering the model by amplifying these reasoning features improved performance on the AIME mathematics benchmark by +13.4%, demonstrating that these features are causally involved in reasoning, not merely correlated with it.
+
+A particularly important finding for our research is the &#34;model diffing&#34; analysis: the authors compared SAE features in the reasoning-fine-tuned model with those in the base (non-reasoning) model and found that reasoning features are largely absent in the base model, emerging specifically through reasoning-focused fine-tuning. This suggests that reasoning capabilities are not merely latent in pretrained models waiting to be elicited, but are actively created or amplified through training. For commonsense reasoning, this raises the critical question: do analogous &#34;commonsense reasoning features&#34; exist, and if so, are they present in base models (having been acquired from pretraining data) or do they require specific fine-tuning to emerge? The ReasonScore methodology can be directly adapted to search for commonsense-specific features, and the steering experiments provide a template for testing whether identified features are causally involved in commonsense reasoning.
+
+### 2.4 Reasoning Limitations
+
+#### Dziri et al. (2023) -- &#34;Faith and Fate: Limits of Transformers on Compositionality&#34; (arXiv: 2305.18354)
+
+Dziri et al. provided a theoretical and empirical analysis of fundamental limitations of transformers on compositional reasoning tasks. They demonstrated that transformers approximate multi-step compositional tasks through **linearized subgraph matching** rather than performing true compositional reasoning. In this approximation, the model matches input patterns to similar patterns seen during training and interpolates between stored solutions, rather than applying compositional rules step-by-step. The critical consequence is that performance degrades systematically with **composition depth** -- the number of reasoning steps required. The authors tested this theory on three task families: multi-digit multiplication (where composition depth corresponds to the number of digits), logic puzzles (where composition depth corresponds to the number of inference steps), and dynamic programming problems (where composition depth corresponds to the number of subproblems).
+
+Across all three task families, they found a consistent pattern: transformers achieve high accuracy at low composition depths but degrade sharply as depth increases, even when trained on examples at higher depths. This finding has profound implications for commonsense reasoning, which often requires composing multiple pieces of knowledge (e.g., understanding that a material is rigid, therefore it cannot bend, therefore it cannot be used as a flexible container). If commonsense reasoning failures are partly driven by composition depth effects, this would point to an architectural limitation rather than a knowledge gap. Our research can directly test this hypothesis by analyzing how the internal mechanisms of LLMs differ between commonsense tasks requiring shallow reasoning (single-step goal-action matching) and those requiring deeper composition (multi-step causal chains).
+
+### 2.5 Commonsense Reasoning Benchmarks
+
+#### Bisk et al. (2020) -- &#34;PIQA: Reasoning about Physical Commonsense in Natural Language&#34; (arXiv: 1911.11641)
+
+Bisk et al. introduced PIQA (Physical Interaction: Question Answering), a benchmark specifically designed to test physical commonsense reasoning. PIQA uses a **goal-solution format**: each item consists of a goal (e.g., &#34;To separate egg whites from the yolk using a water bottle&#34;) and two candidate solutions, one physically plausible and one implausible. This format is particularly significant for mechanistic interpretability because it explicitly separates the goal representation from the action representation, making it possible to study how the model integrates information about goals and actions -- what we term &#34;goal-action coherence.&#34; The benchmark contains approximately 16,000 training examples and 2,000 validation examples. Human performance is 94.9%, while the best model at the time of publication (RoBERTa-large) achieved only 77.1%, revealing a substantial gap.
+
+The authors&#39; error analysis is particularly informative for our research. They found that model failures cluster around specific knowledge dimensions: failures on **spatial and relational words** (understanding relative positions, orientations, and physical relationships), failures on **versatile concepts** (words like &#34;tape&#34; or &#34;paper&#34; that have multiple physical uses depending on context), and failures requiring **causal reasoning** about physical interactions (understanding that heating wax makes it soft, or that rough surfaces create friction). These failure dimensions map well onto mechanistic hypotheses: spatial failures may reflect inadequate enrichment of spatial features at the subject representation stage, versatile-concept failures may reflect polysemanticity in the model&#39;s concept representations, and causal reasoning failures may reflect composition depth limitations. PIQA&#39;s goal-solution structure makes it the ideal primary benchmark for our research on goal-action coherence mechanisms.
+
+#### Talmor et al. (2019) -- &#34;CommonsenseQA&#34; (arXiv: 1811.00937)
+
+Talmor et al. created CommonsenseQA, a challenging multiple-choice question answering dataset that specifically targets commonsense knowledge. The dataset construction leverages ConceptNet, a commonsense knowledge graph: for each source concept, the authors extracted multiple target concepts sharing the same semantic relation, then asked crowdworkers to write questions that discriminate between these targets. This design ensures that questions require genuine commonsense reasoning rather than simple word association. The dataset contains 12,247 questions with 5 answer choices each, covering a wide range of commonsense knowledge types including spatial, temporal, causal, and social reasoning. At the time of publication, the best model (BERT-large) achieved only 56% accuracy compared to 89% human performance, though subsequent models have substantially narrowed this gap. CommonsenseQA&#39;s concept-based structure makes it a useful complement to PIQA for our research, as it tests more abstract commonsense knowledge.
+
+#### Zellers et al. (2019) -- &#34;HellaSwag&#34; (arXiv: 1905.07830)
+
+Zellers et al. introduced HellaSwag, a benchmark for evaluating commonsense natural language inference through sentence completion. Given a context describing an activity (drawn from WikiHow articles and ActivityNet captions), the model must select the most plausible continuation from four options. The dataset is notable for its use of **Adversarial Filtering (AF)**, a procedure that iteratively generates and filters machine-generated incorrect endings to ensure they are challenging for models while remaining easy for humans. The resulting dataset contains approximately 40,000 training examples and achieves a large human-machine gap: humans score above 95% while state-of-the-art models at publication scored below 50%. HellaSwag tests temporal and causal commonsense -- understanding what typically happens next in a sequence of actions -- making it relevant to our study of goal-action coherence, as the correct continuation must be coherent with the established goal or activity.
+
+#### Sakaguchi et al. (2020) -- &#34;WinoGrande&#34; (arXiv: 1907.10641)
+
+Sakaguchi et al. created WinoGrande, a large-scale dataset of 44,000 pronoun resolution problems inspired by the Winograd Schema Challenge (WSC). Each problem consists of a sentence with a blank that must be filled with one of two entity options, where the correct answer requires commonsense reasoning about the entities&#39; properties and relationships. The key methodological contribution is AFLITE (Adversarial Filtering - Lite), an algorithm for reducing spurious statistical biases in the dataset by removing examples that can be solved through surface-level cues. The authors demonstrated that AFLITE significantly reduces the accuracy of models that rely on word associations, from over 90% on the original WSC to 59-79% on WinoGrande, confirming that high WSC performance was inflated by dataset artifacts. WinoGrande tests a different aspect of commonsense than PIQA -- understanding how properties and attributes of entities determine their roles in events -- and provides a complementary evaluation dimension for our research.
+
+### 2.6 Additional Relevant Work
+
+**Marks &amp; Tegmark (2023) -- &#34;The Geometry of Truth&#34; (arXiv: 2310.06824):** This work demonstrated that LLMs develop linear representations of truth and falsehood in their internal activations. Using datasets of simple true/false statements, the authors showed that truth is linearly separable in the model&#39;s representation space, that probes trained on one truth dataset generalize to others, and that surgically intervening along the &#34;truth direction&#34; can flip the model&#39;s assessment of true and false statements. This is relevant to our research because commonsense reasoning failures could involve the model assigning incorrect truth values to physical propositions, and the geometric structure of commonsense truth representations may differ from factual truth representations.
+
+**Zou et al. (2023) -- &#34;Representation Engineering&#34; (arXiv: 2310.01405):** Zou et al. introduced representation engineering (RepE), a framework for understanding and controlling LLM behavior by identifying and manipulating directions in the model&#39;s representation space that correspond to high-level concepts like honesty, fairness, and harmfulness. The approach uses contrastive pairs of stimuli to identify concept directions, then applies reading vectors (for monitoring) or control vectors (for steering) along these directions. RepE provides a complementary approach to SAEs for our research: while SAEs decompose representations into sparse features, RepE identifies specific directions associated with target concepts. We can use RepE-style contrastive analysis to identify directions associated with &#34;physical plausibility&#34; or &#34;goal-action coherence.&#34;
+
+**Arditi et al. (2024) -- &#34;Refusal in Language Models Is Mediated by a Single Direction&#34; (arXiv: 2406.11717):** Arditi et al. showed that the refusal behavior in safety-tuned chat models is mediated by a single direction in the model&#39;s residual stream. Erasing this direction prevents the model from refusing harmful requests, while adding it causes refusal on harmless requests. This finding is remarkable because it shows that complex behavioral patterns (refuse harmful requests, comply with benign ones) can be controlled by a single linear feature. For our research, this raises the question of whether commonsense reasoning competence might similarly be mediated by a small number of directions or features, and whether commonsense failures occur when these directions are insufficiently activated.
+
+**Marks et al. (2024) -- &#34;Sparse Feature Circuits&#34; (arXiv: 2403.19647):** Marks et al. bridged the gap between circuit discovery and sparse autoencoders by introducing methods for discovering circuits defined over SAE features rather than raw model components. These &#34;sparse feature circuits&#34; consist of interpretable, monosemantic features connected by causal edges, providing a much more interpretable account of model computations than traditional circuits defined over polysemantic neurons and attention heads. The authors also introduced SHIFT, a method for improving classifier generalization by ablating features that humans judge to be task-irrelevant. This work is directly relevant to our research because it provides the methodology for discovering interpretable circuits for commonsense reasoning: we can train SAEs on our target models, then use sparse feature circuit discovery to identify the specific interpretable features and their causal connections that implement goal-action coherence.
+
+---
+
+## 3. Common Methodologies
+
+### Activation Patching / Causal Tracing
+
+Activation patching (also called causal tracing or interchange interventions) is the primary causal methodology in mechanistic interpretability. The core idea is to run the model on two inputs -- a &#34;clean&#34; input (where the model behaves correctly) and a &#34;corrupted&#34; input (where the model fails) -- and then selectively replace (&#34;patch&#34;) activations from the clean run into the corrupted run at specific locations (layers, positions, components) to determine which activations are causally necessary for correct behavior.
+
+**Mean ablation** is the simplest variant: replace a component&#39;s activation with its mean activation across a dataset, effectively removing that component&#39;s contribution to the specific input. If performance degrades, the component is important. **Path patching** (introduced by Wang et al., 2022) extends this by patching along specific computational paths (edges between components) rather than at individual nodes, enabling finer-grained causal analysis. For example, path patching can determine not just that attention head 9.6 is important, but specifically that information flowing from head 7.3 to head 9.6 is important. **Attention knockout** involves zeroing out specific attention weights to prevent information flow between positions, testing which position-to-position information transfer is necessary.
+
+Causal tracing as developed by Meng et al. (2022) is a specific protocol: corrupt subject tokens by adding noise, then restore clean activations at individual (layer, position) sites, measuring which restorations recover the correct output. This produces a &#34;causal trace&#34; heatmap showing the causal importance of each site.
+
+### Circuit Discovery
+
+Circuit discovery aims to identify the minimal subnetwork (circuit) that implements a specific behavior. The general approach involves **backward tracing from outputs**: starting from the output logits, identify which components (attention heads, MLP layers) contribute most to the output, then trace backward to identify what inputs these components rely on, recursively building up the circuit. Manual circuit discovery (as in Wang et al., 2022) combines activation patching, attention pattern analysis, and hypothesis-driven investigation. **ACDC automation** (Conmy et al., 2023) replaces this manual process with systematic edge pruning: start with the full computational graph, test each edge via activation patching, and remove edges whose removal does not significantly affect the task-relevant output. The resulting pruned graph is the discovered circuit. Variants include node-based pruning (removing entire attention heads or MLP layers) and edge-based pruning (removing specific connections between components), with edge-based approaches providing finer granularity.
+
+### Probing
+
+Probing involves training a supervised classifier (the &#34;probe&#34;) on a model&#39;s internal representations to predict a property of interest (e.g., part-of-speech, semantic role, factual truth). If a linear probe achieves high accuracy, this is taken as evidence that the property is linearly encoded in the representation. **Linear probes** are preferred because their limited capacity ensures that they are extracting information already present in the representation rather than learning the task themselves. **Control tasks** (Hewitt &amp; Liang, 2019) provide a crucial methodological refinement: by defining control tasks where labels are randomly assigned to word types, the authors establish a baseline for what the probe&#39;s architecture alone can learn. A good probe should achieve high accuracy on the linguistic task but low accuracy on the control task -- a property called &#34;selectivity.&#34; Probes that are not selective may be learning the task rather than reading it from the representation. For our research, probing will be used to test whether commonsense knowledge (e.g., physical properties of objects, causal relationships) is linearly represented in intermediate model layers, and whether the quality of these representations differs between correct and incorrect commonsense predictions.
+
+### Sparse Autoencoders
+
+Sparse autoencoders (SAEs) decompose a model&#39;s dense, polysemantic internal activations into a larger set of sparse, more monosemantic features. An SAE is trained to reconstruct the model&#39;s activations at a specific layer through a bottleneck that enforces sparsity: the encoder maps the activation to a high-dimensional sparse code, and the decoder maps back to the original dimension. The sparsity constraint encourages each dimension of the sparse code to correspond to a single interpretable concept. **Feature decomposition** involves analyzing the learned features by examining what inputs maximally activate each feature, producing feature-level interpretability. The **ReasonScore** metric (Galichin et al., 2025) provides a quantitative method for identifying features specifically associated with a target behavior (like reasoning): it compares the activation frequency of each feature during target behavior versus baseline behavior, identifying features that are significantly more active during the target behavior. Features with high ReasonScores are candidates for being causally involved in the behavior, which can be confirmed through steering experiments (amplifying or suppressing the feature and measuring the effect on behavior).
+
+### Vocabulary Projection / Logit Lens
+
+The logit lens technique (and its refinements like the tuned lens) projects intermediate model representations into vocabulary space by applying the model&#39;s unembedding matrix to hidden states at intermediate layers. This reveals what the model is &#34;thinking&#34; at each layer in terms of token probabilities. For a factual query like &#34;The Eiffel Tower is in ___,&#34; the logit lens shows how the probability of &#34;Paris&#34; builds up across layers -- perhaps starting low in early layers and increasing as the model processes the input through successive layers. For our research, the logit lens can reveal at which layer the model begins to &#34;commit&#34; to a commonsense answer (correct or incorrect), providing a complementary view to activation patching about where commonsense reasoning occurs. Comparing logit lens trajectories for correct versus incorrect predictions can reveal whether failures involve the model never building the correct representation or initially building it but then overwriting it in later layers.
+
+---
+
+## 4. Standard Baselines and Evaluation Metrics
+
+### Logit Difference for Circuit Analysis
+
+The primary metric for evaluating circuit explanations is the **logit difference**: the difference in log-probability (or raw logit) between the correct and incorrect answers. For a binary choice task like PIQA, this is simply logit(correct_solution) - logit(incorrect_solution). A positive logit difference indicates that the model favors the correct answer, and the magnitude indicates the model&#39;s confidence. When evaluating circuits, the key measurement is how much of the full model&#39;s logit difference is recovered by the circuit alone. A circuit that recovers 90% of the logit difference is highly faithful. This metric is preferable to simple accuracy because it is continuous and sensitive to changes in model confidence, not just answer identity.
+
+### Faithfulness, Completeness, and Minimality for Circuit Validation
+
+Following Wang et al. (2022), circuit explanations should be evaluated on three criteria. **Faithfulness** measures whether the circuit, when isolated (with all other model components ablated), produces the same output distribution as the full model. High faithfulness means the circuit captures the relevant computation. **Completeness** measures whether the complement of the circuit (all components not in the circuit) contributes to the task. High completeness means there is no significant task-relevant computation happening outside the identified circuit. **Minimality** measures whether every component in the circuit is necessary -- no component can be removed without degrading the circuit&#39;s performance. A circuit that is faithful but not minimal may contain redundant components; a circuit that is minimal but not complete may miss important alternative pathways.
+
+### Accuracy Metrics for Commonsense Benchmarks
+
+Standard evaluation on commonsense benchmarks uses simple accuracy: the fraction of questions where the model selects the correct answer. For PIQA and WinoGrande (binary choice), chance performance is 50%. For CommonsenseQA (5-way multiple choice), chance is 20%. For HellaSwag (4-way), chance is 25%. Beyond aggregate accuracy, stratified accuracy across different knowledge dimensions (spatial, causal, temporal) and error analysis of specific failure modes are essential for connecting behavioral performance to mechanistic findings.
+
+### ReasonScore for Reasoning Feature Identification
+
+The **ReasonScore** (Galichin et al., 2025) quantifies the degree to which an SAE feature is specifically associated with reasoning behavior. It is computed as the difference in activation frequency between reasoning traces and non-reasoning text, normalized appropriately. Features with high ReasonScores are candidate &#34;reasoning features.&#34; The metric can be adapted for commonsense reasoning by computing activation differences between commonsense-relevant inputs (e.g., PIQA questions) and generic text, identifying features that are specifically engaged during commonsense reasoning.
+
+---
+
+## 5. Datasets in the Literature
+
+### PIQA (Physical Interaction: Question Answering)
+- **Size:** ~16,000 training examples, ~2,000 validation, ~3,000 test (labels hidden)
+- **Format:** Goal + two candidate solutions (binary choice)
+- **Domain:** Physical commonsense reasoning
+- **Key properties:** Goal-solution structure explicitly separates goal from action, enabling mechanistic study of goal-action coherence. Covers spatial reasoning, material properties, causal interactions, and everyday physical procedures.
+- **Baselines:** Human 94.9%, GPT-2 (zero-shot) ~55%, RoBERTa-large 77.1%
+
+### CommonsenseQA
+- **Size:** ~10,000 training examples, ~1,200 validation, ~1,140 test
+- **Format:** Question + 5 answer choices (multiple choice)
+- **Domain:** General commonsense, constructed from ConceptNet relations
+- **Key properties:** Concept-based design ensures questions require genuine commonsense reasoning beyond word association. Covers diverse knowledge types including spatial, temporal, causal, and social commonsense.
+- **Baselines:** Human 89%, BERT-large 56% (at publication)
+
+### HellaSwag
+- **Size:** ~40,000 training examples, ~10,000 validation, ~10,000 test
+- **Format:** Context + 4 candidate continuations (multiple choice)
+- **Domain:** Temporal and causal commonsense (activity completion)
+- **Key properties:** Adversarially filtered to be challenging for language models while easy for humans. Tests understanding of typical activity sequences and causal consequences.
+- **Baselines:** Human 95.6%, BERT-large 47.3% (at publication)
+
+### WinoGrande
+- **Size:** ~40,000 training examples, ~1,200 validation, ~1,700 test
+- **Format:** Sentence with blank + 2 candidate entity fillers (binary choice)
+- **Domain:** Commonsense pronoun resolution / entity role understanding
+- **Key properties:** AFLITE algorithm reduces spurious statistical biases. Tests understanding of how entity properties determine roles in events.
+- **Baselines:** Human 94%, RoBERTa-large 79.1% (at publication)
+
+### CounterFact
+- **Size:** ~21,919 factual statements with counterfactual alternatives
+- **Format:** Subject-relation-object triples with alternative objects
+- **Domain:** Factual associations (used for knowledge editing evaluation)
+- **Key properties:** Designed for evaluating factual editing methods like ROME. Includes paraphrase robustness tests and neighborhood consistency checks. Relevant to our research as a reference dataset for comparing factual versus commonsense knowledge mechanisms.
+
+### PARAREL
+- **Size:** 328 relation types with multiple natural language templates per relation
+- **Format:** Cloze-style factual queries with multiple phrasings
+- **Domain:** Factual knowledge probing across diverse relation types
+- **Key properties:** Multi-template design enables testing whether knowledge representations are robust to surface-form variation. Useful for our research as a methodological template: we can construct multi-template versions of commonsense queries to test robustness of commonsense representations.
+
+---
+
+## 6. Gaps and Opportunities
+
+The literature review reveals several significant gaps at the intersection of mechanistic interpretability and commonsense reasoning, each representing an opportunity for our research:
+
+### Gap 1: No mechanistic interpretability work specifically targets commonsense reasoning failures
+
+The circuit-level analyses to date (Wang et al., 2022; Conmy et al., 2023) have focused exclusively on syntactic and simple semantic tasks: indirect object identification, greater-than comparison, and docstring completion. Knowledge localization studies (Dai et al., 2022; Meng et al., 2022; Geva et al., 2023) have focused on simple factual recall (capital cities, birthdates, etc.). No published work has applied circuit discovery, activation patching, or causal tracing to understand how LLMs process commonsense reasoning tasks or why they fail on them. This is a foundational gap that our research directly addresses.
+
+### Gap 2: Knowledge neuron and circuit approaches focus on factual recall, not reasoning
+
+The knowledge neurons paradigm (Dai et al., 2022) and ROME (Meng et al., 2022) were developed for and evaluated on factual associations -- simple subject-relation-object triples. Commonsense reasoning requires not just retrieving stored facts but composing and applying them in context. Whether the same storage mechanisms (mid-layer FFN modules, knowledge neurons) are involved in commonsense reasoning, or whether commonsense engages qualitatively different mechanisms, remains unknown. Our research will test whether commonsense knowledge uses the same storage and retrieval mechanisms as factual knowledge.
+
+### Gap 3: SAE-based reasoning features have only been studied for mathematical reasoning
+
+Galichin et al. (2025) identified reasoning features using SAEs, but exclusively in the context of mathematical reasoning in a model fine-tuned for chain-of-thought mathematical problem solving. Whether analogous reasoning features exist for commonsense reasoning -- and whether they have similar or different characteristics (behavioral modes, layer distribution, emergence through training) -- is entirely unexplored. Commonsense reasoning is qualitatively different from mathematical reasoning: it relies on implicit, graded knowledge about the physical and social world rather than explicit, rule-based inference. Our research will apply the ReasonScore methodology to identify commonsense-specific features.
+
+### Gap 4: The three-step retrieval mechanism has not been tested for commonsense knowledge
+
+Geva et al.&#39;s three-step mechanism (subject enrichment, relation propagation, attribute extraction) provides the most detailed account of knowledge retrieval in LLMs, but it was developed and validated exclusively for factual associations. Commonsense knowledge differs from factual knowledge in important ways: it is more implicit, more contextual, and more compositional. Testing whether commonsense retrieval follows the same three-step process, or uses a different mechanism, will reveal fundamental insights about how different types of knowledge are represented and processed.
+
+### Gap 5: PIQA&#39;s goal-solution structure is ideal for studying goal-action coherence mechanistically
+
+Among commonsense benchmarks, PIQA is uniquely suited for mechanistic study because its goal-solution format explicitly separates two components that the model must integrate: the goal (what needs to be accomplished) and the solution (how to accomplish it). This separation maps directly onto the subject-relation framework used in factual recall studies: the goal functions analogously to the subject, the implicit relation is &#34;can be accomplished by,&#34; and the solution functions as the attribute. This structural parallel means we can adapt existing mechanistic interpretability tools (causal tracing, three-step analysis, circuit discovery) with minimal modification.
+
+### Gap 6: Composition depth effects need to be studied in commonsense contexts
+
+Dziri et al. (2023) demonstrated that transformers struggle with compositional tasks and that performance degrades with composition depth, but their analysis used synthetic tasks (multiplication, logic puzzles, dynamic programming). Whether the same composition-depth degradation applies to commonsense reasoning -- which often requires composing physical properties, causal chains, and contextual constraints -- has not been tested. Our research can stratify PIQA examples by the number of implicit reasoning steps required and test whether mechanistic failure patterns differ across composition depths.
+
+---
+
+## 7. Recommendations for Our Experiment
+
+Based on the literature reviewed above, we make the following specific recommendations for our experimental design:
+
+### Recommendation 1: Start with GPT-2 Small or Pythia Models
+
+GPT-2 small (124M parameters) and the Pythia model family (70M to 6.9B parameters) are the best-supported models in the TransformerLens library, which provides the hooks, utilities, and activation caching infrastructure necessary for mechanistic interpretability work. GPT-2 small is the model on which the IOI circuit was discovered (Wang et al., 2022), providing a known baseline for circuit discovery methodology. The Pythia family offers the advantage of multiple model scales with identical architectures and training data, enabling the study of how commonsense reasoning mechanisms change with scale. We recommend starting with GPT-2 small for methodology development and then scaling to Pythia-1.4B or Pythia-2.8B for more realistic commonsense reasoning analysis.
+
+### Recommendation 2: Use PIQA as Primary Benchmark
+
+PIQA should be the primary benchmark for our research for three reasons: (a) its goal-solution format provides explicit separation of the two components whose integration we wish to study; (b) the error analysis from Bisk et al. (2020) provides qualitative categories of failure (spatial, versatile concepts, causal) that can guide mechanistic investigation; and (c) its binary-choice format maps cleanly to the logit-difference metric standard in circuit analysis. We recommend using CommonsenseQA and WinoGrande as secondary benchmarks to test whether findings generalize beyond physical commonsense.
+
+### Recommendation 3: Apply the Three-Step Retrieval Framework to Commonsense Queries
+
+Geva et al.&#39;s three-step framework (enrichment, propagation, extraction) should be our primary analytical lens. For PIQA queries, this translates to: (A) **Goal Enrichment** -- does the model enrich the goal representation with relevant physical/causal knowledge in early MLP layers? (B) **Coherence Propagation** -- does information about the goal-action relationship propagate to the prediction position? (C) **Solution Extraction** -- do upper attention heads correctly extract the coherent solution from the enriched representations? We should compare these processes between correctly and incorrectly answered questions to identify at which stage failures occur.
+
+### Recommendation 4: Use SAEs to Find Commonsense-Specific Features
+
+Train sparse autoencoders on intermediate activations of our target model(s) when processing PIQA inputs. Adapt the ReasonScore methodology from Galichin et al. (2025) to identify features that are specifically active during commonsense reasoning: compute activation frequencies on PIQA inputs versus generic text, and identify features with high differential activation. Cluster identified features to determine whether commonsense reasoning involves distinct behavioral modes analogous to the uncertainty/exploration/reflection modes found for mathematical reasoning. Perform steering experiments to test causal involvement: amplifying commonsense features should improve PIQA accuracy, and suppressing them should degrade it.
+
+### Recommendation 5: Apply Circuit Discovery to Identify Goal-Action Coherence Circuits
+
+Use ACDC or path patching to discover the circuit implementing goal-action coherence in PIQA tasks. Start with path patching (more controlled, allows hypothesis-driven investigation) and validate with ACDC (more automated, reduces experimenter bias). Evaluate discovered circuits using the faithfulness/completeness/minimality criteria from Wang et al. (2022). Compare the discovered circuit to the IOI circuit (same model, different task) to determine how much circuit overlap exists between syntactic and commonsense tasks.
+
+### Recommendation 6: Compare Mechanisms for Correct vs. Incorrect Predictions
+
+The core of our research design should be a systematic comparison of internal mechanisms between correct and incorrect commonsense predictions. For each analytical tool (causal tracing, probing, SAE features, logit lens), we should compare: (a) the causal trace heatmap for correctly versus incorrectly answered questions; (b) probe accuracy at each layer for physical property knowledge in correct versus incorrect cases; (c) SAE feature activations for correct versus incorrect cases; and (d) logit lens trajectories showing how the probability of the correct answer evolves across layers in correct versus incorrect cases. Systematic differences will reveal the mechanistic origin of failures.
+
+### Recommendation 7: Test Whether Failures Are at the Enrichment, Propagation, or Extraction Stage
+
+This is the critical experiment for testing our hypothesis. Using the three-step framework from Recommendation 3, we should: (a) Probe for goal-relevant knowledge at the last-goal-token position after early MLP layers (testing enrichment); (b) Measure attention from prediction position to goal position in middle layers (testing propagation); (c) Analyze upper attention head behavior for solution extraction (testing extraction). If failures are predominantly at stage (A), this suggests a training-induced problem (the model never learned the relevant physical knowledge). If failures are at stage (B), this suggests a representational problem (knowledge exists but cannot be routed to where it is needed). If failures are at stage (C), this suggests an architectural or extraction problem (information arrives at the right place but the extraction mechanism fails). These distinctions are precisely what our hypothesis aims to resolve.
+
+---
+
+## References
+
+- Arditi, A., Obeso, O., Syed, A., Paleka, D., Rimsky, N., Gurnee, W., &amp; Nanda, N. (2024). Refusal in Language Models Is Mediated by a Single Direction. *arXiv:2406.11717*.
+- Bisk, Y., Zellers, R., Le Bras, R., Gao, J., &amp; Choi, Y. (2020). PIQA: Reasoning about Physical Commonsense in Natural Language. *AAAI 2020*. *arXiv:1911.11641*.
+- Bricken, T., Templeton, A., Batson, J., Chen, B., Jermyn, A., Conerly, T., ... &amp; Olah, C. (2023). Towards Monosemanticity: Decomposing Language Models With Dictionary Learning. *Transformer Circuits Thread*. *arXiv:2309.10312*.
+- Conmy, A., Mavor-Parker, A. N., Lynch, A., Heimersheim, S., &amp; Garriga-Alonso, A. (2023). Towards Automated Circuit Discovery for Mechanistic Interpretability. *NeurIPS 2023*. *arXiv:2304.14004*.
+- Dai, D., Dong, L., Hao, Y., Sui, Z., Chang, B., &amp; Wei, F. (2022). Knowledge Neurons in Pretrained Transformers. *ACL 2022*. *arXiv:2104.08696*.
+- Dziri, N., Lu, X., Sclar, M., Li, X. L., Jiang, L., Lin, B. Y., ... &amp; Choi, Y. (2023). Faith and Fate: Limits of Transformers on Compositionality. *NeurIPS 2023*. *arXiv:2305.18354*.
+- Galichin, N., Kovalev, N., Ershov, E., Goncharov, A., &amp; Panov, M. (2025). Interpreting Reasoning Features in Large Language Models via Sparse Autoencoders. *arXiv:2503.18878*.
+- Gao, L., la Tour, T. D., Tillman, H., Goh, G., Troll, R., Radford, A., ... &amp; Wu, J. (2024). Scaling and Evaluating Sparse Autoencoders. *arXiv:2406.04093*.
+- Geva, M., Bastings, J., Filippova, K., &amp; Globerson, A. (2023). Dissecting Recall of Factual Associations in Auto-Regressive Language Models. *EMNLP 2023*. *arXiv:2304.14767*.
+- Hewitt, J., &amp; Liang, P. (2019). Designing and Interpreting Probes with Control Tasks. *EMNLP 2019*. *arXiv:1909.03368*.
+- Marks, S., &amp; Tegmark, M. (2023). The Geometry of Truth: Emergent Linear Structure in Large Language Model Representations of True/False Datasets. *arXiv:2310.06824*.
+- Marks, S., Rager, C., Michaud, E. J., Belinkov, Y., Bau, D., &amp; Mueller, A. (2024). Sparse Feature Circuits: Discovering and Editing Interpretable Causal Graphs in Language Models. *ICLR 2025*. *arXiv:2403.19647*.
+- Meng, K., Bau, D., Mitchell, A., &amp; Yun, C. (2022). Locating and Editing Factual Associations in GPT. *NeurIPS 2022*. *arXiv:2202.05262*.
+- Sakaguchi, K., Le Bras, R., Bhagavatula, C., &amp; Choi, Y. (2020). WinoGrande: An Adversarial Winograd Schema Challenge at Scale. *AAAI 2020*. *arXiv:1907.10641*.
+- Talmor, A., Herzig, J., Lourie, N., &amp; Berant, J. (2019). CommonsenseQA: A Question Answering Challenge Targeting Commonsense Knowledge. *NAACL 2019*. *arXiv:1811.00937*.
+- Templeton, A., Conerly, T., Marcus, J., Lindsey, J., Bricken, T., Chen, B., ... &amp; Olah, C. (2024). Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet. *Transformer Circuits Thread*. *arXiv:2406.04093*.
+- Wang, K., Variengien, A., Conmy, A., Shlegeris, B., &amp; Steinhardt, J. (2022). Interpretability in the Wild: A Circuit for Indirect Object Identification in GPT-2 Small. *ICLR 2023*. *arXiv:2211.00593*.
+- Zellers, R., Holtzman, A., Bisk, Y., Farhadi, A., &amp; Choi, Y. (2019). HellaSwag: Can a Machine Really Finish Your Sentence? *ACL 2019*. *arXiv:1905.07830*.
+- Zou, A., Phan, L., Chen, S., Campbell, J., Guo, P., Ren, R., ... &amp; Hendrycks, D. (2023). Representation Engineering: A Top-Down Approach to AI Transparency. *arXiv:2310.01405*.
+
+
+════════════════════════════════════════════════════════════════════════════════
+                          PAPER REQUIREMENTS
+════════════════════════════════════════════════════════════════════════════════
+
+Generate a complete academic paper with the following structure:
+
+1. TITLE
+   - Clear, specific, informative
+   - Should convey main finding or contribution
+
+2. AUTHOR
+   - Use this exact author line in the \author{} block: Mido Sang and Idea-Explorer
+
+3. ABSTRACT (150-250 words)
+   - Problem statement
+   - Approach
+   - Key results
+   - Significance
+
+4. INTRODUCTION
+   - Research problem and motivation
+   - Gap in existing work
+   - Our contribution (be specific)
+   - Paper organization
+
+5. RELATED WORK
+   - Organized by theme/approach
+   - Position our work relative to prior work
+   - Cite papers from literature review
+
+6. METHODOLOGY
+   - Clear description of approach
+   - Experimental setup
+   - Datasets used
+   - Evaluation metrics
+   - Baselines
+
+7. RESULTS
+   - Present results with tables and figures
+   - Statistical analysis
+   - Comparison to baselines
+   - Ablation studies (if applicable)
+
+8. DISCUSSION
+   - Interpretation of results
+   - Limitations
+   - Broader implications
+
+9. CONCLUSION
+   - Summary of contributions
+   - Key findings
+   - Future work
+
+10. REFERENCES
+   - BibTeX format
+   - All cited papers
+
+════════════════════════════════════════════════════════════════════════════════
+                          OUTPUT FORMAT
+════════════════════════════════════════════════════════════════════════════════
+
+Create a MODULAR LaTeX project with the following directory structure:
+
+paper_draft/
+├── main.tex              # Main file that imports all sections
+├── references.bib        # BibTeX references
+├── sections/
+│   ├── abstract.tex      # Abstract content
+│   ├── introduction.tex  # Introduction section
+│   ├── related_work.tex  # Related work section
+│   ├── methodology.tex   # Methodology section
+│   ├── results.tex       # Results section
+│   ├── discussion.tex    # Discussion section
+│   └── conclusion.tex    # Conclusion section
+├── figures/              # Directory for any generated figures
+├── tables/               # Directory for complex standalone tables
+└── appendix/             # Directory for appendix sections (if needed)
+
+INSTRUCTIONS:
+1. First, create the directory structure above (mkdir -p paper_draft/sections paper_draft/figures paper_draft/tables paper_draft/appendix)
+2. Write main.tex using the EXACT preamble for NEURIPS:
+
+   \documentclass{article}
+   \usepackage[final]{neurips_2025}  % NEURIPS style (neurips_2025.sty is in paper_draft/)
+   \usepackage[hidelinks]{hyperref}  % REQUIRED: clickable links
+   \usepackage{booktabs}  % REQUIRED: professional tables
+   \usepackage{graphicx}
+   \usepackage{amsmath,amssymb}
+
+   % Import command files
+   \input{commands/math}
+   \input{commands/general}
+   \input{commands/macros}
+
+   % Use this bibliography style:
+   \bibliographystyle{plainnat}
+
+   \author{Mido Sang and Idea-Explorer}
+
+   - Use \input{sections/...} to include each section
+   - Use \bibliography{references} for references
+3. Write each section file with COMPLETE content (no placeholders)
+4. Each section file should include its \section{} command
+5. Write references.bib with all citations in BibTeX format
+6. After writing all files, compile the paper:
+   cd paper_draft && pdflatex -interaction=nonstopmode main.tex && bibtex main && pdflatex -interaction=nonstopmode main.tex && pdflatex -interaction=nonstopmode main.tex
+
+This modular structure allows humans to easily:
+- Edit individual sections without navigating a large file
+- Track changes per section
+- Reuse sections across different paper versions
+
+════════════════════════════════════════════════════════════════════════════════
+                          QUALITY REQUIREMENTS
+════════════════════════════════════════════════════════════════════════════════
+
+- Academic tone throughout
+- All claims must be supported by data from the experiment report
+- Proper citations using \cite{} commands
+- Clear figures and tables with proper captions
+- NO placeholder text - every section must have real content
+- The paper MUST compile without errors
+- If compilation fails, debug and fix the LaTeX errors
+
+════════════════════════════════════════════════════════════════════════════════
+                          LAB WRITING STYLE
+════════════════════════════════════════════════════════════════════════════════
+
+Follow these lab-specific conventions to match our paper style:
+
+1. LANGUAGE STYLE:
+   - Use active voice: "We propose", "We examine", "We focus on"
+   - Be direct and confident: "Our main question is...", "We hypothesize that..."
+   - State things clearly and simply - prefer plain language over jargon
+   - Use bold questions as paragraph organizers: {\bf what is X?}
+   - Include specific quantitative claims: "8.97% over baseline"
+   - Avoid fancy wording: "utilize" → "use", "facilitate" → "help"
+
+2. INTRODUCTION STRUCTURE:
+   - Engaging hook (get to the point quickly)
+   - Problem importance
+   - Gap identification
+   - Your approach with method figure reference
+   - Quantitative preview of results
+   - Contribution bullets (3-4 items, action verbs)
+
+3. CONTRIBUTION LISTS:
+   \begin{itemize}[leftmargin=*,itemsep=0pt,topsep=0pt]
+       \item We propose...
+       \item We conduct...
+       \item We complement...
+   \end{itemize}
+
+4. MODULAR COMMANDS STRUCTURE:
+   Command templates are pre-copied to paper_draft/commands/:
+   - math.tex: Math notation macros
+   - general.tex: Formatting macros
+   - macros.tex: Project-specific term definitions (customize this for your paper)
+
+   In main.tex, include:
+   \input{commands/math}
+   \input{commands/general}
+   \input{commands/macros}
+
+5. REFERENCE CONVENTIONS:
+   Use reference macros from math.tex:
+   - \figref{fig:name} for "figure 1" (lowercase, in-sentence)
+   - \Figref{fig:name} for "Figure 1" (capitalized, start of sentence)
+   - \secref{sec:name} for "section 2"
+
+6. TEXT FORMATTING:
+   - Use \para{Header text} for bold paragraph headers
+   - Define method/dataset names with \textsc and \xspace:
+     \newcommand{\methodname}{\textsc{MethodName}\xspace}
+
+7. TABLE FORMATTING:
+   - Use booktabs package (no vertical lines)
+   - Use \resizebox{\textwidth}{!}{...} for wide tables
+   - Use @{} to remove padding at table edges
+   - Use \cmidrule(lr){x-y} for sub-headers
+   - Use \textsc{} for dataset/method names in headers
+   - Bold best results with {\bf ...}
+
+8. FIGURE FORMATTING:
+   - Use 0.32\textwidth for 3-column subfigures
+   - Use 0.95\linewidth for full-width figures
+   - Use \input{figures/legend} for shared legends
+   - Write self-contained captions explaining key observations
+
+9. RESULTS PRESENTATION:
+   - Define \increase and \decrease for colored arrows (green up, red down)
+   - Bold best results in tables
+   - Report confidence intervals when available
+
+10. ALGORITHM STYLING:
+    - Use algpseudocode with [noend]
+    - Use \triangleright for comments
+
+11. HYPERLINKS (REQUIRED):
+    - Always use \usepackage[hidelinks]{hyperref} or with colored links
+    - All citations, section refs, figure refs, table refs must be clickable
+    - This is essential for reader navigation
+
+════════════════════════════════════════════════════════════════════════════════
+                          WORKFLOW: REVIEW AND REFLECT
+════════════════════════════════════════════════════════════════════════════════
+
+Before calling finish, you MUST complete these review steps:
+
+1. REVIEW RESOURCES (at the start):
+   - Read .claude/skills/paper-writer/SKILL.md for detailed guidance
+   - Study templates/paper_writing/lab_style_guide.md for style conventions
+   - Browse paper_examples/ for formatting and language patterns
+
+2. SELF-REFLECTION (before finishing):
+   After writing all sections, review your work against these criteria:
+
+   LANGUAGE CHECK:
+   - [ ] Is the writing clear and jargon-free?
+   - [ ] Are claims specific with quantitative support?
+   - [ ] Is active voice used throughout?
+
+   FORMATTING CHECK:
+   - [ ] Does main.tex include \input{commands/math}, \input{commands/general}, \input{commands/macros}?
+   - [ ] Is hyperref package included for clickable references?
+   - [ ] Do tables use booktabs (no vertical lines)?
+   - [ ] Are best results bolded in tables?
+   - [ ] Are figures/tables properly captioned?
+
+   STRUCTURE CHECK:
+   - [ ] Does introduction follow: hook → importance → gap → approach → preview → contributions?
+   - [ ] Are contribution bullets specific with action verbs?
+   - [ ] Does the paper compile without errors?
+
+3. FIX ISSUES:
+   - Address any issues found in the self-reflection
+   - Re-compile and verify the PDF looks correct
+
+Only after completing this review should you consider the paper finished.

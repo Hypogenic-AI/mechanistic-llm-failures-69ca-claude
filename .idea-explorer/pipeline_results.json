@@ -1,0 +1,27 @@
+{
+  "success": true,
+  "stages": {
+    "resource_finder": {
+      "success": true,
+      "completion_marker": "/workspaces/mechanistic-llm-failures-69ca-claude/.resource_finder_complete",
+      "outputs": {
+        "literature_review": "/workspaces/mechanistic-llm-failures-69ca-claude/literature_review.md",
+        "resources_catalog": "/workspaces/mechanistic-llm-failures-69ca-claude/resources.md",
+        "papers_dir": "/workspaces/mechanistic-llm-failures-69ca-claude/papers",
+        "datasets_dir": "/workspaces/mechanistic-llm-failures-69ca-claude/datasets",
+        "code_dir": "/workspaces/mechanistic-llm-failures-69ca-claude/code"
+      },
+      "log_file": "/workspaces/mechanistic-llm-failures-69ca-claude/logs/resource_finder_claude.log",
+      "transcript_file": "/workspaces/mechanistic-llm-failures-69ca-claude/logs/resource_finder_claude_transcript.jsonl",
+      "elapsed_time": 1832.3761630058289
+    },
+    "experiment_runner": {
+      "success": true,
+      "return_code": 0,
+      "elapsed_time": 2018.2981233596802,
+      "log_file": "/workspaces/mechanistic-llm-failures-69ca-claude/logs/execution_claude.log",
+      "transcript_file": "/workspaces/mechanistic-llm-failures-69ca-claude/logs/execution_claude_transcript.jsonl"
+    }
+  },
+  "work_dir": "/workspaces/mechanistic-llm-failures-69ca-claude"
+}

@@ -1,0 +1,9 @@
+PDF: /workspaces/mechanistic-llm-failures-69ca-claude/papers/dai2021_knowledge_neurons.pdf
+Total pages: 10
+Pages per chunk: 3
+
+Chunks:
+  dai2021_knowledge_neurons_chunk_001.pdf: pages 1-3
+  dai2021_knowledge_neurons_chunk_002.pdf: pages 4-6
+  dai2021_knowledge_neurons_chunk_003.pdf: pages 7-9
+  dai2021_knowledge_neurons_chunk_004.pdf: page 10

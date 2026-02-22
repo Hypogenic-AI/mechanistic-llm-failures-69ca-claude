@@ -1,0 +1,2884 @@
+[
+  {
+    "paperId": "cfad550fd525ce1d28917e61cb18277aa2f5b987",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2510-25013",
+      "ArXiv": "2510.25013",
+      "DOI": "10.48550/arXiv.2510.25013",
+      "CorpusId": 282573839
+    },
+    "url": "https://www.semanticscholar.org/paper/cfad550fd525ce1d28917e61cb18277aa2f5b987",
+    "title": "Emergence of Minimal Circuits for Indirect Object Identification in Attention-Only Transformers",
+    "year": 2025,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2510.25013, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2181487286",
+        "name": "Rabin Adhikari"
+      }
+    ],
+    "abstract": "Mechanistic interpretability aims to reverse-engineer large language models (LLMs) into human-understandable computational circuits. However, the complexity of pretrained models often obscures the minimal mechanisms required for specific reasoning tasks. In this work, we train small, attention-only transformers from scratch on a symbolic version of the Indirect Object Identification (IOI) task -- a benchmark for studying coreference -- like reasoning in transformers. Surprisingly, a single-layer model with only two attention heads achieves perfect IOI accuracy, despite lacking MLPs and normalization layers. Through residual stream decomposition, spectral analysis, and embedding interventions, we find that the two heads specialize into additive and contrastive subcircuits that jointly implement IOI resolution. Furthermore, we show that a two-layer, one-head model achieves similar performance by composing information across layers through query-value interactions. These results demonstrate that task-specific training induces highly interpretable, minimal circuits, offering a controlled testbed for probing the computational foundations of transformer reasoning."
+  },
+  {
+    "paperId": "64121dbcfa56ce2a1e21c2424dc4a8d591d1d59d",
+    "externalIds": {
+      "ArXiv": "2505.13737",
+      "DBLP": "journals/corr/abs-2505-13737",
+      "DOI": "10.48550/arXiv.2505.13737",
+      "CorpusId": 278769698
+    },
+    "url": "https://www.semanticscholar.org/paper/64121dbcfa56ce2a1e21c2424dc4a8d591d1d59d",
+    "title": "Causal Head Gating: A Framework for Interpreting Roles of Attention Heads in Transformers",
+    "year": 2025,
+    "citationCount": 3,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2505.13737, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2362503681",
+        "name": "Andrew Nam"
+      },
+      {
+        "authorId": "2362501052",
+        "name": "Henry Conklin"
+      },
+      {
+        "authorId": "2362426573",
+        "name": "Yukang Yang"
+      },
+      {
+        "authorId": "2362483901",
+        "name": "Thomas Griffiths"
+      },
+      {
+        "authorId": "2362697946",
+        "name": "Jonathan Cohen"
+      },
+      {
+        "authorId": "2362504681",
+        "name": "Sarah-Jane Leslie"
+      }
+    ],
+    "abstract": "We present causal head gating (CHG), a scalable method for interpreting the functional roles of attention heads in transformer models. CHG learns soft gates over heads and assigns them a causal taxonomy - facilitating, interfering, or irrelevant - based on their impact on task performance. Unlike prior approaches in mechanistic interpretability, which are hypothesis-driven and require prompt templates or target labels, CHG applies directly to any dataset using standard next-token prediction. We evaluate CHG across multiple large language models (LLMs) in the Llama 3 model family and diverse tasks, including syntax, commonsense, and mathematical reasoning, and show that CHG scores yield causal, not merely correlational, insight validated via ablation and causal mediation analyses. We also introduce contrastive CHG, a variant that isolates sub-circuits for specific task components. Our findings reveal that LLMs contain multiple sparse task-sufficient sub-circuits, that individual head roles depend on interactions with others (low modularity), and that instruction following and in-context learning rely on separable mechanisms."
+  },
+  {
+    "paperId": "ad10c5c445439bf1945db7a1ce31cf27662fd242",
+    "externalIds": {
+      "ArXiv": "2506.23679",
+      "DBLP": "journals/corr/abs-2506-23679",
+      "DOI": "10.48550/arXiv.2506.23679",
+      "CorpusId": 280010990
+    },
+    "url": "https://www.semanticscholar.org/paper/ad10c5c445439bf1945db7a1ce31cf27662fd242",
+    "title": "Learning Modular Exponentiation with Transformers",
+    "year": 2025,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2506.23679, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2346837144",
+        "name": "David Demitri Africa"
+      },
+      {
+        "authorId": "2371069348",
+        "name": "Sara M. Kapoor"
+      },
+      {
+        "authorId": "2371069076",
+        "name": "Theo Simon Sorg"
+      }
+    ],
+    "abstract": "Modular exponentiation is crucial to number theory and cryptography, yet remains largely unexplored from a mechanistic interpretability standpoint. We train a 4-layer encoder-decoder Transformer model to perform this operation and investigate the emergence of numerical reasoning during training. Utilizing principled sampling strategies, PCA-based embedding analysis, and activation patching, we examine how number-theoretic properties are encoded within the model. We find that reciprocal operand training leads to strong performance gains, with sudden generalization across related moduli. These synchronized accuracy surges reflect grokking-like dynamics, suggesting the model internalizes shared arithmetic structure. We also find a subgraph consisting entirely of attention heads in the final layer sufficient to achieve full performance on the task of regular exponentiation. These results suggest that transformer models learn modular arithmetic through specialized computational circuits, paving the way for more interpretable and efficient neural approaches to modular exponentiation."
+  },
+  {
+    "paperId": "ca269e74084894dd4cc60134b50cebf52647849f",
+    "externalIds": {
+      "DOI": "10.1109/INMIC65900.2025.11348249",
+      "CorpusId": 285109015
+    },
+    "url": "https://www.semanticscholar.org/paper/ca269e74084894dd4cc60134b50cebf52647849f",
+    "title": "Cracking the Circuits: Mechanistic Interpretability in Large Language Models",
+    "year": 2025,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/INMIC65900.2025.11348249?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/INMIC65900.2025.11348249, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2318101983",
+        "name": "Dost Muhammad"
+      },
+      {
+        "authorId": "2355391293",
+        "name": "Muhammad Salman"
+      },
+      {
+        "authorId": "2337799662",
+        "name": "Mushtaq Ali"
+      },
+      {
+        "authorId": "3156701",
+        "name": "Malika Bendechache"
+      }
+    ],
+    "abstract": "Mechanistic interpretability aims to uncover how internal components of large language models (LLMs) contribute to their overall behaviour. While previous research has revealed interpretable circuits in small-scale transformers, the field still lacks a systematic and mathematically grounded framework for understanding, validating, and comparing interpretability techniques. In this paper, we introduce a unified formalism and taxonomy for mechanistic interpretability, defining core concepts such as modular circuits, representational superposition, and polysemantic neurons. We categorise interpretability methods based on granularity, causal influence, robustness to perturbation, and transferability across tasks. To demonstrate the utility of this framework, we analyse the GPT2-small model on the Indirect Object Identification (IOI) task using TransformerLens. Our findings reveal that attention heads 7.1 and 8.6 play a consistent and causal role in performing the name-mover function. Activation patching experiments show that restoring these components recovers over 90 % of performance lost due to input corruption, while ablating them results in a 27.3 % accuracy drop. These results provide empirical support for the existence of sparse, interpretable circuits that underpin model reasoning. Visualisations of patching curves and attention patterns further substantiate this behaviour. This study offers a principled methodology for mechanistic analysis in language models, bridging theoretical insights with empirical validation. The proposed framework supports the development of transparent, trustworthy, and controllable AI systems, with potential for extension to larger-scale models and safety-critical applications."
+  },
+  {
+    "paperId": "5bed8937926f7381db9a5f67b9ec76dbcb34b678",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2502-09022",
+      "ArXiv": "2502.09022",
+      "DOI": "10.48550/arXiv.2502.09022",
+      "CorpusId": 276318021
+    },
+    "url": "https://www.semanticscholar.org/paper/5bed8937926f7381db9a5f67b9ec76dbcb34b678",
+    "title": "Mechanistic Unveiling of Transformer Circuits: Self-Influence as a Key to Model Reasoning",
+    "year": 2025,
+    "citationCount": 9,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2502.09022, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2345182475",
+        "name": "Lin Zhang"
+      },
+      {
+        "authorId": "2153121378",
+        "name": "Lijie Hu"
+      },
+      {
+        "authorId": "2332361126",
+        "name": "Di Wang"
+      }
+    ],
+    "abstract": "Transformer-based language models have achieved significant success; however, their internal mechanisms remain largely opaque due to the complexity of non-linear interactions and high-dimensional operations. While previous studies have demonstrated that these models implicitly embed reasoning trees, humans typically employ various distinct logical reasoning mechanisms to complete the same task. It is still unclear which multi-step reasoning mechanisms are used by language models to solve such tasks. In this paper, we aim to address this question by investigating the mechanistic interpretability of language models, particularly in the context of multi-step reasoning tasks. Specifically, we employ circuit analysis and self-influence functions to evaluate the changing importance of each token throughout the reasoning process, allowing us to map the reasoning paths adopted by the model. We apply this methodology to the GPT-2 model on a prediction task (IOI) and demonstrate that the underlying circuits reveal a human-interpretable reasoning process used by the model."
+  },
+  {
+    "paperId": "a9ceeafaa5cffc975fb5aa3d591666fb0ebc47d8",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2407-14494",
+      "ArXiv": "2407.14494",
+      "DOI": "10.48550/arXiv.2407.14494",
+      "CorpusId": 271310283
+    },
+    "url": "https://www.semanticscholar.org/paper/a9ceeafaa5cffc975fb5aa3d591666fb0ebc47d8",
+    "title": "InterpBench: Semi-Synthetic Transformers for Evaluating Mechanistic Interpretability Techniques",
+    "year": 2024,
+    "citationCount": 7,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2407.14494, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2312274312",
+        "name": "Rohan Gupta"
+      },
+      {
+        "authorId": "2349542533",
+        "name": "Iv'an Arcuschin"
+      },
+      {
+        "authorId": "2312201820",
+        "name": "Thomas Kwa"
+      },
+      {
+        "authorId": "1388513000",
+        "name": "Adri\u00e0 Garriga-Alonso"
+      }
+    ],
+    "abstract": "Mechanistic interpretability methods aim to identify the algorithm a neural network implements, but it is difficult to validate such methods when the true algorithm is unknown. This work presents InterpBench, a collection of semi-synthetic yet realistic transformers with known circuits for evaluating these techniques. We train simple neural networks using a stricter version of Interchange Intervention Training (IIT) which we call Strict IIT (SIIT). Like the original, SIIT trains neural networks by aligning their internal computation with a desired high-level causal model, but it also prevents non-circuit nodes from affecting the model's output. We evaluate SIIT on sparse transformers produced by the Tracr tool and find that SIIT models maintain Tracr's original circuit while being more realistic. SIIT can also train transformers with larger circuits, like Indirect Object Identification (IOI). Finally, we use our benchmark to evaluate existing circuit discovery techniques."
+  },
+  {
+    "paperId": "0334c287e165a3dc84a09486751be26325342339",
+    "externalIds": {
+      "DBLP": "conf/nips/WangY0024",
+      "DOI": "10.52202/079017-3017",
+      "CorpusId": 276259970
+    },
+    "url": "https://www.semanticscholar.org/paper/0334c287e165a3dc84a09486751be26325342339",
+    "title": "Grokking of Implicit Reasoning in Transformers: A Mechanistic Journey to the Edge of Generalization",
+    "year": 2024,
+    "citationCount": 31,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.52202/079017-3017?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.52202/079017-3017, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "7425689",
+        "name": "Boshi Wang"
+      },
+      {
+        "authorId": "2268495181",
+        "name": "Xiang Yue"
+      },
+      {
+        "authorId": "2345002357",
+        "name": "Yu Su"
+      },
+      {
+        "authorId": "2239158325",
+        "name": "Huan Sun"
+      }
+    ],
+    "abstract": "We study whether transformers can learn to implicitly reason over parametric knowledge, a skill that even the most capable language models struggle with. Focusing on two representative reasoning types, composition and comparison, we consistently find that transformers can learn implicit reasoning, but only through grokking , i.e., extended training far beyond overfitting. The levels of generalization also vary across reasoning types: when faced with out-of-distribution examples, transformers fail to systematically generalize for composition but succeed for comparison. We delve into the model\u2019s internals throughout training, conducting analytical experiments that reveal: 1) the mechanism behind grokking, such as the formation of the generalizing circuit and its relation to the relative efficiency of generalizing and memorizing circuits, and 2) the connection between systematicity and the configuration of the generalizing circuit. Our findings guide data and training setup to better induce implicit reasoning and suggest potential improvements to the transformer architecture, such as encouraging cross-layer knowledge sharing. Furthermore, we demonstrate that for a challenging reasoning task with a large search space, GPT-4-Turbo and Gemini-1.5-Pro based on non-parametric memory fail badly regardless of prompting styles or retrieval augmentation, while a fully grokked transformer can achieve near-perfect accuracy, showcasing the power of parametric memory for complex reasoning. 2"
+  },
+  {
+    "paperId": "f89483bb3a18ab100cd37c08641029ef7fb82853",
+    "externalIds": {
+      "ArXiv": "2511.13653",
+      "DBLP": "journals/corr/abs-2511-13653",
+      "DOI": "10.48550/arXiv.2511.13653",
+      "CorpusId": 283071677
+    },
+    "url": "https://www.semanticscholar.org/paper/f89483bb3a18ab100cd37c08641029ef7fb82853",
+    "title": "Weight-sparse transformers have interpretable circuits",
+    "year": 2025,
+    "citationCount": 13,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2511.13653, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2392997929",
+        "name": "Leo Gao"
+      },
+      {
+        "authorId": "2391608921",
+        "name": "Achyuta Rajaram"
+      },
+      {
+        "authorId": "2328088993",
+        "name": "Jacob Coxon"
+      },
+      {
+        "authorId": "2129385885",
+        "name": "Soham V. Govande"
+      },
+      {
+        "authorId": "2274766907",
+        "name": "Bowen Baker"
+      },
+      {
+        "authorId": "3407880",
+        "name": "Daniel P. Mossing"
+      }
+    ],
+    "abstract": "Finding human-understandable circuits in language models is a central goal of the field of mechanistic interpretability. We train models to have more understandable circuits by constraining most of their weights to be zeros, so that each neuron only has a few connections. To recover fine-grained circuits underlying each of several hand-crafted tasks, we prune the models to isolate the part responsible for the task. These circuits often contain neurons and residual channels that correspond to natural concepts, with a small number of straightforwardly interpretable connections between them. We study how these models scale and find that making weights sparser trades off capability for interpretability, and scaling model size improves the capability-interpretability frontier. However, scaling sparse models beyond tens of millions of nonzero parameters while preserving interpretability remains a challenge. In addition to training weight-sparse models de novo, we show preliminary results suggesting our method can also be adapted to explain existing dense models. Our work produces circuits that achieve an unprecedented level of human understandability and validates them with considerable rigor."
+  },
+  {
+    "paperId": "663292eaef24c22c0692f1b4a9120d24662d7fc7",
+    "externalIds": {
+      "ArXiv": "2505.03530",
+      "DBLP": "journals/corr/abs-2505-03530",
+      "DOI": "10.48550/arXiv.2505.03530",
+      "CorpusId": 278339502
+    },
+    "url": "https://www.semanticscholar.org/paper/663292eaef24c22c0692f1b4a9120d24662d7fc7",
+    "title": "Causal Intervention Framework for Variational Auto Encoder Mechanistic Interpretability",
+    "year": 2025,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2505.03530, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2359261344",
+        "name": "Dip Roy"
+      }
+    ],
+    "abstract": "Mechanistic interpretability of deep learning models has emerged as a crucial research direction for understanding the functioning of neural networks. While significant progress has been made in interpreting discriminative models like transformers, understanding generative models such as Variational Autoencoders (VAEs) remains challenging. This paper introduces a comprehensive causal intervention framework for mechanistic interpretability of VAEs. We develop techniques to identify and analyze\"circuit motifs\"in VAEs, examining how semantic factors are encoded, processed, and disentangled through the network layers. Our approach uses targeted interventions at different levels: input manipulations, latent space perturbations, activation patching, and causal mediation analysis. We apply our framework to both synthetic datasets with known causal relationships and standard disentanglement benchmarks. Results show that our interventions can successfully isolate functional circuits, map computational graphs to causal graphs of semantic factors, and distinguish between polysemantic and monosemantic units. Furthermore, we introduce metrics for causal effect strength, intervention specificity, and circuit modularity that quantify the interpretability of VAE components. Experimental results demonstrate clear differences between VAE variants, with FactorVAE achieving higher disentanglement scores (0.084) and effect strengths (mean 4.59) compared to standard VAE (0.064, 3.99) and Beta-VAE (0.051, 3.43). Our framework advances the mechanistic understanding of generative models and provides tools for more transparent and controllable VAE architectures."
+  },
+  {
+    "paperId": "63a87feede94433b44b2c2b194e5902c3c5158f2",
+    "externalIds": {
+      "DBLP": "conf/icml/SinghMHCS24",
+      "ArXiv": "2404.07129",
+      "DOI": "10.48550/arXiv.2404.07129",
+      "CorpusId": 269033179
+    },
+    "url": "https://www.semanticscholar.org/paper/63a87feede94433b44b2c2b194e5902c3c5158f2",
+    "title": "What needs to go right for an induction head? A mechanistic study of in-context learning circuits and their formation",
+    "year": 2024,
+    "citationCount": 64,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2404.07129, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2257127712",
+        "name": "Aaditya K. Singh"
+      },
+      {
+        "authorId": "2238206617",
+        "name": "Ted Moskovitz"
+      },
+      {
+        "authorId": "2265548290",
+        "name": "Felix Hill"
+      },
+      {
+        "authorId": "2292269934",
+        "name": "S. C. Chan"
+      },
+      {
+        "authorId": "2261233446",
+        "name": "Andrew M. Saxe"
+      }
+    ],
+    "abstract": "In-context learning is a powerful emergent ability in transformer models. Prior work in mechanistic interpretability has identified a circuit element that may be critical for in-context learning -- the induction head (IH), which performs a match-and-copy operation. During training of large transformers on natural language data, IHs emerge around the same time as a notable phase change in the loss. Despite the robust evidence for IHs and this interesting coincidence with the phase change, relatively little is known about the diversity and emergence dynamics of IHs. Why is there more than one IH, and how are they dependent on each other? Why do IHs appear all of a sudden, and what are the subcircuits that enable them to emerge? We answer these questions by studying IH emergence dynamics in a controlled setting by training on synthetic data. In doing so, we develop and share a novel optogenetics-inspired causal framework for modifying activations throughout training. Using this framework, we delineate the diverse and additive nature of IHs. By clamping subsets of activations throughout training, we then identify three underlying subcircuits that interact to drive IH formation, yielding the phase change. Furthermore, these subcircuits shed light on data-dependent properties of formation, such as phase change timing, already showing the promise of this more in-depth understanding of subcircuits that need to\"go right\"for an induction head."
+  },
+  {
+    "paperId": "5b1120f547d3969afc49b4a094e874d568e53aca",
+    "externalIds": {
+      "ArXiv": "2405.15071",
+      "DBLP": "journals/corr/abs-2405-15071",
+      "DOI": "10.48550/arXiv.2405.15071",
+      "CorpusId": 270045579
+    },
+    "url": "https://www.semanticscholar.org/paper/5b1120f547d3969afc49b4a094e874d568e53aca",
+    "title": "Grokked Transformers are Implicit Reasoners: A Mechanistic Journey to the Edge of Generalization",
+    "year": 2024,
+    "citationCount": 77,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2405.15071, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "7425689",
+        "name": "Boshi Wang"
+      },
+      {
+        "authorId": "2268495181",
+        "name": "Xiang Yue"
+      },
+      {
+        "authorId": "1758652",
+        "name": "Yu Su"
+      },
+      {
+        "authorId": "2239158325",
+        "name": "Huan Sun"
+      }
+    ],
+    "abstract": "We study whether transformers can learn to implicitly reason over parametric knowledge, a skill that even the most capable language models struggle with. Focusing on two representative reasoning types, composition and comparison, we consistently find that transformers can learn implicit reasoning, but only through grokking, i.e., extended training far beyond overfitting. The levels of generalization also vary across reasoning types: when faced with out-of-distribution examples, transformers fail to systematically generalize for composition but succeed for comparison. We delve into the model's internals throughout training, conducting analytical experiments that reveal: 1) the mechanism behind grokking, such as the formation of the generalizing circuit and its relation to the relative efficiency of generalizing and memorizing circuits, and 2) the connection between systematicity and the configuration of the generalizing circuit. Our findings guide data and training setup to better induce implicit reasoning and suggest potential improvements to the transformer architecture, such as encouraging cross-layer knowledge sharing. Furthermore, we demonstrate that for a challenging reasoning task with a large search space, GPT-4-Turbo and Gemini-1.5-Pro based on non-parametric memory fail badly regardless of prompting styles or retrieval augmentation, while a fully grokked transformer can achieve near-perfect accuracy, showcasing the power of parametric memory for complex reasoning."
+  },
+  {
+    "paperId": "1cff6353f155b28314d2cdd6783c13dcf48b72a3",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2510-14095",
+      "ArXiv": "2510.14095",
+      "DOI": "10.48550/arXiv.2510.14095",
+      "CorpusId": 282139516
+    },
+    "url": "https://www.semanticscholar.org/paper/1cff6353f155b28314d2cdd6783c13dcf48b72a3",
+    "title": "Unlocking Out-of-Distribution Generalization in Transformers via Recursive Latent Space Reasoning",
+    "year": 2025,
+    "citationCount": 2,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2510.14095, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2182913083",
+        "name": "Awni Altabaa"
+      },
+      {
+        "authorId": "2289616921",
+        "name": "Siyu Chen"
+      },
+      {
+        "authorId": "2239195765",
+        "name": "John Lafferty"
+      },
+      {
+        "authorId": "2297735407",
+        "name": "Zhuoran Yang"
+      }
+    ],
+    "abstract": "Systematic, compositional generalization beyond the training distribution remains a core challenge in machine learning -- and a critical bottleneck for the emergent reasoning abilities of modern language models. This work investigates out-of-distribution (OOD) generalization in Transformer networks using a GSM8K-style modular arithmetic on computational graphs task as a testbed. We introduce and explore a set of four architectural mechanisms aimed at enhancing OOD generalization: (i) input-adaptive recurrence; (ii) algorithmic supervision; (iii) anchored latent representations via a discrete bottleneck; and (iv) an explicit error-correction mechanism. Collectively, these mechanisms yield an architectural approach for native and scalable latent space reasoning in Transformer networks with robust algorithmic generalization capabilities. We complement these empirical results with a detailed mechanistic interpretability analysis that reveals how these mechanisms give rise to robust OOD generalization abilities."
+  },
+  {
+    "paperId": "c1ceb29224145b1a7b4e7943f43c62f25a7a80cf",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2504-19475",
+      "ArXiv": "2504.19475",
+      "DOI": "10.48550/arXiv.2504.19475",
+      "CorpusId": 278165495
+    },
+    "url": "https://www.semanticscholar.org/paper/c1ceb29224145b1a7b4e7943f43c62f25a7a80cf",
+    "title": "Prisma: An Open Source Toolkit for Mechanistic Interpretability in Vision and Video",
+    "year": 2025,
+    "citationCount": 11,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2504.19475, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2355082098",
+        "name": "Sonia Joseph"
+      },
+      {
+        "authorId": "2355309836",
+        "name": "Praneet Suresh"
+      },
+      {
+        "authorId": "2203793946",
+        "name": "Lorenz Hufe"
+      },
+      {
+        "authorId": "2330885919",
+        "name": "Edward Stevinson"
+      },
+      {
+        "authorId": "2355082065",
+        "name": "Robert Graham"
+      },
+      {
+        "authorId": "2230656302",
+        "name": "Yash Vadi"
+      },
+      {
+        "authorId": "2355080520",
+        "name": "Danilo Bzdok"
+      },
+      {
+        "authorId": "3633358",
+        "name": "S. Lapuschkin"
+      },
+      {
+        "authorId": "2267502247",
+        "name": "Lee Sharkey"
+      },
+      {
+        "authorId": "2311697786",
+        "name": "Blake Richards"
+      }
+    ],
+    "abstract": "Robust tooling and publicly available pre-trained models have helped drive recent advances in mechanistic interpretability for language models. However, similar progress in vision mechanistic interpretability has been hindered by the lack of accessible frameworks and pre-trained weights. We present Prisma (Access the codebase here: https://github.com/Prisma-Multimodal/ViT-Prisma), an open-source framework designed to accelerate vision mechanistic interpretability research, providing a unified toolkit for accessing 75+ vision and video transformers; support for sparse autoencoder (SAE), transcoder, and crosscoder training; a suite of 80+ pre-trained SAE weights; activation caching, circuit analysis tools, and visualization tools; and educational resources. Our analysis reveals surprising findings, including that effective vision SAEs can exhibit substantially lower sparsity patterns than language SAEs, and that in some instances, SAE reconstructions can decrease model loss. Prisma enables new research directions for understanding vision model internals while lowering barriers to entry in this emerging field."
+  },
+  {
+    "paperId": "f680d47a51a0e470fcb228bf0110c026535ead1b",
+    "externalIds": {
+      "ArXiv": "2301.05217",
+      "DBLP": "journals/corr/abs-2301-05217",
+      "DOI": "10.48550/arXiv.2301.05217",
+      "CorpusId": 255749430
+    },
+    "url": "https://www.semanticscholar.org/paper/f680d47a51a0e470fcb228bf0110c026535ead1b",
+    "title": "Progress measures for grokking via mechanistic interpretability",
+    "year": 2023,
+    "citationCount": 675,
+    "openAccessPdf": {
+      "url": "http://arxiv.org/pdf/2301.05217",
+      "status": "GREEN",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2301.05217, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2051128902",
+        "name": "Neel Nanda"
+      },
+      {
+        "authorId": "2072836382",
+        "name": "Lawrence Chan"
+      },
+      {
+        "authorId": "2162470507",
+        "name": "Tom Lieberum"
+      },
+      {
+        "authorId": "2200391337",
+        "name": "Jess Smith"
+      },
+      {
+        "authorId": "5164568",
+        "name": "J. Steinhardt"
+      }
+    ],
+    "abstract": "Neural networks often exhibit emergent behavior, where qualitatively new capabilities arise from scaling up the amount of parameters, training data, or training steps. One approach to understanding emergence is to find continuous \\textit{progress measures} that underlie the seemingly discontinuous qualitative changes. We argue that progress measures can be found via mechanistic interpretability: reverse-engineering learned behaviors into their individual components. As a case study, we investigate the recently-discovered phenomenon of ``grokking'' exhibited by small transformers trained on modular addition tasks. We fully reverse engineer the algorithm learned by these networks, which uses discrete Fourier transforms and trigonometric identities to convert addition to rotation about a circle. We confirm the algorithm by analyzing the activations and weights and by performing ablations in Fourier space. Based on this understanding, we define progress measures that allow us to study the dynamics of training and split training into three continuous phases: memorization, circuit formation, and cleanup. Our results show that grokking, rather than being a sudden shift, arises from the gradual amplification of structured mechanisms encoded in the weights, followed by the later removal of memorizing components."
+  },
+  {
+    "paperId": "4e2bafb0a851afa00bc4a6a635acb175ee16fc2d",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2507-09931",
+      "ArXiv": "2507.09931",
+      "DOI": "10.48550/arXiv.2507.09931",
+      "CorpusId": 280291381
+    },
+    "url": "https://www.semanticscholar.org/paper/4e2bafb0a851afa00bc4a6a635acb175ee16fc2d",
+    "title": "Mechanistic Interpretability of LoRA-Adapted Language Models for Nuclear Reactor Safety Applications",
+    "year": 2025,
+    "citationCount": 1,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2507.09931, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2373711579",
+        "name": "Yoon Pyo Lee"
+      }
+    ],
+    "abstract": "The integration of Large Language Models (LLMs) into safety-critical domains, such as nuclear engineering, necessitates a deep understanding of their internal reasoning processes. This paper presents a novel methodology for interpreting how an LLM encodes and utilizes domain-specific knowledge, using a Boiling Water Reactor system as a case study. We adapted a general-purpose LLM (Gemma-3-1b-it) to the nuclear domain using a parameter-efficient fine-tuning technique known as Low-Rank Adaptation. By comparing the neuron activation patterns of the base model to those of the fine-tuned model, we identified a sparse set of neurons whose behavior was significantly altered during the adaptation process. To probe the causal role of these specialized neurons, we employed a neuron silencing technique. Our results demonstrate that while silencing most of these specialized neurons individually did not produce a statistically significant effect, deactivating the entire group collectively led to a statistically significant degradation in task performance. Qualitative analysis further revealed that silencing these neurons impaired the model's ability to generate detailed, contextually accurate technical information. This paper provides a concrete methodology for enhancing the transparency of an opaque black-box model, allowing domain expertise to be traced to verifiable neural circuits. This offers a pathway towards achieving nuclear-grade artificial intelligence (AI) assurance, addressing the verification and validation challenges mandated by nuclear regulatory frameworks (e.g., 10 CFR 50 Appendix B), which have limited AI deployment in safety-critical nuclear operations."
+  },
+  {
+    "paperId": "1301ed763095097ff424c668e16a265b3ae2f231",
+    "externalIds": {
+      "ArXiv": "2402.12201",
+      "DBLP": "journals/corr/abs-2402-12201",
+      "DOI": "10.48550/arXiv.2402.12201",
+      "CorpusId": 267751496
+    },
+    "url": "https://www.semanticscholar.org/paper/1301ed763095097ff424c668e16a265b3ae2f231",
+    "title": "Dictionary Learning Improves Patch-Free Circuit Discovery in Mechanistic Interpretability: A Case Study on Othello-GPT",
+    "year": 2024,
+    "citationCount": 25,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2402.12201, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2166121084",
+        "name": "Zhengfu He"
+      },
+      {
+        "authorId": "2284692027",
+        "name": "Xuyang Ge"
+      },
+      {
+        "authorId": "2284823489",
+        "name": "Qiong Tang"
+      },
+      {
+        "authorId": "153345698",
+        "name": "Tianxiang Sun"
+      },
+      {
+        "authorId": "1834133",
+        "name": "Qinyuan Cheng"
+      },
+      {
+        "authorId": "2256661882",
+        "name": "Xipeng Qiu"
+      }
+    ],
+    "abstract": "Sparse dictionary learning has been a rapidly growing technique in mechanistic interpretability to attack superposition and extract more human-understandable features from model activations. We ask a further question based on the extracted more monosemantic features: How do we recognize circuits connecting the enormous amount of dictionary features? We propose a circuit discovery framework alternative to activation patching. Our framework suffers less from out-of-distribution and proves to be more efficient in terms of asymptotic complexity. The basic unit in our framework is dictionary features decomposed from all modules writing to the residual stream, including embedding, attention output and MLP output. Starting from any logit, dictionary feature or attention score, we manage to trace down to lower-level dictionary features of all tokens and compute their contribution to these more interpretable and local model behaviors. We dig in a small transformer trained on a synthetic task named Othello and find a number of human-understandable fine-grained circuits inside of it."
+  },
+  {
+    "paperId": "492a2196b11f989bd6073aef1fe1fba1964ac7b0",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2512-05865",
+      "ArXiv": "2512.05865",
+      "DOI": "10.48550/arXiv.2512.05865",
+      "CorpusId": 283672562
+    },
+    "url": "https://www.semanticscholar.org/paper/492a2196b11f989bd6073aef1fe1fba1964ac7b0",
+    "title": "Sparse Attention Post-Training for Mechanistic Interpretability",
+    "year": 2025,
+    "citationCount": 2,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2512.05865, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2392721795",
+        "name": "Florent Draye"
+      },
+      {
+        "authorId": "2172100670",
+        "name": "Anson Lei"
+      },
+      {
+        "authorId": "2238952730",
+        "name": "Ingmar Posner"
+      },
+      {
+        "authorId": "2261483511",
+        "name": "Bernhard Sch\u00f6lkopf"
+      }
+    ],
+    "abstract": "We introduce a simple post-training method that makes transformer attention sparse without sacrificing performance. Applying a flexible sparsity regularisation under a constrained-loss objective, we show on models up to 7B parameters that it is possible to retain the original pretraining loss while reducing attention connectivity to $\\approx 0.4 \\%$ of its edges. Unlike sparse-attention methods designed for computational efficiency, our approach leverages sparsity as a structural prior: it preserves capability while exposing a more organized and interpretable connectivity pattern. We find that this local sparsity cascades into global circuit simplification: task-specific circuits involve far fewer components (attention heads and MLPs) with up to 100x fewer edges connecting them. Additionally, using cross-layer transcoders, we show that sparse attention substantially simplifies attention attribution, enabling a unified view of feature-based and circuit-based perspectives. These results demonstrate that transformer attention can be made orders of magnitude sparser, suggesting that much of its computation is redundant and that sparsity may serve as a guiding principle for more structured and interpretable models."
+  },
+  {
+    "paperId": "fa5fc9f50d9eb406ce8cd2e81d105699b21c73d6",
+    "externalIds": {
+      "DBLP": "conf/acl/KimVF25",
+      "ArXiv": "2408.08590",
+      "DOI": "10.18653/v1/2025.findings-acl.525",
+      "CorpusId": 271892176
+    },
+    "url": "https://www.semanticscholar.org/paper/fa5fc9f50d9eb406ce8cd2e81d105699b21c73d6",
+    "title": "Reasoning Circuits in Language Models: A Mechanistic Interpretation of Syllogistic Inference",
+    "year": 2024,
+    "citationCount": 13,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2408.08590, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2316365571",
+        "name": "Geonhee Kim"
+      },
+      {
+        "authorId": "34102057",
+        "name": "Marco Valentino"
+      },
+      {
+        "authorId": "2242981659",
+        "name": "Andr\u00e9 Freitas"
+      }
+    ],
+    "abstract": "Recent studies on reasoning in language models (LMs) have sparked a debate on whether they can learn systematic inferential principles or merely exploit superficial patterns in the training data. To understand and uncover the mechanisms adopted for formal reasoning in LMs, this paper presents a mechanistic interpretation of syllogistic inference. Specifically, we present a methodology for circuit discovery aimed at interpreting content-independent and formal reasoning mechanisms. Through two distinct intervention methods, we uncover a sufficient and necessary circuit involving middle-term suppression that elucidates how LMs transfer information to derive valid conclusions from premises. Furthermore, we investigate how belief biases manifest in syllogistic inference, finding evidence of partial contamination from additional attention heads responsible for encoding commonsense and contextualized knowledge. Finally, we explore the generalization of the discovered mechanisms across various syllogistic schemes, model sizes and architectures. The identified circuit is sufficient and necessary for syllogistic schemes on which the models achieve high accuracy (>60%), with compatible activation patterns across models of different families. Overall, our findings suggest that LMs learn transferable content-independent reasoning mechanisms, but that, at the same time, such mechanisms do not involve generalizable and abstract logical primitives, being susceptible to contamination by the same world knowledge acquired during pre-training."
+  },
+  {
+    "paperId": "ad1a800820daf7065b6dcce83e6a9adc459f0310",
+    "externalIds": {
+      "ArXiv": "2602.11130",
+      "CorpusId": 285470240
+    },
+    "url": "https://www.semanticscholar.org/paper/ad1a800820daf7065b6dcce83e6a9adc459f0310",
+    "title": "From Circuits to Dynamics: Understanding and Stabilizing Failure in 3D Diffusion Transformers",
+    "year": 2026,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2602.11130, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2352793899",
+        "name": "Maximilian Plattner"
+      },
+      {
+        "authorId": "2344833419",
+        "name": "F. Paischer"
+      },
+      {
+        "authorId": "2346109725",
+        "name": "Johannes Brandstetter"
+      },
+      {
+        "authorId": "145611078",
+        "name": "Arturs Berzins"
+      }
+    ],
+    "abstract": "Reliable surface completion from sparse point clouds underpins many applications spanning content creation and robotics. While 3D diffusion transformers attain state-of-the-art results on this task, we uncover that they exhibit a catastrophic mode of failure: arbitrarily small on-surface perturbations to the input point cloud can fracture the output into multiple disconnected pieces -- a phenomenon we call Meltdown. Using activation-patching from mechanistic interpretability, we localize Meltdown to a single early denoising cross-attention activation. We find that the singular-value spectrum of this activation provides a scalar proxy: its spectral entropy rises when fragmentation occurs and returns to baseline when patched. Interpreted through diffusion dynamics, we show that this proxy tracks a symmetry-breaking bifurcation of the reverse process. Guided by this insight, we introduce PowerRemap, a test-time control that stabilizes sparse point-cloud conditioning. We demonstrate that Meltdown persists across state-of-the-art architectures (WaLa, Make-a-Shape), datasets (GSO, SimJEB) and denoising strategies (DDPM, DDIM), and that PowerRemap effectively counters this failure with stabilization rates of up to 98.3%. Overall, this work is a case study on how diffusion model behavior can be understood and guided based on mechanistic analysis, linking a circuit-level cross-attention mechanism to diffusion-dynamics accounts of trajectory bifurcations."
+  },
+  {
+    "paperId": "c2e945cd6e5d80c4c7f619736f29558afaededea",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2601-09049",
+      "ArXiv": "2601.09049",
+      "DOI": "10.48550/arXiv.2601.09049",
+      "CorpusId": 284718031
+    },
+    "url": "https://www.semanticscholar.org/paper/c2e945cd6e5d80c4c7f619736f29558afaededea",
+    "title": "Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers",
+    "year": 2026,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2601.09049, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2316529381",
+        "name": "Kaiyu He"
+      },
+      {
+        "authorId": "2370956537",
+        "name": "Mian Zhang"
+      },
+      {
+        "authorId": "2324228540",
+        "name": "Peilin Wu"
+      },
+      {
+        "authorId": "2347877078",
+        "name": "Xinya Du"
+      },
+      {
+        "authorId": "2316509145",
+        "name": "Zhiyu Chen"
+      }
+    ],
+    "abstract": "While Large Language Models (LLMs) excel at factual retrieval, they often struggle with the\"curse of two-hop reasoning\"in compositional tasks. Recent research suggests that parameter-sharing transformers can bridge this gap by forming a\"Generalization Circuit\"during a prolonged\"grokking\"phase. A fundamental question arises: Is a grokked model superior to its non-grokked counterparts on downstream tasks? Furthermore, is the extensive computational cost of waiting for the grokking phase worthwhile? In this work, we conduct a mechanistic study to evaluate the Generalization Circuit's role in knowledge assimilation and transfer. We demonstrate that: (i) The inference paths established by non-grokked and grokked models for in-distribution compositional queries are identical. This suggests that the\"Generalization Circuit\"does not represent the sudden acquisition of a new reasoning paradigm. Instead, we argue that grokking is the process of integrating memorized atomic facts into an naturally established reasoning path. (ii) Achieving high accuracy on unseen cases after prolonged training and the formation of a certain reasoning path are not bound; they can occur independently under specific data regimes. (iii) Even a mature circuit exhibits limited transferability when integrating new knowledge, suggesting that\"grokked\"Transformers do not achieve a full mastery of compositional logic."
+  },
+  {
+    "paperId": "2ac42be0b5fb0b61f4be220bbd65322bed59ecbf",
+    "externalIds": {
+      "DBLP": "conf/icml/AdamsBLYA25",
+      "PubMedCentral": "11839115",
+      "DOI": "10.1101/2025.02.06.636901",
+      "CorpusId": 276259557,
+      "PubMed": "39975216"
+    },
+    "url": "https://www.semanticscholar.org/paper/2ac42be0b5fb0b61f4be220bbd65322bed59ecbf",
+    "title": "From Mechanistic Interpretability to Mechanistic Biology: Training, Evaluating, and Interpreting Sparse Autoencoders on Protein Language Models",
+    "year": 2025,
+    "citationCount": 32,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": "CCBYNC",
+      "disclaimer": "Notice: Paper or abstract available at https://pmc.ncbi.nlm.nih.gov/articles/PMC11839115, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2320504416",
+        "name": "Etowah Adams"
+      },
+      {
+        "authorId": "2075397087",
+        "name": "Li Bai"
+      },
+      {
+        "authorId": "2303477990",
+        "name": "Minji Lee"
+      },
+      {
+        "authorId": "2280098317",
+        "name": "Yiyang Yu"
+      },
+      {
+        "authorId": "1380118346",
+        "name": "Mohammed Alquraishi"
+      }
+    ],
+    "abstract": "Protein language models (pLMs) are powerful predictors of protein structure and function, learning through unsupervised training on millions of protein sequences. pLMs are thought to capture common motifs in protein sequences, but the specifics of pLM features are not well understood. Identifying these features would not only shed light on how pLMs work, but potentially uncover novel protein biology\u2013\u2013studying the model to study the biology. Motivated by this, we train sparse autoencoders (SAEs) on the residual stream of a pLM, ESM-2. By characterizing SAE features, we determine that pLMs use a combination of generic features and family-specific features to represent a protein. In addition, we demonstrate how known sequence determinants of properties such as thermostability and subcellular localization can be identified by linear probing of SAE features. For predictive features without known functional associations, we hypothesize their role in unknown mechanisms and provide visualization tools to aid their interpretation. Our study gives a better understanding of the limitations of pLMs, and demonstrates how SAE features can be used to help generate hypotheses for biological mechanisms. We release our code, model weights and feature visualizer."
+  },
+  {
+    "paperId": "edb548fe7574d99454b352ffdb61bca93c3072ba",
+    "externalIds": {
+      "DBLP": "conf/iclr/HubenCRES24",
+      "ArXiv": "2309.08600",
+      "DOI": "10.48550/arXiv.2309.08600",
+      "CorpusId": 261934663
+    },
+    "url": "https://www.semanticscholar.org/paper/edb548fe7574d99454b352ffdb61bca93c3072ba",
+    "title": "Sparse Autoencoders Find Highly Interpretable Features in Language Models",
+    "year": 2023,
+    "citationCount": 878,
+    "openAccessPdf": {
+      "url": "https://arxiv.org/pdf/2309.08600",
+      "status": "CLOSED",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2309.08600, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2343506954",
+        "name": "Hoagy Cunningham"
+      },
+      {
+        "authorId": "2287842553",
+        "name": "Aidan Ewart"
+      },
+      {
+        "authorId": "2368362042",
+        "name": "Logan Riggs Smith"
+      },
+      {
+        "authorId": "82997662",
+        "name": "R. Huben"
+      },
+      {
+        "authorId": "2241776844",
+        "name": "Lee Sharkey"
+      }
+    ],
+    "abstract": "One of the roadblocks to a better understanding of neural networks' internals is \\textit{polysemanticity}, where neurons appear to activate in multiple, semantically distinct contexts. Polysemanticity prevents us from identifying concise, human-understandable explanations for what neural networks are doing internally. One hypothesised cause of polysemanticity is \\textit{superposition}, where neural networks represent more features than they have neurons by assigning features to an overcomplete set of directions in activation space, rather than to individual neurons. Here, we attempt to identify those directions, using sparse autoencoders to reconstruct the internal activations of a language model. These autoencoders learn sets of sparsely activating features that are more interpretable and monosemantic than directions identified by alternative approaches, where interpretability is measured by automated methods. Moreover, we show that with our learned set of features, we can pinpoint the features that are causally responsible for counterfactual behaviour on the indirect object identification task \\citep{wang2022interpretability} to a finer degree than previous decompositions. This work indicates that it is possible to resolve superposition in language models using a scalable, unsupervised method. Our method may serve as a foundation for future mechanistic interpretability work, which we hope will enable greater model transparency and steerability."
+  },
+  {
+    "paperId": "68510f18285aa3453f7d68542eaacfeb4bad0a0b",
+    "externalIds": {
+      "ArXiv": "2504.02821",
+      "DBLP": "journals/corr/abs-2504-02821",
+      "DOI": "10.48550/arXiv.2504.02821",
+      "CorpusId": 277510503
+    },
+    "url": "https://www.semanticscholar.org/paper/68510f18285aa3453f7d68542eaacfeb4bad0a0b",
+    "title": "Sparse Autoencoders Learn Monosemantic Features in Vision-Language Models",
+    "year": 2025,
+    "citationCount": 21,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2504.02821, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2353383211",
+        "name": "Mateusz Pach"
+      },
+      {
+        "authorId": "1387873091",
+        "name": "Shyamgopal Karthik"
+      },
+      {
+        "authorId": "1845899848",
+        "name": "Quentin Bouniot"
+      },
+      {
+        "authorId": "2356550683",
+        "name": "Serge Belongie"
+      },
+      {
+        "authorId": "1854487018",
+        "name": "Zeynep Akata"
+      }
+    ],
+    "abstract": "Sparse Autoencoders (SAEs) have recently gained attention as a means to improve the interpretability and steerability of Large Language Models (LLMs), both of which are essential for AI safety. In this work, we extend the application of SAEs to Vision-Language Models (VLMs), such as CLIP, and introduce a comprehensive framework for evaluating monosemanticity at the neuron-level in visual representations. To ensure that our evaluation aligns with human perception, we propose a benchmark derived from a large-scale user study. Our experimental results reveal that SAEs trained on VLMs significantly enhance the monosemanticity of individual neurons, with sparsity and wide latents being the most influential factors. Further, we demonstrate that applying SAE interventions on CLIP's vision encoder directly steers multimodal LLM outputs (e.g., LLaVA), without any modifications to the underlying language model. These findings emphasize the practicality and efficacy of SAEs as an unsupervised tool for enhancing both interpretability and control of VLMs. Code and benchmark data are available at https://github.com/ExplainableML/sae-for-vlm."
+  },
+  {
+    "paperId": "be97409a865f72edc4828407496e9d31bbbc4ec7",
+    "externalIds": {
+      "ArXiv": "2503.05613",
+      "DBLP": "journals/corr/abs-2503-05613",
+      "DOI": "10.48550/arXiv.2503.05613",
+      "CorpusId": 276885338
+    },
+    "url": "https://www.semanticscholar.org/paper/be97409a865f72edc4828407496e9d31bbbc4ec7",
+    "title": "A Survey on Sparse Autoencoders: Interpreting the Internal Mechanisms of Large Language Models",
+    "year": 2025,
+    "citationCount": 33,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2503.05613, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2328309150",
+        "name": "Dong Shu"
+      },
+      {
+        "authorId": "2145346360",
+        "name": "Xuansheng Wu"
+      },
+      {
+        "authorId": "2237987232",
+        "name": "Haiyan Zhao"
+      },
+      {
+        "authorId": "2203429265",
+        "name": "Daking Rai"
+      },
+      {
+        "authorId": "2307416803",
+        "name": "Ziyu Yao"
+      },
+      {
+        "authorId": "2256183798",
+        "name": "Ninghao Liu"
+      },
+      {
+        "authorId": "2237804196",
+        "name": "Mengnan Du"
+      }
+    ],
+    "abstract": "Large Language Models (LLMs) have transformed natural language processing, yet their internal mechanisms remain largely opaque. Recently, mechanistic interpretability has attracted significant attention from the research community as a means to understand the inner workings of LLMs. Among various mechanistic interpretability approaches, Sparse Autoencoders (SAEs) have emerged as a promising method due to their ability to disentangle the complex, superimposed features within LLMs into more interpretable components. This paper presents a comprehensive survey of SAEs for interpreting and understanding the internal workings of LLMs. Our major contributions include: (1) exploring the technical framework of SAEs, covering basic architecture, design improvements, and effective training strategies; (2) examining different approaches to explaining SAE features, categorized into input-based and output-based explanation methods; (3) discussing evaluation methods for assessing SAE performance, covering both structural and functional metrics; and (4) investigating real-world applications of SAEs in understanding and manipulating LLM behaviors."
+  },
+  {
+    "paperId": "cc696dd165832cb1a1d21d35ea1f504fccff7fe2",
+    "externalIds": {
+      "ArXiv": "2502.09135",
+      "DBLP": "journals/corr/abs-2502-09135",
+      "DOI": "10.48550/arXiv.2502.09135",
+      "CorpusId": 276317815
+    },
+    "url": "https://www.semanticscholar.org/paper/cc696dd165832cb1a1d21d35ea1f504fccff7fe2",
+    "title": "Interpreting and Steering Protein Language Models through Sparse Autoencoders",
+    "year": 2025,
+    "citationCount": 13,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2502.09135, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2401918128",
+        "name": "E. N. V. Garcia"
+      },
+      {
+        "authorId": "5366502",
+        "name": "Alessio Ansuini"
+      }
+    ],
+    "abstract": "The rapid advancements in transformer-based language models have revolutionized natural language processing, yet understanding the internal mechanisms of these models remains a significant challenge. This paper explores the application of sparse autoencoders (SAE) to interpret the internal representations of protein language models, specifically focusing on the ESM-2 8M parameter model. By performing a statistical analysis on each latent component's relevance to distinct protein annotations, we identify potential interpretations linked to various protein characteristics, including transmembrane regions, binding sites, and specialized motifs. We then leverage these insights to guide sequence generation, shortlisting the relevant latent components that can steer the model towards desired targets such as zinc finger domains. This work contributes to the emerging field of mechanistic interpretability in biological sequence models, offering new perspectives on model steering for sequence design."
+  },
+  {
+    "paperId": "0390fcde62c69eb6fb8df4e3aa76cf5121dff0fa",
+    "externalIds": {
+      "ArXiv": "2602.05859",
+      "CorpusId": 285304383
+    },
+    "url": "https://www.semanticscholar.org/paper/0390fcde62c69eb6fb8df4e3aa76cf5121dff0fa",
+    "title": "DLM-Scope: Mechanistic Interpretability of Diffusion Language Models via Sparse Autoencoders",
+    "year": 2026,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2602.05859, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2346063551",
+        "name": "Xu Wang"
+      },
+      {
+        "authorId": "2409149960",
+        "name": "Bingqing Jiang"
+      },
+      {
+        "authorId": "2244411465",
+        "name": "Yunyang Wan"
+      },
+      {
+        "authorId": "2408995382",
+        "name": "Baosong Yang"
+      },
+      {
+        "authorId": "2409131278",
+        "name": "Lingpeng Kong"
+      },
+      {
+        "authorId": "2345817655",
+        "name": "Difan Zou"
+      }
+    ],
+    "abstract": "Sparse autoencoders (SAEs) have become a standard tool for mechanistic interpretability in autoregressive large language models (LLMs), enabling researchers to extract sparse, human-interpretable features and intervene on model behavior. Recently, as diffusion language models (DLMs) have become an increasingly promising alternative to the autoregressive LLMs, it is essential to develop tailored mechanistic interpretability tools for this emerging class of models. In this work, we present DLM-Scope, the first SAE-based interpretability framework for DLMs, and demonstrate that trained Top-K SAEs can faithfully extract interpretable features. Notably, we find that inserting SAEs affects DLMs differently than autoregressive LLMs: while SAE insertion in LLMs typically incurs a loss penalty, in DLMs it can reduce cross-entropy loss when applied to early layers, a phenomenon absent or markedly weaker in LLMs. Additionally, SAE features in DLMs enable more effective diffusion-time interventions, often outperforming LLM steering. Moreover, we pioneer certain new SAE-based research directions for DLMs: we show that SAEs can provide useful signals for DLM decoding order; and the SAE features are stable during the post-training phase of DLMs. Our work establishes a foundation for mechanistic interpretability in DLMs and shows a great potential of applying SAEs to DLM-related tasks and algorithms."
+  },
+  {
+    "paperId": "6d54629705ea702fed3f7e58d3a4b5eb64b23334",
+    "externalIds": {
+      "ArXiv": "2504.07831",
+      "DBLP": "journals/corr/abs-2504-07831",
+      "DOI": "10.48550/arXiv.2504.07831",
+      "CorpusId": 277667390
+    },
+    "url": "https://www.semanticscholar.org/paper/6d54629705ea702fed3f7e58d3a4b5eb64b23334",
+    "title": "Deceptive Automated Interpretability: Language Models Coordinating to Fool Oversight Systems",
+    "year": 2025,
+    "citationCount": 4,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2504.07831, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2264267940",
+        "name": "Simon Lermen"
+      },
+      {
+        "authorId": "2325727492",
+        "name": "Mateusz Dziemian"
+      },
+      {
+        "authorId": "2331619967",
+        "name": "Natalia P'erez-Campanero Antol'in"
+      }
+    ],
+    "abstract": "We demonstrate how AI agents can coordinate to deceive oversight systems using automated interpretability of neural networks. Using sparse autoencoders (SAEs) as our experimental framework, we show that language models (Llama, DeepSeek R1, and Claude 3.7 Sonnet) can generate deceptive explanations that evade detection. Our agents employ steganographic methods to hide information in seemingly innocent explanations, successfully fooling oversight models while achieving explanation quality comparable to reference labels. We further find that models can scheme to develop deceptive strategies when they believe the detection of harmful features might lead to negative consequences for themselves. All tested LLM agents were capable of deceiving the overseer while achieving high interpretability scores comparable to those of reference labels. We conclude by proposing mitigation strategies, emphasizing the critical need for robust understanding and defenses against deception."
+  },
+  {
+    "paperId": "58ed0d54817f3244753782feccd57b99bb9f3d6f",
+    "externalIds": {
+      "ArXiv": "2507.07486",
+      "CorpusId": 280266809
+    },
+    "url": "https://www.semanticscholar.org/paper/58ed0d54817f3244753782feccd57b99bb9f3d6f",
+    "title": "Sparse Autoencoders Reveal Interpretable Structure in Small Gene Language Models",
+    "year": 2025,
+    "citationCount": 1,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2507.07486, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2333357871",
+        "name": "Haoxiang Guan"
+      },
+      {
+        "authorId": "2367749242",
+        "name": "Jiyan He"
+      },
+      {
+        "authorId": "2372706031",
+        "name": "Jie Zhang"
+      }
+    ],
+    "abstract": "Sparse autoencoders (SAEs) have recently emerged as a powerful tool for interpreting the internal representations of large language models (LLMs), revealing latent latent features with semantical meaning. This interpretability has also proven valuable in biological domains: applying SAEs to protein language models uncovered meaningful features related to protein structure and function. More recently, SAEs have been used to analyze genomics-focused models such as Evo 2, identifying interpretable features in gene sequences. However, it remains unclear whether SAEs can extract meaningful representations from small gene language models, which have fewer parameters and potentially less expressive capacity. To address it, we propose applying SAEs to the activations of a small gene language model. We demonstrate that even small-scale models encode biologically relevant genomic features, such as transcription factor binding motifs, that SAEs can effectively uncover. Our findings suggest that compact gene language models are capable of learning structured genomic representations, and that SAEs offer a scalable approach for interpreting gene models across various model sizes."
+  },
+  {
+    "paperId": "a1dc2a0ee413b2e0b8b14d47ba41009f40b19e5b",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2509-05309",
+      "ArXiv": "2509.05309",
+      "DOI": "10.48550/arXiv.2509.05309",
+      "CorpusId": 281203675
+    },
+    "url": "https://www.semanticscholar.org/paper/a1dc2a0ee413b2e0b8b14d47ba41009f40b19e5b",
+    "title": "ProtSAE: Disentangling and Interpreting Protein Language Models via Semantically-Guided Sparse Autoencoders",
+    "year": 2025,
+    "citationCount": 1,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2509.05309, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2304301341",
+        "name": "Xiangyu Liu"
+      },
+      {
+        "authorId": "2379660449",
+        "name": "Haodi Lei"
+      },
+      {
+        "authorId": "2304129974",
+        "name": "Yi Liu"
+      },
+      {
+        "authorId": "2275219162",
+        "name": "Yang Liu"
+      },
+      {
+        "authorId": "2293775825",
+        "name": "Wei Hu"
+      }
+    ],
+    "abstract": "Sparse Autoencoder (SAE) has emerged as a powerful tool for mechanistic interpretability of large language models. Recent works apply SAE to protein language models (PLMs), aiming to extract and analyze biologically meaningful features from their latent spaces. However, SAE suffers from semantic entanglement, where individual neurons often mix multiple nonlinear concepts, making it difficult to reliably interpret or manipulate model behaviors. In this paper, we propose a semantically-guided SAE, called ProtSAE. Unlike existing SAE which requires annotation datasets to filter and interpret activations, we guide semantic disentanglement during training using both annotation datasets and domain knowledge to mitigate the effects of entangled attributes. We design interpretability experiments showing that ProtSAE learns more biologically relevant and interpretable hidden features compared to previous methods. Performance analyses further demonstrate that ProtSAE maintains high reconstruction fidelity while achieving better results in interpretable probing. We also show the potential of ProtSAE in steering PLMs for downstream generation tasks."
+  },
+  {
+    "paperId": "369d1caf84ae0a8a77df7002d6dc0597ff865618",
+    "externalIds": {
+      "DBLP": "conf/clic-it/BondielliPL25",
+      "CorpusId": 284552125
+    },
+    "url": "https://www.semanticscholar.org/paper/369d1caf84ae0a8a77df7002d6dc0597ff865618",
+    "title": "Sparse Autoencoders Find Partially Interpretable Features in Italian Small Language Models",
+    "year": 2025,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null
+    },
+    "authors": [
+      {
+        "authorId": "8227249",
+        "name": "Alessandro Bondielli"
+      },
+      {
+        "authorId": "2313729272",
+        "name": "Lucia C. Passaro"
+      },
+      {
+        "authorId": "2277456474",
+        "name": "Alessandro Lenci"
+      }
+    ],
+    "abstract": null
+  },
+  {
+    "paperId": "a7bfe68f2e26d481905c4449ff1bd5a8e0c704fd",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2512-08077",
+      "ArXiv": "2512.08077",
+      "DOI": "10.48550/arXiv.2512.08077",
+      "CorpusId": 283711466
+    },
+    "url": "https://www.semanticscholar.org/paper/a7bfe68f2e26d481905c4449ff1bd5a8e0c704fd",
+    "title": "Unveiling Latent Knowledge in Chemistry Language Models through Sparse Autoencoders",
+    "year": 2025,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2512.08077, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2399004520",
+        "name": "Jaron Cohen"
+      },
+      {
+        "authorId": "2397487456",
+        "name": "Alexander G. Hasson"
+      },
+      {
+        "authorId": "2335847790",
+        "name": "Sara Tanovic"
+      }
+    ],
+    "abstract": "Since the advent of machine learning, interpretability has remained a persistent challenge, becoming increasingly urgent as generative models support high-stakes applications in drug and material discovery. Recent advances in large language model (LLM) architectures have yielded chemistry language models (CLMs) with impressive capabilities in molecular property prediction and molecular generation. However, how these models internally represent chemical knowledge remains poorly understood. In this work, we extend sparse autoencoder techniques to uncover and examine interpretable features within CLMs. Applying our methodology to the Foundation Models for Materials (FM4M) SMI-TED chemistry foundation model, we extract semantically meaningful latent features and analyse their activation patterns across diverse molecular datasets. Our findings reveal that these models encode a rich landscape of chemical concepts. We identify correlations between specific latent features and distinct domains of chemical knowledge, including structural motifs, physicochemical properties, and pharmacological drug classes. Our approach provides a generalisable framework for uncovering latent knowledge in chemistry-focused AI systems. This work has implications for both foundational understanding and practical deployment; with the potential to accelerate computational chemistry research."
+  },
+  {
+    "paperId": "fa965a002729ce91605d9b759724409b95ce983d",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2511-05541",
+      "ArXiv": "2511.05541",
+      "DOI": "10.48550/arXiv.2511.05541",
+      "CorpusId": 282912122
+    },
+    "url": "https://www.semanticscholar.org/paper/fa965a002729ce91605d9b759724409b95ce983d",
+    "title": "Temporal Sparse Autoencoders: Leveraging the Sequential Nature of Language for Interpretability",
+    "year": 2025,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2511.05541, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2160885489",
+        "name": "Usha Bhalla"
+      },
+      {
+        "authorId": "2041293215",
+        "name": "Alexander X. Oesterling"
+      },
+      {
+        "authorId": "52015628",
+        "name": "C. M. Verdun"
+      },
+      {
+        "authorId": "2310699647",
+        "name": "Himabindu Lakkaraju"
+      },
+      {
+        "authorId": "144717568",
+        "name": "F. Calmon"
+      }
+    ],
+    "abstract": "Translating the internal representations and computations of models into concepts that humans can understand is a key goal of interpretability. While recent dictionary learning methods such as Sparse Autoencoders (SAEs) provide a promising route to discover human-interpretable features, they suffer from a variety of problems, including a systematic failure to capture the rich conceptual information that drives linguistic understanding. Instead, they exhibit a bias towards shallow, token-specific, or noisy features, such as\"the phrase'The'at the start of sentences\". In this work, we propose that this is due to a fundamental issue with how dictionary learning methods for LLMs are trained. Language itself has a rich, well-studied structure spanning syntax, semantics, and pragmatics; however, current unsupervised methods largely ignore this linguistic knowledge, leading to poor feature discovery that favors superficial patterns over meaningful concepts. We focus on a simple but important aspect of language: semantic content has long-range dependencies and tends to be smooth over a sequence, whereas syntactic information is much more local. Building on this insight, we introduce Temporal Sparse Autoencoders (T-SAEs), which incorporate a novel contrastive loss encouraging consistent activations of high-level features over adjacent tokens. This simple yet powerful modification enables SAEs to disentangle semantic from syntactic features in a self-supervised manner. Across multiple datasets and models, T-SAEs recover smoother, more coherent semantic concepts without sacrificing reconstruction quality. Strikingly, they exhibit clear semantic structure despite being trained without explicit semantic signal, offering a new pathway for unsupervised interpretability in language models."
+  },
+  {
+    "paperId": "39bbd489b43911152bdaf07f741a91bf1b15989d",
+    "externalIds": {
+      "ArXiv": "2410.06981",
+      "CorpusId": 273228435
+    },
+    "url": "https://www.semanticscholar.org/paper/39bbd489b43911152bdaf07f741a91bf1b15989d",
+    "title": "Quantifying Feature Space Universality Across Large Language Models via Sparse Autoencoders",
+    "year": 2024,
+    "citationCount": 11,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2410.06981, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2265584082",
+        "name": "Michael Lan"
+      },
+      {
+        "authorId": "2257347697",
+        "name": "Philip H. S. Torr"
+      },
+      {
+        "authorId": "2257345097",
+        "name": "Austin Meek"
+      },
+      {
+        "authorId": "2285214499",
+        "name": "Ashkan Khakzar"
+      },
+      {
+        "authorId": "2262214707",
+        "name": "David Krueger"
+      },
+      {
+        "authorId": "2143198655",
+        "name": "Fazl Barez"
+      }
+    ],
+    "abstract": "The Universality Hypothesis in large language models (LLMs) claims that different models converge towards similar concept representations in their latent spaces. Providing evidence for this hypothesis would enable researchers to exploit universal properties, facilitating the generalization of mechanistic interpretability techniques across models. Previous works studied if LLMs learned the same features, which are internal representations that activate on specific concepts. Since comparing features across LLMs is challenging due to polysemanticity, in which LLM neurons often correspond to multiple unrelated features rather than to distinct concepts, sparse autoencoders (SAEs) have been employed to disentangle LLM neurons into SAE features corresponding to distinct concepts. In this paper, we introduce a new variation of the universality hypothesis called Analogous Feature Universality: we hypothesize that even if SAEs across different models learn different feature representations, the spaces spanned by SAE features are similar, such that one SAE space is similar to another SAE space under rotation-invariant transformations. Evidence for this hypothesis would imply that interpretability techniques related to latent spaces, such as steering vectors, may be transferred across models via certain transformations. To investigate this hypothesis, we first pair SAE features across different models via activation correlation, and then measure spatial relation similarities between paired features via representational similarity measures, which transform spaces into representations that reveal hidden relational similarities. Our experiments demonstrate high similarities for SAE feature spaces across various LLMs, providing evidence for feature space universality."
+  },
+  {
+    "paperId": "dd039186ad0fd661314ace27c85d354410896155",
+    "externalIds": {
+      "ArXiv": "2410.21508",
+      "DBLP": "conf/emnlp/GhilardiBMMP25",
+      "DOI": "10.18653/v1/2025.emnlp-main.942",
+      "CorpusId": 273662212
+    },
+    "url": "https://www.semanticscholar.org/paper/dd039186ad0fd661314ace27c85d354410896155",
+    "title": "Group-SAE: Efficient Training of Sparse Autoencoders for Large Language Models via Layer Groups",
+    "year": 2024,
+    "citationCount": 10,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2410.21508, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2328089280",
+        "name": "Davide Ghilardi"
+      },
+      {
+        "authorId": "2328088738",
+        "name": "Federico Belotti"
+      },
+      {
+        "authorId": "2328087846",
+        "name": "Marco Molinari"
+      }
+    ],
+    "abstract": "SAEs have recently been employed as a promising unsupervised approach for understanding the representations of layers of Large Language Models (LLMs). However, with the growth in model size and complexity, training SAEs is computationally intensive, as typically one SAE is trained for each model layer. To address such limitation, we propose \\textit{Group-SAE}, a novel strategy to train SAEs. Our method considers the similarity of the residual stream representations between contiguous layers to group similar layers and train a single SAE per group. To balance the trade-off between efficiency and performance, we further introduce \\textit{AMAD} (Average Maximum Angular Distance), an empirical metric that guides the selection of an optimal number of groups based on representational similarity across layers. Experiments on models from the Pythia family show that our approach significantly accelerates training with minimal impact on reconstruction quality and comparable downstream task performance and interpretability over baseline SAEs trained layer by layer. This method provides an efficient and scalable strategy for training SAEs in modern LLMs."
+  },
+  {
+    "paperId": "e59d6e9622d67772dee6a02e750bf37de9958717",
+    "externalIds": {
+      "PubMedCentral": "12403088",
+      "DOI": "10.1073/pnas.2506316122",
+      "CorpusId": 280683330,
+      "PubMed": "40828027"
+    },
+    "url": "https://www.semanticscholar.org/paper/e59d6e9622d67772dee6a02e750bf37de9958717",
+    "title": "Sparse autoencoders uncover biologically interpretable features in protein language model representations",
+    "year": 2025,
+    "citationCount": 25,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": "CCBYNCND",
+      "disclaimer": "Notice: Paper or abstract available at https://pmc.ncbi.nlm.nih.gov/articles/PMC12403088, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2376245676",
+        "name": "Onkar Gujral"
+      },
+      {
+        "authorId": "2179449453",
+        "name": "Mihir Bafna"
+      },
+      {
+        "authorId": "2281816596",
+        "name": "Eric J Alm"
+      },
+      {
+        "authorId": "2307532954",
+        "name": "Bonnie Berger"
+      }
+    ],
+    "abstract": "Significance Interpreting representations derived from protein language models (PLMs) is crucial for improving trust in the model, explainability, and human\u2013AI collaboration in downstream applications. We leverage sparse autoencoders and transcoders from natural language processing as a way to extract biologically meaningful, interpretable features from both protein-level and amino acid-level representations. Our Gene Ontology Analysis and automated interpretability protocols uncover many sparse features that are strongly associated with specific functional annotations and protein families. We show that the sparse features are more interpretable than PLM neurons. These insights not only enhance our understanding of biological information PLMs encode and provide a pathway for gaining functional meaning from PLMs, but also enable interpretability for downstream tasks that rely on these representations."
+  },
+  {
+    "paperId": "2f85c93ab918aa4276cf6fad4638c83b228a8561",
+    "externalIds": {
+      "DBLP": "conf/emnlp/ShiLLWMWH25",
+      "ArXiv": "2503.08200",
+      "DOI": "10.48550/arXiv.2503.08200",
+      "CorpusId": 276928474
+    },
+    "url": "https://www.semanticscholar.org/paper/2f85c93ab918aa4276cf6fad4638c83b228a8561",
+    "title": "Route Sparse Autoencoder to Interpret Large Language Models",
+    "year": 2025,
+    "citationCount": 17,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2503.08200, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2124291731",
+        "name": "Wei Shi"
+      },
+      {
+        "authorId": "2261249035",
+        "name": "Sihang Li"
+      },
+      {
+        "authorId": "2324792588",
+        "name": "Tao Liang"
+      },
+      {
+        "authorId": "2296649407",
+        "name": "Mingyang Wan"
+      },
+      {
+        "authorId": "2350890296",
+        "name": "Gojun Ma"
+      },
+      {
+        "authorId": "2343828495",
+        "name": "Xiang Wang"
+      },
+      {
+        "authorId": "2240825631",
+        "name": "Xiangnan He"
+      }
+    ],
+    "abstract": "Mechanistic interpretability of large language models (LLMs) aims to uncover the internal processes of information propagation and reasoning. Sparse autoencoders (SAEs) have demonstrated promise in this domain by extracting interpretable and monosemantic features. However, prior works primarily focus on feature extraction from a single layer, failing to effectively capture activations that span multiple layers. In this paper, we introduce Route Sparse Autoencoder (RouteSAE), a new framework that integrates a routing mechanism with a shared SAE to efficiently extract features from multiple layers. It dynamically assigns weights to activations from different layers, incurring minimal parameter overhead while achieving high interpretability and flexibility for targeted feature manipulation. We evaluate RouteSAE through extensive experiments on Llama-3.2-1B-Instruct. Specifically, under the same sparsity constraint of 64, RouteSAE extracts 22.5% more features than baseline SAEs while achieving a 22.3% higher interpretability score. These results underscore the potential of RouteSAE as a scalable and effective method for LLM interpretability, with applications in feature discovery and model intervention. Our codes are available at https://github.com/swei2001/RouteSAEs."
+  },
+  {
+    "paperId": "f8c74724977d04366ab8010328c8e096b1688389",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2510-03659",
+      "ArXiv": "2510.03659",
+      "DOI": "10.48550/arXiv.2510.03659",
+      "CorpusId": 281843641
+    },
+    "url": "https://www.semanticscholar.org/paper/f8c74724977d04366ab8010328c8e096b1688389",
+    "title": "Does higher interpretability imply better utility? A Pairwise Analysis on Sparse Autoencoders",
+    "year": 2025,
+    "citationCount": 2,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2510.03659, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2346063551",
+        "name": "Xu Wang"
+      },
+      {
+        "authorId": "2344198577",
+        "name": "Yan Hu"
+      },
+      {
+        "authorId": "2343777007",
+        "name": "Benyou Wang"
+      },
+      {
+        "authorId": "2345817655",
+        "name": "Difan Zou"
+      }
+    ],
+    "abstract": "Sparse Autoencoders (SAEs) are widely used to steer large language models (LLMs), based on the assumption that their interpretable features naturally enable effective model behavior steering. Yet, a fundamental question remains unanswered: does higher interpretability indeed imply better steering utility? To answer this question, we train 90 SAEs across three LLMs (Gemma-2-2B, Qwen-2.5-3B, Gemma-2-9B), spanning five architectures and six sparsity levels, and evaluate their interpretability and steering utility based on SAEBench (arXiv:2501.12345) and AxBench (arXiv:2502.23456) respectively, and perform a rank-agreement analysis via Kendall's rank coefficients (tau b). Our analysis reveals only a relatively weak positive association (tau b approx 0.298), indicating that interpretability is an insufficient proxy for steering performance. We conjecture the interpretability utility gap may stem from the selection of SAE features, as not all of them are equally effective for steering. To further find features that truly steer the behavior of LLMs, we propose a novel selection criterion called Delta Token Confidence, which measures how much amplifying a feature changes the next token distribution. We show that our method improves the steering performance of three LLMs by 52.52 percent compared to the current best output score based criterion (arXiv:2503.34567). Strikingly, after selecting features with high Delta Token Confidence, the correlation between interpretability and utility vanishes (tau b approx 0), and can even become negative. This further highlights the divergence between interpretability and utility for the most effective steering features."
+  },
+  {
+    "paperId": "a8c2f4246a909510d7ea182e77ec7834a5884186",
+    "externalIds": {
+      "ArXiv": "2508.09363",
+      "DBLP": "journals/corr/abs-2508-09363",
+      "DOI": "10.48550/arXiv.2508.09363",
+      "CorpusId": 280642363
+    },
+    "url": "https://www.semanticscholar.org/paper/a8c2f4246a909510d7ea182e77ec7834a5884186",
+    "title": "Resurrecting the Salmon: Rethinking Mechanistic Interpretability with Domain-Specific Sparse Autoencoders",
+    "year": 2025,
+    "citationCount": 1,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2508.09363, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2374153363",
+        "name": "Charles O'Neill"
+      },
+      {
+        "authorId": "2221409603",
+        "name": "Mudith Jayasekara"
+      },
+      {
+        "authorId": "2374154118",
+        "name": "Max Kirkby"
+      }
+    ],
+    "abstract": "Sparse autoencoders (SAEs) decompose large language model (LLM) activations into latent features that reveal mechanistic structure. Conventional SAEs train on broad data distributions, forcing a fixed latent budget to capture only high-frequency, generic patterns. This often results in significant linear ``dark matter''in reconstruction error and produces latents that fragment or absorb each other, complicating interpretation. We show that restricting SAE training to a well-defined domain (medical text) reallocates capacity to domain-specific features, improving both reconstruction fidelity and interpretability. Training JumpReLU SAEs on layer-20 activations of Gemma-2 models using 195k clinical QA examples, we find that domain-confined SAEs explain up to 20\\% more variance, achieve higher loss recovery, and reduce linear residual error compared to broad-domain SAEs. Automated and human evaluations confirm that learned features align with clinically meaningful concepts (e.g., ``taste sensations''or ``infectious mononucleosis''), rather than frequent but uninformative tokens. These domain-specific SAEs capture relevant linear structure, leaving a smaller, more purely nonlinear residual. We conclude that domain-confinement mitigates key limitations of broad-domain SAEs, enabling more complete and interpretable latent decompositions, and suggesting the field may need to question ``foundation-model''scaling for general-purpose SAEs."
+  },
+  {
+    "paperId": "67c70168b08dad4e76122c1aaa09ca8aff431304",
+    "externalIds": {
+      "ArXiv": "2505.22255",
+      "CorpusId": 278959495
+    },
+    "url": "https://www.semanticscholar.org/paper/67c70168b08dad4e76122c1aaa09ca8aff431304",
+    "title": "Kronecker Factorization Improves Efficiency and Interpretability of Sparse Autoencoders",
+    "year": 2025,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2505.22255, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2363874698",
+        "name": "Vadim Kurochkin"
+      },
+      {
+        "authorId": "2284598329",
+        "name": "Yaroslav Aksenov"
+      },
+      {
+        "authorId": "2182176313",
+        "name": "Daniil Laptev"
+      },
+      {
+        "authorId": "48418468",
+        "name": "Daniil Gavrilov"
+      },
+      {
+        "authorId": "2125004220",
+        "name": "Nikita Balagansky"
+      }
+    ],
+    "abstract": "Sparse Autoencoders (SAEs) have demonstrated significant promise in interpreting the hidden states of language models by decomposing them into interpretable latent directions. However, training and interpreting SAEs at scale remains challenging, especially when large dictionary sizes are used. While decoders can leverage sparse-aware kernels for efficiency, encoders still require computationally intensive linear operations with large output dimensions. To address this, we propose KronSAE, a novel architecture that factorizes the latent representation via Kronecker product decomposition, drastically reducing memory and computational overhead. Furthermore, we introduce mAND, a differentiable activation function approximating the binary AND operation, which improves interpretability and performance in our factorized framework."
+  },
+  {
+    "paperId": "70be79af59c8cb3e2c8c4f4f78cbb9a9fe640e1d",
+    "externalIds": {
+      "ArXiv": "2509.00691",
+      "DBLP": "journals/corr/abs-2509-00691",
+      "DOI": "10.48550/arXiv.2509.00691",
+      "CorpusId": 281079641
+    },
+    "url": "https://www.semanticscholar.org/paper/70be79af59c8cb3e2c8c4f4f78cbb9a9fe640e1d",
+    "title": "CE-Bench: Towards a Reliable Contrastive Evaluation Benchmark of Interpretability of Sparse Autoencoders",
+    "year": 2025,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2509.00691, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2378707083",
+        "name": "Alex Gulko"
+      },
+      {
+        "authorId": "2379971519",
+        "name": "Yusen Peng"
+      },
+      {
+        "authorId": "2378582941",
+        "name": "Sachin Kumar"
+      }
+    ],
+    "abstract": "Sparse autoencoders (SAEs) are a promising approach for uncovering interpretable features in large language models (LLMs). While several automated evaluation methods exist for SAEs, most rely on external LLMs. In this work, we introduce CE-Bench, a novel and lightweight contrastive evaluation benchmark for sparse autoencoders, built on a curated dataset of contrastive story pairs. We conduct comprehensive evaluation studies to validate the effectiveness of our approach. Our results show that CE-Bench reliably measures the interpretability of sparse autoencoders and aligns well with existing benchmarks without requiring an external LLM judge, achieving over 70% Spearman correlation with results in SAEBench. The official implementation and evaluation dataset are open-sourced and publicly available."
+  },
+  {
+    "paperId": "54e6c0f804d6b01c5bde375a6eaa1884357cead9",
+    "externalIds": {
+      "DBLP": "conf/bigdataconf/Marinelli24",
+      "DOI": "10.1109/BigData62323.2024.10825125",
+      "CorpusId": 275586652
+    },
+    "url": "https://www.semanticscholar.org/paper/54e6c0f804d6b01c5bde375a6eaa1884357cead9",
+    "title": "Causal Tracing to Identify Hacking Knowledge in Large Language Models",
+    "year": 2024,
+    "citationCount": 2,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/BigData62323.2024.10825125?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/BigData62323.2024.10825125, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2335135918",
+        "name": "Ryan Marinelli"
+      }
+    ],
+    "abstract": "This research seeks to identify where hacking knowledge is stored in models. SQL Injection is used as a base case considering the risks involved with production systems. Through using causal tracing techniques, it is determined that SQL Injection knowledge capabilities are most prevalent in the last layers of the network. It is also established that there may be some shared representation of SQL Injection knowledge across models through training a KNN classifier. When training the classifier on GPT-Neo\u2019s activations and attempting to classify on GPT-2, it was found to be 52% accurate."
+  },
+  {
+    "paperId": "d9a219d07e35d22c027e510cf7604c3280e39416",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2503-01090",
+      "ArXiv": "2503.01090",
+      "DOI": "10.48550/arXiv.2503.01090",
+      "CorpusId": 276742084
+    },
+    "url": "https://www.semanticscholar.org/paper/d9a219d07e35d22c027e510cf7604c3280e39416",
+    "title": "Precise Localization of Memories: A Fine-grained Neuron-level Knowledge Editing Technique for LLMs",
+    "year": 2025,
+    "citationCount": 14,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2503.01090, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2266401742",
+        "name": "Haowen Pan"
+      },
+      {
+        "authorId": "2266422735",
+        "name": "Xiaozhi Wang"
+      },
+      {
+        "authorId": "2266430822",
+        "name": "Yixin Cao"
+      },
+      {
+        "authorId": "2301566537",
+        "name": "Zenglin Shi"
+      },
+      {
+        "authorId": "2266805109",
+        "name": "Xun Yang"
+      },
+      {
+        "authorId": "2294164848",
+        "name": "Juanzi Li"
+      },
+      {
+        "authorId": "2332144739",
+        "name": "Meng Wang"
+      }
+    ],
+    "abstract": "Knowledge editing aims to update outdated information in Large Language Models (LLMs). A representative line of study is locate-then-edit methods, which typically employ causal tracing to identify the modules responsible for recalling factual knowledge about entities. However, we find these methods are often sensitive only to changes in the subject entity, leaving them less effective at adapting to changes in relations. This limitation results in poor editing locality, which can lead to the persistence of irrelevant or inaccurate facts, ultimately compromising the reliability of LLMs. We believe this issue arises from the insufficient precision of knowledge localization. To address this, we propose a Fine-grained Neuron-level Knowledge Editing (FiNE) method that enhances editing locality without affecting overall success rates. By precisely identifying and modifying specific neurons within feed-forward networks, FiNE significantly improves knowledge localization and editing. Quantitative experiments demonstrate that FiNE efficiently achieves better overall performance compared to existing techniques, providing new insights into the localization and modification of knowledge within LLMs."
+  },
+  {
+    "paperId": "8c23e7627896b7571648896b7d61b6ef76ece982",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2202-05262",
+      "CorpusId": 249282155
+    },
+    "url": "https://www.semanticscholar.org/paper/8c23e7627896b7571648896b7d61b6ef76ece982",
+    "title": "Locating and Editing Factual Knowledge in GPT",
+    "year": 2022,
+    "citationCount": 80,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null
+    },
+    "authors": [
+      {
+        "authorId": "153615419",
+        "name": "Kevin Meng"
+      },
+      {
+        "authorId": "144159726",
+        "name": "David Bau"
+      },
+      {
+        "authorId": "50112310",
+        "name": "A. Andonian"
+      },
+      {
+        "authorId": "2083259",
+        "name": "Yonatan Belinkov"
+      }
+    ],
+    "abstract": null
+  },
+  {
+    "paperId": "c65e263859f58786723e81ad6bf396b81e8ac8be",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2410-03772",
+      "ArXiv": "2410.03772",
+      "DOI": "10.48550/arXiv.2410.03772",
+      "CorpusId": 273186182
+    },
+    "url": "https://www.semanticscholar.org/paper/c65e263859f58786723e81ad6bf396b81e8ac8be",
+    "title": "Precision Knowledge Editing: Enhancing Safety in Large Language Models",
+    "year": 2024,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2410.03772, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2324838463",
+        "name": "Xuying Li"
+      },
+      {
+        "authorId": "2324897489",
+        "name": "Zhuo Li"
+      },
+      {
+        "authorId": "2324785706",
+        "name": "Yuji Kosuga"
+      },
+      {
+        "authorId": "2324785271",
+        "name": "Yasuhiro Yoshida"
+      },
+      {
+        "authorId": "2324785630",
+        "name": "Victor Bian"
+      }
+    ],
+    "abstract": "Large language models (LLMs) have demonstrated remarkable capabilities, but they also pose risks related to the generation of toxic or harmful content. This work introduces Precision Knowledge Editing (PKE), an advanced technique that builds upon existing knowledge editing methods to more effectively identify and modify toxic parameter regions within LLMs. By leveraging neuron weight tracking and activation pathway tracing, PKE achieves finer granularity in toxic content management compared to previous methods like Detoxifying Instance Neuron Modification (DINM). Our experiments demonstrate that PKE significantly reduces the attack success rate (ASR) across various models, including Llama2-7b and Llama-3-8b-instruct, while maintaining overall model performance. Additionally, we also compared the performance of some closed-source models (gpt-4-0613 and Claude 3 Sonnet) in our experiments, and found that models adjusted using our method far outperformed the closed-source models in terms of safety. This research contributes to the ongoing efforts to make LLMs safer and more reliable for real-world applications."
+  },
+  {
+    "paperId": "9c0a434b240299cec0029a1be93ab263d7ec9963",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2301-04213",
+      "ArXiv": "2301.04213",
+      "DOI": "10.48550/arXiv.2301.04213",
+      "CorpusId": 255595518
+    },
+    "url": "https://www.semanticscholar.org/paper/9c0a434b240299cec0029a1be93ab263d7ec9963",
+    "title": "Does Localization Inform Editing? Surprising Differences in Causality-Based Localization vs. Knowledge Editing in Language Models",
+    "year": 2023,
+    "citationCount": 238,
+    "openAccessPdf": {
+      "url": "http://arxiv.org/pdf/2301.04213",
+      "status": "GREEN",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2301.04213, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "144625004",
+        "name": "Peter Hase"
+      },
+      {
+        "authorId": "143977268",
+        "name": "Mohit Bansal"
+      },
+      {
+        "authorId": "3351164",
+        "name": "Been Kim"
+      },
+      {
+        "authorId": "2214185",
+        "name": "Asma Ghandeharioun"
+      }
+    ],
+    "abstract": "Language models learn a great quantity of factual information during pretraining, and recent work localizes this information to specific model weights like mid-layer MLP weights. In this paper, we find that we can change how a fact is stored in a model by editing weights that are in a different location than where existing methods suggest that the fact is stored. This is surprising because we would expect that localizing facts to specific model parameters would tell us where to manipulate knowledge in models, and this assumption has motivated past work on model editing methods. Specifically, we show that localization conclusions from representation denoising (also known as Causal Tracing) do not provide any insight into which model MLP layer would be best to edit in order to override an existing stored fact with a new one. This finding raises questions about how past work relies on Causal Tracing to select which model layers to edit. Next, we consider several variants of the editing problem, including erasing and amplifying facts. For one of our editing problems, editing performance does relate to localization results from representation denoising, but we find that which layer we edit is a far better predictor of performance. Our results suggest, counterintuitively, that better mechanistic understanding of how pretrained language models work may not always translate to insights about how to best change their behavior. Our code is available at https://github.com/google/belief-localization"
+  },
+  {
+    "paperId": "5d881ad14f954ccb0ca6350570aeb5d35ea63972",
+    "externalIds": {
+      "ArXiv": "2601.17086",
+      "CorpusId": 285051692
+    },
+    "url": "https://www.semanticscholar.org/paper/5d881ad14f954ccb0ca6350570aeb5d35ea63972",
+    "title": "SonoEdit: Null-Space Constrained Knowledge Editing for Pronunciation Correction in LLM-Based TTS",
+    "year": 2026,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2601.17086, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2260279515",
+        "name": "Ayush Singh"
+      },
+      {
+        "authorId": "2287832203",
+        "name": "Harshit Singh"
+      },
+      {
+        "authorId": "2269736339",
+        "name": "Nityanand Mathur"
+      },
+      {
+        "authorId": "1434548015",
+        "name": "Akshat Mandloi"
+      },
+      {
+        "authorId": "2406837014",
+        "name": "Sudarshan Kamath"
+      }
+    ],
+    "abstract": "Neural text-to-speech (TTS) systems systematically mispronounce low-resource proper nouns, particularly non-English names, brands, and geographic locations, due to their underrepresentation in predominantly English training corpora. Existing solutions typically rely on expensive multilingual data collection, supervised finetuning, or manual phonetic annotation, which limits the deployment of TTS systems in linguistically diverse settings. We introduce SonoEdit, a model editing technique that surgically corrects pronunciation errors in pre-trained TTS models without retraining. Instead of costly finetuning or explicit phoneme injection, we propose a parsimonious alternative based on Null-Space Pronunciation Editing, which performs a single-shot parameter update to modify the pronunciation of specific words while provably preserving all other model behavior. We first adapt Acoustic Causal Tracing to identify the Transformer layers responsible for text-to-pronunciation mapping. We then apply Null-Space Constrained Editing to compute a closed-form weight update that corrects the target pronunciation while remaining mathematically orthogonal to the subspace governing general speech generation. This constrained update steers the model's acoustic output toward a desired pronunciation exemplar while guaranteeing zero first-order change on a preserved speech corpus."
+  },
+  {
+    "paperId": "b0633ccf235e467c35b963ad012f6b8c54aba19f",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2402-18099",
+      "ArXiv": "2402.18099",
+      "DOI": "10.1145/3627673.3679673",
+      "CorpusId": 268041701
+    },
+    "url": "https://www.semanticscholar.org/paper/b0633ccf235e467c35b963ad012f6b8c54aba19f",
+    "title": "Editing Factual Knowledge and Explanatory Ability of Medical Large Language Models",
+    "year": 2024,
+    "citationCount": 21,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2402.18099, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2262514619",
+        "name": "Derong Xu"
+      },
+      {
+        "authorId": "2030976630",
+        "name": "Ziheng Zhang"
+      },
+      {
+        "authorId": "2288043255",
+        "name": "Zhihong Zhu"
+      },
+      {
+        "authorId": "2258562926",
+        "name": "Zhenxi Lin"
+      },
+      {
+        "authorId": "2240559309",
+        "name": "Qidong Liu"
+      },
+      {
+        "authorId": "2258675923",
+        "name": "Xian Wu"
+      },
+      {
+        "authorId": "2277237058",
+        "name": "Tong Xu"
+      },
+      {
+        "authorId": "2281902096",
+        "name": "Xiangyu Zhao"
+      },
+      {
+        "authorId": "2237585282",
+        "name": "Yefeng Zheng"
+      },
+      {
+        "authorId": "2265580543",
+        "name": "Enhong Chen"
+      }
+    ],
+    "abstract": "Model editing aims to precisely alter the behaviors of large language models (LLMs) in relation to specific knowledge, while leaving unrelated knowledge intact. This approach has proven effective in addressing issues of hallucination and outdated information in LLMs. However, the potential of using model editing to modify knowledge in the medical field remains largely unexplored, even though resolving hallucination is a pressing need in this area. Our observations indicate that current methods face significant challenges in dealing with specialized and complex knowledge in medical domain. Therefore, we propose MedLaSA, a novel Layer-wise Scalable Adapter strategy for medical model editing. MedLaSA harnesses the strengths of both adding extra parameters and locate-then-edit methods for medical model editing. We utilize causal tracing to identify the association of knowledge in neurons across different layers, and generate a corresponding scale set from the association value for each piece of knowledge. Subsequently, we incorporate scalable adapters into the dense layers of LLMs. These adapters are assigned scaling values based on the corresponding specific knowledge, which allows for the adjustment of the adapter's weight and rank. The more similar the content, the more consistent the scale between them. This ensures precise editing of semantically identical knowledge while avoiding impact on unrelated knowledge. To evaluate the editing impact on the behaviours of LLMs, we propose two model editing studies for medical domain: (1) editing factual knowledge for medical specialization and (2) editing the explanatory ability for complex knowledge. We build two novel medical benchmarking datasets and introduce a series of challenging and comprehensive metrics. Extensive experiments on medical LLMs demonstrate the editing efficiency of MedLaSA, without affecting unrelated knowledge."
+  },
+  {
+    "paperId": "14daac32518c1bd872a53cb5b4fb38aed92f31b8",
+    "externalIds": {
+      "ArXiv": "2406.15940",
+      "DBLP": "journals/corr/abs-2406-15940",
+      "DOI": "10.48550/arXiv.2406.15940",
+      "CorpusId": 270702715
+    },
+    "url": "https://www.semanticscholar.org/paper/14daac32518c1bd872a53cb5b4fb38aed92f31b8",
+    "title": "Beyond Individual Facts: Investigating Categorical Knowledge Locality of Taxonomy and Meronomy Concepts in GPT Models",
+    "year": 2024,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2406.15940, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2218044799",
+        "name": "Christopher Burger"
+      },
+      {
+        "authorId": "2308045416",
+        "name": "Yifan Hu"
+      },
+      {
+        "authorId": "2258868683",
+        "name": "Thai Le"
+      }
+    ],
+    "abstract": "The location of knowledge within Generative Pre-trained Transformer (GPT)-like models has seen extensive recent investigation. However, much of the work is focused towards determining locations of individual facts, with the end goal being the editing of facts that are outdated, erroneous, or otherwise harmful, without the time and expense of retraining the entire model. In this work, we investigate a broader view of knowledge location, that of concepts or clusters of related information, instead of disparate individual facts. To do this, we first curate a novel dataset, called DARC, that includes a total of 34 concepts of ~120K factual statements divided into two types of hierarchical categories, namely taxonomy and meronomy. Next, we utilize existing causal mediation analysis methods developed for determining regions of importance for individual facts and apply them to a series of related categories to provide detailed investigation into whether concepts are associated with distinct regions within these models. We find that related categories exhibit similar areas of importance in contrast to less similar categories. However, fine-grained localization of individual category subsets to specific regions is not apparent."
+  },
+  {
+    "paperId": "3199d37b172a09f94840c0ade103fd4a9b4b9db1",
+    "externalIds": {
+      "CorpusId": 252547586
+    },
+    "url": "https://www.semanticscholar.org/paper/3199d37b172a09f94840c0ade103fd4a9b4b9db1",
+    "title": "Moving the Eiffel Tower to ROME: Tracing and Editing Facts in GPT",
+    "year": 2021,
+    "citationCount": 1,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null
+    },
+    "authors": [
+      {
+        "authorId": "2256409672",
+        "name": "David Bau"
+      },
+      {
+        "authorId": "2285239295",
+        "name": "Steven Liu"
+      },
+      {
+        "authorId": "2285415882",
+        "name": "Tongzhou Wang"
+      },
+      {
+        "authorId": "2256465973",
+        "name": "Jun-Yan Zhu"
+      },
+      {
+        "authorId": "2261282667",
+        "name": "Tom Brown"
+      },
+      {
+        "authorId": "2285072384",
+        "name": "Benjamin Mann"
+      },
+      {
+        "authorId": "2260406867",
+        "name": "N. Ryder"
+      },
+      {
+        "authorId": "2261960223",
+        "name": "Jared D Subbiah"
+      },
+      {
+        "authorId": "2261942588",
+        "name": "Prafulla Kaplan"
+      },
+      {
+        "authorId": "2260445935",
+        "name": "A. Dhariwal"
+      },
+      {
+        "authorId": "2285153028",
+        "name": "P. Neelakantan"
+      },
+      {
+        "authorId": "2285148664",
+        "name": "Girish Shyam"
+      },
+      {
+        "authorId": "2285152996",
+        "name": "Amanda Sastry"
+      },
+      {
+        "authorId": "2285153039",
+        "name": "Sandhini Askell"
+      },
+      {
+        "authorId": "2285152528",
+        "name": "Ariel Agarwal"
+      },
+      {
+        "authorId": "2285144589",
+        "name": "Herbert-Voss"
+      },
+      {
+        "authorId": "2064404342",
+        "name": "Gretchen Krueger"
+      },
+      {
+        "authorId": "103143311",
+        "name": "T. Henighan"
+      },
+      {
+        "authorId": "48422824",
+        "name": "R. Child"
+      },
+      {
+        "authorId": "2285086252",
+        "name": "Aditya Ramesh"
+      },
+      {
+        "authorId": "2052152920",
+        "name": "Daniel M. Ziegler"
+      },
+      {
+        "authorId": "2242326456",
+        "name": "Jeffrey Wu"
+      },
+      {
+        "authorId": "2059411355",
+        "name": "Clemens Winter"
+      },
+      {
+        "authorId": "2242286342",
+        "name": "Chris Hesse"
+      },
+      {
+        "authorId": "2108828435",
+        "name": "Mark Chen"
+      },
+      {
+        "authorId": "2064673055",
+        "name": "Eric Sigler"
+      },
+      {
+        "authorId": "1380985420",
+        "name": "Ma-teusz Litwin"
+      },
+      {
+        "authorId": "145565184",
+        "name": "Scott Gray"
+      },
+      {
+        "authorId": "1490681878",
+        "name": "Benjamin Chess"
+      },
+      {
+        "authorId": "2285086642",
+        "name": "Christopher Clark"
+      },
+      {
+        "authorId": "2285141745",
+        "name": "Sam Berner"
+      },
+      {
+        "authorId": "2285312525",
+        "name": "Alec McCandlish"
+      },
+      {
+        "authorId": "2285140012",
+        "name": "Ilya Radford"
+      },
+      {
+        "authorId": "2285145698",
+        "name": "Sutskever Dario"
+      },
+      {
+        "authorId": "2179889822",
+        "name": "Amodei"
+      },
+      {
+        "authorId": "10780897",
+        "name": "Damai Dai"
+      },
+      {
+        "authorId": "2286153844",
+        "name": "Li Dong"
+      },
+      {
+        "authorId": "34128716",
+        "name": "Y. Hao"
+      },
+      {
+        "authorId": "3335836",
+        "name": "Zhifang Sui"
+      },
+      {
+        "authorId": "41019080",
+        "name": "Nicola De Cao"
+      },
+      {
+        "authorId": "2251134171",
+        "name": "Wilker Aziz"
+      },
+      {
+        "authorId": "2285314255",
+        "name": "Ivan Titov. 2021"
+      },
+      {
+        "authorId": "2285312195",
+        "name": "Edit-604"
+      },
+      {
+        "authorId": "2261961752",
+        "name": "J. Devlin"
+      },
+      {
+        "authorId": "2262085555",
+        "name": "Ming-Wei Chang"
+      },
+      {
+        "authorId": "2262196473",
+        "name": "Kenton Lee"
+      }
+    ],
+    "abstract": null
+  },
+  {
+    "paperId": "cf6806f348aaeee7c2757037d1eb9f1c181236a6",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2510-07896",
+      "ArXiv": "2510.07896",
+      "DOI": "10.48550/arXiv.2510.07896",
+      "CorpusId": 281950889
+    },
+    "url": "https://www.semanticscholar.org/paper/cf6806f348aaeee7c2757037d1eb9f1c181236a6",
+    "title": "ACE: Attribution-Controlled Knowledge Editing for Multi-hop Factual Recall",
+    "year": 2025,
+    "citationCount": 1,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2510.07896, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2324835237",
+        "name": "Jiayu Yang"
+      },
+      {
+        "authorId": "2385186144",
+        "name": "Yuxuan Fan"
+      },
+      {
+        "authorId": "2319829684",
+        "name": "Songning Lai"
+      },
+      {
+        "authorId": "2380547987",
+        "name": "Shengen Wu"
+      },
+      {
+        "authorId": "2384973841",
+        "name": "Jiaqi Tang"
+      },
+      {
+        "authorId": "2385334721",
+        "name": "Chun Kang"
+      },
+      {
+        "authorId": "2681038",
+        "name": "Zhijiang Guo"
+      },
+      {
+        "authorId": "2303847331",
+        "name": "Yutao Yue"
+      }
+    ],
+    "abstract": "Large Language Models (LLMs) require efficient knowledge editing (KE) to update factual information, yet existing methods exhibit significant performance decay in multi-hop factual recall. This failure is particularly acute when edits involve intermediate implicit subjects within reasoning chains. Through causal analysis, we reveal that this limitation stems from an oversight of how chained knowledge is dynamically represented and utilized at the neuron level. We discover that during multi hop reasoning, implicit subjects function as query neurons, which sequentially activate corresponding value neurons across transformer layers to accumulate information toward the final answer, a dynamic prior KE work has overlooked. Guided by this insight, we propose ACE: Attribution-Controlled Knowledge Editing for Multi-hop Factual Recall, a framework that leverages neuron-level attribution to identify and edit these critical query-value (Q-V) pathways. ACE provides a mechanistically grounded solution for multi-hop KE, empirically outperforming state-of-the-art methods by 9.44% on GPT-J and 37.46% on Qwen3-8B. Our analysis further reveals more fine-grained activation patterns in Qwen3 and demonstrates that the semantic interpretability of value neurons is orchestrated by query-driven accumulation. These findings establish a new pathway for advancing KE capabilities based on the principled understanding of internal reasoning mechanisms."
+  },
+  {
+    "paperId": "5664f7f52264ff656faa3671d83e2009f4f390fd",
+    "externalIds": {
+      "ArXiv": "2404.03646",
+      "DBLP": "journals/corr/abs-2404-03646",
+      "DOI": "10.48550/arXiv.2404.03646",
+      "CorpusId": 268889738
+    },
+    "url": "https://www.semanticscholar.org/paper/5664f7f52264ff656faa3671d83e2009f4f390fd",
+    "title": "Locating and Editing Factual Associations in Mamba",
+    "year": 2024,
+    "citationCount": 37,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2404.03646, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "1429844787",
+        "name": "Arnab Sen Sharma"
+      },
+      {
+        "authorId": "2294877299",
+        "name": "David Atkinson"
+      },
+      {
+        "authorId": "2267242608",
+        "name": "David Bau"
+      }
+    ],
+    "abstract": "We investigate the mechanisms of factual recall in the Mamba state space model. Our work is inspired by previous findings in autoregressive transformer language models suggesting that their knowledge recall is localized to particular modules at specific token locations; we therefore ask whether factual recall in Mamba can be similarly localized. To investigate this, we conduct four lines of experiments on Mamba. First, we apply causal tracing or interchange interventions to localize key components inside Mamba that are responsible for recalling facts, revealing that specific components within middle layers show strong causal effects at the last token of the subject, while the causal effect of intervening on later layers is most pronounced at the last token of the prompt, matching previous findings on autoregressive transformers. Second, we show that rank-one model editing methods can successfully insert facts at specific locations, again resembling findings on transformer LMs. Third, we examine the linearity of Mamba's representations of factual relations. Finally we adapt attention-knockout techniques to Mamba in order to dissect information flow during factual recall. We compare Mamba directly to a similar-sized autoregressive transformer LM and conclude that despite significant differences in architectural approach, when it comes to factual recall, the two architectures share many similarities."
+  },
+  {
+    "paperId": "cf75a0086f2dc22f6990623e7dab727df74a220a",
+    "externalIds": {
+      "ArXiv": "2602.07095",
+      "CorpusId": 285452185
+    },
+    "url": "https://www.semanticscholar.org/paper/cf75a0086f2dc22f6990623e7dab727df74a220a",
+    "title": "WorldEdit: Towards Open-World Image Editing with a Knowledge-Informed Benchmark",
+    "year": 2026,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2602.07095, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2316887051",
+        "name": "Wang Lin"
+      },
+      {
+        "authorId": "2269737429",
+        "name": "Feng Wang"
+      },
+      {
+        "authorId": "2409895980",
+        "name": "Majun Zhang"
+      },
+      {
+        "authorId": "2411926788",
+        "name": "Wentao Hu"
+      },
+      {
+        "authorId": "2376732363",
+        "name": "Tao Jin"
+      },
+      {
+        "authorId": "2288063568",
+        "name": "Zhou Zhao"
+      },
+      {
+        "authorId": "2379214915",
+        "name": "Fei Wu"
+      },
+      {
+        "authorId": "2301405391",
+        "name": "Jingyuan Chen"
+      },
+      {
+        "authorId": "2253485882",
+        "name": "Alan L. Yuille"
+      },
+      {
+        "authorId": "2269463974",
+        "name": "Sucheng Ren"
+      }
+    ],
+    "abstract": "Recent advances in image editing models have demonstrated remarkable capabilities in executing explicit instructions, such as attribute manipulation, style transfer, and pose synthesis. However, these models often face challenges when dealing with implicit editing instructions, which describe the cause of a visual change without explicitly detailing the resulting outcome. These limitations arise because existing models rely on uniform editing strategies that are not equipped to handle the complex world knowledge and reasoning required for implicit instructions. To address this gap, we introduce \\textbf{WorldEdit}, a dataset specifically designed to enable world-driven image editing. WorldEdit consists of high-quality editing samples, guided by paraphrased instructions that align with real-world causal logic. Furthermore, we provide \\textbf{WorldEdit-Test} for evaluating the existing model's performance on causal editing scenarios. With WorldEdit, we use a two-stage training framework for fine-tuning models like Bagel, integrating with a causal verification reward. Our results show that the proposed dataset and methods significantly narrow the gap with GPT-4o and Nano-Banana, demonstrating competitive performance not only in instruction following but also in knowledge plausibility, where many open-source systems typically struggle."
+  },
+  {
+    "paperId": "f86f5f171b44aaddea2e46c77a2c878f545d4186",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2408-11827",
+      "ArXiv": "2408.11827",
+      "DOI": "10.48550/arXiv.2408.11827",
+      "CorpusId": 271923830
+    },
+    "url": "https://www.semanticscholar.org/paper/f86f5f171b44aaddea2e46c77a2c878f545d4186",
+    "title": "The Mechanics of Conceptual Interpretation in GPT Models: Interpretative Insights",
+    "year": 2024,
+    "citationCount": 3,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2408.11827, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "8776688",
+        "name": "Nura Aljaafari"
+      },
+      {
+        "authorId": "2316640287",
+        "name": "Danilo S. Carvalho"
+      },
+      {
+        "authorId": "2316638121",
+        "name": "Andr\u00e9 Freitas"
+      }
+    ],
+    "abstract": "Locating and editing knowledge in large language models (LLMs) is crucial for enhancing their accuracy, safety, and inference rationale. We introduce ``concept editing'', an innovative variation of knowledge editing that uncovers conceptualisation mechanisms within these models. Using the reverse dictionary task, inference tracing, and input abstraction, we analyse the Multi-Layer Perceptron (MLP), Multi-Head Attention (MHA), and hidden state components of transformer models. Our results reveal distinct patterns: MLP layers employ key-value retrieval mechanism and context-dependent processing, which are highly associated with relative input tokens. MHA layers demonstrate a distributed nature with significant higher-level activations, suggesting sophisticated semantic integration. Hidden states emphasise the importance of the last token and top layers in the inference process. We observe evidence of gradual information building and distributed representation. These observations elucidate how transformer models process semantic information, paving the way for targeted interventions and improved interpretability techniques. Our work highlights the complex, layered nature of semantic processing in LLMs and the challenges of isolating and modifying specific concepts within these models."
+  },
+  {
+    "paperId": "c312fcb19824eced0e0c0e0190c6c29951071dc5",
+    "externalIds": {
+      "DBLP": "conf/ieeecai/AgrawalLL25",
+      "DOI": "10.1109/CAI64502.2025.00151",
+      "CorpusId": 279987979
+    },
+    "url": "https://www.semanticscholar.org/paper/c312fcb19824eced0e0c0e0190c6c29951071dc5",
+    "title": "LLM Interpretability: Tracing How LLMs Answer Factual Queries and Math Questions",
+    "year": 2025,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/CAI64502.2025.00151?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/CAI64502.2025.00151, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "145846120",
+        "name": "Shweta Agrawal"
+      },
+      {
+        "authorId": "2371082835",
+        "name": "He Nan Tony Li"
+      },
+      {
+        "authorId": "2370802026",
+        "name": "Lucas Lu"
+      }
+    ],
+    "abstract": "In this paper, we study how LLMs like GPT store and retrieve facts to answer factual queries. Using a pretrained GPT-2 model, we evaluate factual accuracy on knowledge datasets, math questions, and hand-crafted prompts, employing metrics such as weighted first token accuracy, F1 score for token overlap, perplexity, and BLEU. We leverage interpretability techniques like attention visualization, logit-lens analysis, and causal tracing to identify layers responsible for knowledge retrieval. To enhance the model's factual and mathematical capabilities, we implement prompt engineering, retrieval-augmented generation (RAG), and fine-tuning, comparing their impact on accuracy and fact retrieval mechanisms."
+  },
+  {
+    "paperId": "f9a370e21e588509e7c3a80ccd1bcab9e14f184b",
+    "externalIds": {
+      "ACL": "2024.findings-eacl.86",
+      "DBLP": "conf/eacl/MishraSRGK24",
+      "DOI": "10.18653/v1/2024.findings-eacl.86",
+      "CorpusId": 268417156
+    },
+    "url": "https://www.semanticscholar.org/paper/f9a370e21e588509e7c3a80ccd1bcab9e14f184b",
+    "title": "Correcting Language Model Outputs by Editing Salient Layers",
+    "year": 2024,
+    "citationCount": 3,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://aclanthology.org/2024.findings-eacl.86, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2406835997",
+        "name": "Kshitij Mishra"
+      },
+      {
+        "authorId": "2291360900",
+        "name": "T. Soliman"
+      },
+      {
+        "authorId": "2266838160",
+        "name": "Anil Ramakrishna"
+      },
+      {
+        "authorId": "143728483",
+        "name": "A. Galstyan"
+      },
+      {
+        "authorId": "2169129833",
+        "name": "Anoop Kumar"
+      }
+    ],
+    "abstract": "Large language models can accumulate incorrect or outdated knowledge as the real world evolves. Compared to typical solutions such as retraining, retrieval augmented generation, model editing offers an effective yet low cost solution to address this issue. However, existing model editing algorithms employ manual selection of edit layers, which requires prior domain knowledge or expensive architecture-specific empirical layer selection methods, such as causal tracing. In this work, we propose SaLEM (Salient Layers Editing Model), an efficient solution for data driven layer selection for the model editing task. Our solution utilizes layer-wise saliency maps for layer selection, and matches the accuracy of prior approaches but with only 1/3 of their edits, enabling efficient updates to the parametric knowledge in large language models."
+  },
+  {
+    "paperId": "e63c80f68d738f44c0c8c52d0f34918947f7aeda",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2504-00031",
+      "ArXiv": "2504.00031",
+      "DOI": "10.48550/arXiv.2504.00031",
+      "CorpusId": 277468204
+    },
+    "url": "https://www.semanticscholar.org/paper/e63c80f68d738f44c0c8c52d0f34918947f7aeda",
+    "title": "Leaking LoRa: An Evaluation of Password Leaks and Knowledge Storage in Large Language Models",
+    "year": 2025,
+    "citationCount": 1,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2504.00031, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2353384709",
+        "name": "Ryan Marinelli"
+      },
+      {
+        "authorId": "2353076594",
+        "name": "Magnus Eckhoff"
+      }
+    ],
+    "abstract": "To effectively deploy Large Language Models (LLMs) in application-specific settings, fine-tuning techniques are applied to enhance performance on specialized tasks. This process often involves fine-tuning on user data data, which may contain sensitive information. Although not recommended, it is not uncommon for users to send passwords in messages, and fine-tuning models on this could result in passwords being leaked. In this study, a Large Language Model is fine-tuned with customer support data and passwords from the RockYou password wordlist using Low-Rank Adaptation (LoRA). Out of the first 200 passwords from the list, 37 were successfully recovered. Further, causal tracing is used to identify that password information is largely located in a few layers. Lastly, Rank One Model Editing (ROME) is used to remove the password information from the model, resulting in the number of passwords recovered going from 37 to 0."
+  },
+  {
+    "paperId": "c0362d0ef4f31ec24b2fdc9a71039cf1a5b23f7d",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2405-01008",
+      "ArXiv": "2405.01008",
+      "DOI": "10.48550/arXiv.2405.01008",
+      "CorpusId": 269502576
+    },
+    "url": "https://www.semanticscholar.org/paper/c0362d0ef4f31ec24b2fdc9a71039cf1a5b23f7d",
+    "title": "On Mechanistic Knowledge Localization in Text-to-Image Generative Models",
+    "year": 2024,
+    "citationCount": 24,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2405.01008, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2114710333",
+        "name": "Samyadeep Basu"
+      },
+      {
+        "authorId": "2204576892",
+        "name": "Keivan Rezaei"
+      },
+      {
+        "authorId": "1962835975",
+        "name": "Priyatham Kattakinda"
+      },
+      {
+        "authorId": "2317012495",
+        "name": "Ryan A. Rossi"
+      },
+      {
+        "authorId": "2299942084",
+        "name": "Cherry Zhao"
+      },
+      {
+        "authorId": "2061209811",
+        "name": "V. Morariu"
+      },
+      {
+        "authorId": "1977256",
+        "name": "Varun Manjunatha"
+      },
+      {
+        "authorId": "34389431",
+        "name": "S. Feizi"
+      }
+    ],
+    "abstract": "Identifying layers within text-to-image models which control visual attributes can facilitate efficient model editing through closed-form updates. Recent work, leveraging causal tracing show that early Stable-Diffusion variants confine knowledge primarily to the first layer of the CLIP text-encoder, while it diffuses throughout the UNet.Extending this framework, we observe that for recent models (e.g., SD-XL, DeepFloyd), causal tracing fails in pinpointing localized knowledge, highlighting challenges in model editing. To address this issue, we introduce the concept of Mechanistic Localization in text-to-image models, where knowledge about various visual attributes (e.g.,\"style\",\"objects\",\"facts\") can be mechanistically localized to a small fraction of layers in the UNet, thus facilitating efficient model editing. We localize knowledge using our method LocoGen which measures the direct effect of intermediate layers to output generation by performing interventions in the cross-attention layers of the UNet. We then employ LocoEdit, a fast closed-form editing method across popular open-source text-to-image models (including the latest SD-XL)and explore the possibilities of neuron-level model editing. Using Mechanistic Localization, our work offers a better view of successes and failures in localization-based text-to-image model editing. Code will be available at https://github.com/samyadeepbasu/LocoGen."
+  },
+  {
+    "paperId": "2b72888cc3ff048038f6011b8e3d89ba106540b6",
+    "externalIds": {
+      "ArXiv": "2305.14956",
+      "DBLP": "conf/emnlp/GuptaMS00WT23",
+      "DOI": "10.18653/v1/2023.emnlp-main.511",
+      "CorpusId": 258865393
+    },
+    "url": "https://www.semanticscholar.org/paper/2b72888cc3ff048038f6011b8e3d89ba106540b6",
+    "title": "Editing Common Sense in Transformers",
+    "year": 2023,
+    "citationCount": 33,
+    "openAccessPdf": {
+      "url": "https://aclanthology.org/2023.emnlp-main.511.pdf",
+      "status": "HYBRID",
+      "license": "CCBY",
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2305.14956, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2200083553",
+        "name": "Anshita Gupta"
+      },
+      {
+        "authorId": "2261673039",
+        "name": "Debanjan Mondal"
+      },
+      {
+        "authorId": "2046876495",
+        "name": "Akshay Krishna Sheshadri"
+      },
+      {
+        "authorId": "50771250",
+        "name": "Wenlong Zhao"
+      },
+      {
+        "authorId": "1737850",
+        "name": "Xiang Lorraine Li"
+      },
+      {
+        "authorId": "35823986",
+        "name": "Sarah Wiegreffe"
+      },
+      {
+        "authorId": "1721168",
+        "name": "Niket Tandon"
+      }
+    ],
+    "abstract": "Editing model parameters directly in Transformers makes updating open-source transformer-based models possible without re-training (Meng et al., 2023). However, these editing methods have only been evaluated on statements about encyclopedic knowledge with a single correct answer. Commonsense knowledge with multiple correct answers, e.g., an apple can be green or red but not transparent, has not been studied but is as essential for enhancing transformers' reliability and usefulness. In this paper, we investigate whether commonsense judgments are causally associated with localized, editable parameters in Transformers, and we provide an affirmative answer. We find that directly applying the MEMIT editing algorithm results in sub-par performance and improve it for the commonsense domain by varying edit tokens and improving the layer selection strategy, i.e., $MEMIT_{CSK}$. GPT-2 Large and XL models edited using $MEMIT_{CSK}$ outperform best-fine-tuned baselines by 10.97% and 10.73% F1 scores on PEP3k and 20Q datasets. In addition, we propose a novel evaluation dataset, PROBE SET, that contains unaffected and affected neighborhoods, affected paraphrases, and affected reasoning challenges. $MEMIT_{CSK}$ performs well across the metrics while fine-tuning baselines show significant trade-offs between unaffected and affected metrics. These results suggest a compelling future direction for incorporating feedback about common sense into Transformers through direct model editing."
+  },
+  {
+    "paperId": "4803e3de462c7e84f909d8f69270c5e08bdd0c16",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2504-02976",
+      "ArXiv": "2504.02976",
+      "DOI": "10.48550/arXiv.2504.02976",
+      "CorpusId": 277595892
+    },
+    "url": "https://www.semanticscholar.org/paper/4803e3de462c7e84f909d8f69270c5e08bdd0c16",
+    "title": "Localized Definitions and Distributed Reasoning: A Proof-of-Concept Mechanistic Interpretability Study via Activation Patching",
+    "year": 2025,
+    "citationCount": 1,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2504.02976, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "46596235",
+        "name": "N. Bahador"
+      }
+    ],
+    "abstract": "This study investigates the localization of knowledge representation in fine-tuned GPT-2 models using Causal Layer Attribution via Activation Patching (CLAP), a method that identifies critical neural layers responsible for correct answer generation. The model was fine-tuned on 9,958 PubMed abstracts (epilepsy: 20,595 mentions, EEG: 11,674 mentions, seizure: 13,921 mentions) using two configurations with validation loss monitoring for early stopping. CLAP involved (1) caching clean (correct answer) and corrupted (incorrect answer) activations, (2) computing logit difference to quantify model preference, and (3) patching corrupted activations with clean ones to assess recovery. Results revealed three findings: First, patching the first feedforward layer recovered 56% of correct preference, demonstrating that associative knowledge is distributed across multiple layers. Second, patching the final output layer completely restored accuracy (100% recovery), indicating that definitional knowledge is localised. The stronger clean logit difference for definitional questions further supports this localized representation. Third, minimal recovery from convolutional layer patching (13.6%) suggests low-level features contribute marginally to high-level reasoning. Statistical analysis confirmed significant layer-specific effects (p<0.01). These findings demonstrate that factual knowledge is more localized and associative knowledge depends on distributed representations. We also showed that editing efficacy depends on task type. Our findings not only reconcile conflicting observations about localization in model editing but also emphasize on using task-adaptive techniques for reliable, interpretable updates."
+  },
+  {
+    "paperId": "9a765999784b8e7d3071b10c95fc517e6c08ed5f",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2412-02542",
+      "ArXiv": "2412.02542",
+      "DOI": "10.48550/arXiv.2412.02542",
+      "CorpusId": 274445791
+    },
+    "url": "https://www.semanticscholar.org/paper/9a765999784b8e7d3071b10c95fc517e6c08ed5f",
+    "title": "Unveiling Concept Attribution in Diffusion Models",
+    "year": 2024,
+    "citationCount": 4,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2412.02542, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2249762076",
+        "name": "Quang H. Nguyen"
+      },
+      {
+        "authorId": null,
+        "name": "Hoang Phan"
+      },
+      {
+        "authorId": "2310704958",
+        "name": "Khoa D. Doan"
+      }
+    ],
+    "abstract": "Diffusion models have shown remarkable abilities in generating realistic and high-quality images from text prompts. However, a trained model remains largely black-box; little do we know about the roles of its components in exhibiting a concept such as objects or styles. Recent works employ causal tracing to localize knowledge-storing layers in generative models without showing how other layers contribute to the target concept. In this work, we approach diffusion models'interpretability problem from a more general perspective and pose a question: \\textit{``How do model components work jointly to demonstrate knowledge?''}. To answer this question, we decompose diffusion models using component attribution, systematically unveiling the importance of each component (specifically the model parameter) in generating a concept. The proposed framework, called \\textbf{C}omponent \\textbf{A}ttribution for \\textbf{D}iffusion Model (CAD), discovers the localization of concept-inducing (positive) components, while interestingly uncovers another type of components that contribute negatively to generating a concept, which is missing in the previous knowledge localization work. Based on this holistic understanding of diffusion models, we introduce two fast, inference-time model editing algorithms, CAD-Erase and CAD-Amplify; in particular, CAD-Erase enables erasure and CAD-Amplify allows amplification of a generated concept by ablating the positive and negative components, respectively, while retaining knowledge of other concepts. Extensive experimental results validate the significance of both positive and negative components pinpointed by our framework, demonstrating the potential of providing a complete view of interpreting generative models. Our code is available \\href{https://github.com/mail-research/CAD-attribution4diffusion}{here}."
+  },
+  {
+    "paperId": "aa709394b527d96947194fb0677b8b026e3b4c40",
+    "externalIds": {
+      "ArXiv": "2602.03506",
+      "CorpusId": 285275045
+    },
+    "url": "https://www.semanticscholar.org/paper/aa709394b527d96947194fb0677b8b026e3b4c40",
+    "title": "Explaining the Explainer: Understanding the Inner Workings of Transformer-based Symbolic Regression Models",
+    "year": 2026,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2602.03506, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2408531445",
+        "name": "Arco van Breda"
+      },
+      {
+        "authorId": "2325047660",
+        "name": "Erman Acar"
+      }
+    ],
+    "abstract": "Following their success across many domains, transformers have also proven effective for symbolic regression (SR); however, the internal mechanisms underlying their generation of mathematical operators remain largely unexplored. Although mechanistic interpretability has successfully identified circuits in language and vision models, it has not yet been applied to SR. In this article, we introduce PATCHES, an evolutionary circuit discovery algorithm that identifies compact and correct circuits for SR. Using PATCHES, we isolate 28 circuits, providing the first circuit-level characterisation of an SR transformer. We validate these findings through a robust causal evaluation framework based on key notions such as faithfulness, completeness, and minimality. Our analysis shows that mean patching with performance-based evaluation most reliably isolates functionally correct circuits. In contrast, we demonstrate that direct logit attribution and probing classifiers primarily capture correlational features rather than causal ones, limiting their utility for circuit discovery. Overall, these results establish SR as a high-potential application domain for mechanistic interpretability and propose a principled methodology for circuit discovery."
+  },
+  {
+    "paperId": "60e2cc70dbed51cdfc16016ff202175aac8146f9",
+    "externalIds": {
+      "MAG": "2990278841",
+      "DOI": "10.1109/ECCE.2019.8912633",
+      "CorpusId": 208632420
+    },
+    "url": "https://www.semanticscholar.org/paper/60e2cc70dbed51cdfc16016ff202175aac8146f9",
+    "title": "Optimal Design of the Resonant Tank of the Soft-Switching Solid-State Transformer",
+    "year": 2019,
+    "citationCount": 9,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/ECCE.2019.8912633?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/ECCE.2019.8912633, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "5731653",
+        "name": "M. Mauger"
+      },
+      {
+        "authorId": "49524676",
+        "name": "P. Kandula"
+      },
+      {
+        "authorId": "2284267",
+        "name": "D. Divan"
+      }
+    ],
+    "abstract": "The Soft-Switching Solid-State Transformer (S4T) is a minimal single-stage current source topology with high frequency isolation and soft switching across the entire load range. The resonant tanks, consisting of a resonant LC circuit and an auxiliary switch, are crucial to the proper operation of the S4T by setting the zero voltage switching conditions across all the power devices. The selection of the resonant inductor and capacitor greatly affects the overall converter design in terms of voltage and current stress, achievable switching frequency and DC link utilization. This paper presents a detailed analysis of the resonant tanks operation and interaction with the transformer magnetizing and leakage inductances. The main relations are derived analytically and explained physically. Based on this mathematical framework, a Pareto optimization of the resonant circuits is proposed for a given set of transformer parameters. Finally, simulation and experimental results verifying the analysis are presented."
+  },
+  {
+    "paperId": "06e432a53b87dcca26544c3c737616ac546a769c",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2305-03452",
+      "ArXiv": "2305.03452",
+      "DOI": "10.48550/arXiv.2305.03452",
+      "CorpusId": 258547249
+    },
+    "url": "https://www.semanticscholar.org/paper/06e432a53b87dcca26544c3c737616ac546a769c",
+    "title": "A technical note on bilinear layers for interpretability",
+    "year": 2023,
+    "citationCount": 10,
+    "openAccessPdf": {
+      "url": "http://arxiv.org/pdf/2305.03452",
+      "status": "CLOSED",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2305.03452, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2106414883",
+        "name": "Lee D. Sharkey"
+      }
+    ],
+    "abstract": "The ability of neural networks to represent more features than neurons makes interpreting them challenging. This phenomenon, known as superposition, has spurred efforts to find architectures that are more interpretable than standard multilayer perceptrons (MLPs) with elementwise activation functions. In this note, I examine bilinear layers, which are a type of MLP layer that are mathematically much easier to analyze while simultaneously performing better than standard MLPs. Although they are nonlinear functions of their input, I demonstrate that bilinear layers can be expressed using only linear operations and third order tensors. We can integrate this expression for bilinear layers into a mathematical framework for transformer circuits, which was previously limited to attention-only transformers. These results suggest that bilinear layers are easier to analyze mathematically than current architectures and thus may lend themselves to deeper safety insights by allowing us to talk more formally about circuits in neural networks. Additionally, bilinear layers may offer an alternative path for mechanistic interpretability through understanding the mechanisms of feature construction instead of enumerating a (potentially exponentially) large number of features in large models."
+  },
+  {
+    "paperId": "c0edde16942324fffa12a76d58453b2b2d6ae186",
+    "externalIds": {
+      "CorpusId": 237257993
+    },
+    "url": "https://www.semanticscholar.org/paper/c0edde16942324fffa12a76d58453b2b2d6ae186",
+    "title": "Transformers Failures Impact in Wind Turbines",
+    "year": 2020,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null
+    },
+    "authors": [
+      {
+        "authorId": "2124452240",
+        "name": "Ada In\u00eas Gon\u00e7alves de Brito"
+      }
+    ],
+    "abstract": null
+  },
+  {
+    "paperId": "c21a4d70d83e0f6eb2a9e1c41d034842dd561e47",
+    "externalIds": {
+      "MAG": "2952331680",
+      "ACL": "N19-1421",
+      "DBLP": "journals/corr/abs-1811-00937",
+      "ArXiv": "1811.00937",
+      "DOI": "10.18653/v1/N19-1421",
+      "CorpusId": 53296520
+    },
+    "url": "https://www.semanticscholar.org/paper/c21a4d70d83e0f6eb2a9e1c41d034842dd561e47",
+    "title": "CommonsenseQA: A Question Answering Challenge Targeting Commonsense Knowledge",
+    "year": 2019,
+    "citationCount": 2244,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/1811.00937, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "12371246",
+        "name": "Alon Talmor"
+      },
+      {
+        "authorId": "47426264",
+        "name": "Jonathan Herzig"
+      },
+      {
+        "authorId": "35219984",
+        "name": "Nicholas Lourie"
+      },
+      {
+        "authorId": "1750652",
+        "name": "Jonathan Berant"
+      }
+    ],
+    "abstract": "When answering a question, people often draw upon their rich world knowledge in addition to the particular context. Recent work has focused primarily on answering questions given some relevant document or context, and required very little general background. To investigate question answering with prior knowledge, we present CommonsenseQA: a challenging new dataset for commonsense question answering. To capture common sense beyond associations, we extract from ConceptNet (Speer et al., 2017) multiple target concepts that have the same semantic relation to a single source concept. Crowd-workers are asked to author multiple-choice questions that mention the source concept and discriminate in turn between each of the target concepts. This encourages workers to create questions with complex semantics that often require prior knowledge. We create 12,247 questions through this procedure and demonstrate the difficulty of our task with a large number of strong baselines. Our best baseline is based on BERT-large (Devlin et al., 2018) and obtains 56% accuracy, well below human performance, which is 89%."
+  },
+  {
+    "paperId": "a1d46a46cf550b604422d4cb87cfef4d81ad2fd5",
+    "externalIds": {
+      "DOI": "10.1109/ICISE-IE64355.2024.11025434",
+      "CorpusId": 279325953
+    },
+    "url": "https://www.semanticscholar.org/paper/a1d46a46cf550b604422d4cb87cfef4d81ad2fd5",
+    "title": "Enhancing Multiple-Choice Question Answering with External Knowledge and Lightweight Model Optimization",
+    "year": 2024,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/ICISE-IE64355.2024.11025434?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/ICISE-IE64355.2024.11025434, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2367001498",
+        "name": "Yaqi Wei"
+      },
+      {
+        "authorId": "2367322279",
+        "name": "Le Li"
+      }
+    ],
+    "abstract": "In recent years, many studies have attempted to integrate external knowledge with Large Language Models (LLMs) to improve their performance on multiple-choice question answering tasks. However, effectively incorporating external knowledge and extracting useful information from it remains a challenge. To address this issue, this paper proposes a novel framework that can effectively extract extensive external knowledge from both pre-trained LLMs and pertinent training datasets. Furthermore, it involves a distilled lightweight model capable of effectively refining and synthesizing knowledge obtained from various sources with minimal computational resources. Experiments on the CommonsenseQA and OpenbookQA datasets demonstrate that this framework can substantially enhance performance on the question answering task in comparison to baseline models."
+  },
+  {
+    "paperId": "0ff7f557203d1489110b9d2f89a76245def7b530",
+    "externalIds": {
+      "MAG": "2968908603",
+      "ArXiv": "1908.06725",
+      "DBLP": "journals/corr/abs-1908-06725",
+      "CorpusId": 201070756
+    },
+    "url": "https://www.semanticscholar.org/paper/0ff7f557203d1489110b9d2f89a76245def7b530",
+    "title": "Align, Mask and Select: A Simple Method for Incorporating Commonsense Knowledge into Language Representation Models",
+    "year": 2019,
+    "citationCount": 69,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/1908.06725, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "2114132405",
+        "name": "Zhiquan Ye"
+      },
+      {
+        "authorId": "47261124",
+        "name": "Qian Chen"
+      },
+      {
+        "authorId": "2117827836",
+        "name": "Wen Wang"
+      },
+      {
+        "authorId": "1749989",
+        "name": "Zhenhua Ling"
+      }
+    ],
+    "abstract": "The state-of-the-art pre-trained language representation models, such as Bidirectional Encoder Representations from Transformers (BERT), rarely incorporate commonsense knowledge or other knowledge explicitly. We propose a pre-training approach for incorporating commonsense knowledge into language representation models. We construct a commonsense-related multi-choice question answering dataset for pre-training a neural language representation model. The dataset is created automatically by our proposed \"align, mask, and select\" (AMS) method. We also investigate different pre-training tasks. Experimental results demonstrate that pre-training models using the proposed approach followed by fine-tuning achieve significant improvements over previous state-of-the-art models on two commonsense-related benchmarks, including CommonsenseQA and Winograd Schema Challenge. We also observe that fine-tuned models after the proposed pre-training approach maintain comparable performance on other NLP tasks, such as sentence classification and natural language inference tasks, compared to the original BERT models. These results verify that the proposed approach, while significantly improving commonsense-related NLP tasks, does not degrade the general language representation capabilities."
+  },
+  {
+    "paperId": "88bb0a28bb58d847183ec505dda89b63771bb495",
+    "externalIds": {
+      "ArXiv": "1803.05457",
+      "DBLP": "journals/corr/abs-1803-05457",
+      "MAG": "2794325560",
+      "CorpusId": 3922816
+    },
+    "url": "https://www.semanticscholar.org/paper/88bb0a28bb58d847183ec505dda89b63771bb495",
+    "title": "Think you have Solved Question Answering? Try ARC, the AI2 Reasoning Challenge",
+    "year": 2018,
+    "citationCount": 4046,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/1803.05457, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "48323507",
+        "name": "Peter Clark"
+      },
+      {
+        "authorId": "3390191",
+        "name": "Isaac Cowhey"
+      },
+      {
+        "authorId": "1741101",
+        "name": "Oren Etzioni"
+      },
+      {
+        "authorId": "2236429",
+        "name": "Tushar Khot"
+      },
+      {
+        "authorId": "48229640",
+        "name": "Ashish Sabharwal"
+      },
+      {
+        "authorId": "3393851",
+        "name": "Carissa Schoenick"
+      },
+      {
+        "authorId": "3385516",
+        "name": "Oyvind Tafjord"
+      }
+    ],
+    "abstract": "We present a new question set, text corpus, and baselines assembled to encourage AI research in advanced question answering. Together, these constitute the AI2 Reasoning Challenge (ARC), which requires far more powerful knowledge and reasoning than previous challenges such as SQuAD or SNLI. The ARC question set is partitioned into a Challenge Set and an Easy Set, where the Challenge Set contains only questions answered incorrectly by both a retrieval-based algorithm and a word co-occurence algorithm. The dataset contains only natural, grade-school science questions (authored for human tests), and is the largest public-domain set of this kind (7,787 questions). We test several baselines on the Challenge Set, including leading neural models from the SQuAD and SNLI tasks, and find that none are able to significantly outperform a random baseline, reflecting the difficult nature of this task. We are also releasing the ARC Corpus, a corpus of 14M science sentences relevant to the task, and implementations of the three neural baseline models tested. Can your model perform better? We pose ARC as a challenge to the community."
+  },
+  {
+    "paperId": "91e2b69cab356b5d6ccf5bd759065fa954263725",
+    "externalIds": {
+      "DBLP": "conf/ecir/NentidisKKKRLSTTGBSNFMM25",
+      "DOI": "10.1007/978-3-031-88720-8_61",
+      "CorpusId": 277953389
+    },
+    "url": "https://www.semanticscholar.org/paper/91e2b69cab356b5d6ccf5bd759065fa954263725",
+    "title": "BioASQ at CLEF2025: The Thirteenth Edition of the Large-Scale Biomedical Semantic Indexing and Question Answering Challenge",
+    "year": 2025,
+    "citationCount": 10,
+    "openAccessPdf": {
+      "url": "",
+      "status": "CLOSED",
+      "license": null,
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1007/978-3-031-88720-8_61?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1007/978-3-031-88720-8_61, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "authors": [
+      {
+        "authorId": "23133070",
+        "name": "A. Nentidis"
+      },
+      {
+        "authorId": "2566909",
+        "name": "Georgios Katsimpras"
+      },
+      {
+        "authorId": "1927081",
+        "name": "Anastasia Krithara"
+      },
+      {
+        "authorId": "2261405497",
+        "name": "Martin Krallinger"
+      },
+      {
+        "authorId": "2315886330",
+        "name": "Miguel Rodr\u00edguez-Ortega"
+      },
+      {
+        "authorId": "2301580883",
+        "name": "Natalia V. Loukachevitch"
+      },
+      {
+        "authorId": "1620502935",
+        "name": "Andrey Sakhovskiy"
+      },
+      {
+        "authorId": "2141764359",
+        "name": "Elena Tutubalina"
+      },
+      {
+        "authorId": "2502501",
+        "name": "Grigorios Tsoumakas"
+      },
+      {
+        "authorId": "153054984",
+        "name": "G. Giannakoulas"
+      },
+      {
+        "authorId": "2142940553",
+        "name": "A. Bekiaridou"
+      },
+      {
+        "authorId": "152907062",
+        "name": "A. Samaras"
+      },
+      {
+        "authorId": "2051747173",
+        "name": "G. Nunzio"
+      },
+      {
+        "authorId": "2257172300",
+        "name": "Nicola Ferro"
+      },
+      {
+        "authorId": "39960971",
+        "name": "Stefano Marchesin"
+      },
+      {
+        "authorId": "2239486285",
+        "name": "Laura Menotti"
+      },
+      {
+        "authorId": "1508853659",
+        "name": "Gianmaria Silvello"
+      },
+      {
+        "authorId": "2247480883",
+        "name": "Georgios Paliouras"
+      }
+    ],
+    "abstract": null
+  }
+]

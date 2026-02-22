@@ -1,0 +1,140 @@
+[
+  {
+    "arxiv_id": "2211.00593",
+    "title": "Interpretability in the Wild: A Circuit for Indirect Object Identification in GPT-2 Small",
+    "category": "mech_interp"
+  },
+  {
+    "arxiv_id": "2202.05262",
+    "title": "Locating and Editing Factual Associations in GPT (ROME)",
+    "category": "mech_interp"
+  },
+  {
+    "arxiv_id": "2309.10312",
+    "title": "Towards Monosemanticity: Decomposing Language Models with Dictionary Learning",
+    "category": "mech_interp"
+  },
+  {
+    "arxiv_id": "2310.17230",
+    "title": "Codebook Features: Sparse and Discrete Interpretability for Neural Networks",
+    "category": "mech_interp"
+  },
+  {
+    "arxiv_id": "2310.01405",
+    "title": "Representation Engineering: A Top-Down Approach to AI Transparency",
+    "category": "mech_interp"
+  },
+  {
+    "arxiv_id": "2104.08696",
+    "title": "Knowledge Neurons in Pretrained Transformers",
+    "category": "mech_interp"
+  },
+  {
+    "arxiv_id": "2403.19647",
+    "title": "Sparse Feature Circuits: Discovering and Editing Interpretable Causal Graphs",
+    "category": "mech_interp"
+  },
+  {
+    "arxiv_id": "2310.06824",
+    "title": "The Geometry of Truth: Emergent Linear Structure in LLM Representations",
+    "category": "mech_interp"
+  },
+  {
+    "arxiv_id": "2406.11717",
+    "title": "Refusal in Language Models Is Mediated by a Single Direction",
+    "category": "mech_interp"
+  },
+  {
+    "arxiv_id": "2305.01610",
+    "title": "Finding Neurons in a Haystack: Case Studies with Sparse Probing",
+    "category": "mech_interp"
+  },
+  {
+    "arxiv_id": "2304.14767",
+    "title": "Dissecting Recall of Factual Associations in Auto-Regressive Language Models",
+    "category": "mech_interp"
+  },
+  {
+    "arxiv_id": "2304.15004",
+    "title": "Towards Automated Circuit Discovery for Mechanistic Interpretability (ACDC)",
+    "category": "mech_interp"
+  },
+  {
+    "arxiv_id": "1911.11641",
+    "title": "PIQA: Reasoning about Physical Commonsense in Natural Language",
+    "category": "commonsense"
+  },
+  {
+    "arxiv_id": "1811.00937",
+    "title": "CommonsenseQA: A Question Answering Challenge Targeting Commonsense Knowledge",
+    "category": "commonsense"
+  },
+  {
+    "arxiv_id": "1905.07830",
+    "title": "HellaSwag: Can a Machine Really Finish Your Sentence?",
+    "category": "commonsense"
+  },
+  {
+    "arxiv_id": "1907.10641",
+    "title": "WinoGrande: An Adversarial Winograd Schema Challenge at Scale",
+    "category": "commonsense"
+  },
+  {
+    "arxiv_id": "1909.03368",
+    "title": "Designing and Interpreting Probes with Control Tasks",
+    "category": "probing"
+  },
+  {
+    "arxiv_id": "1909.01066",
+    "title": "Language Models as Knowledge Bases? (LAMA)",
+    "category": "probing"
+  },
+  {
+    "arxiv_id": "2106.09346",
+    "title": "Probing Across Time: What Does RoBERTa Know and When?",
+    "category": "probing"
+  },
+  {
+    "arxiv_id": "2305.18354",
+    "title": "Faith and Fate: Limits of Transformers on Compositionality",
+    "category": "reasoning"
+  },
+  {
+    "arxiv_id": "2305.01610",
+    "title": "Finding Neurons in a Haystack",
+    "category": "reasoning"
+  },
+  {
+    "arxiv_id": "2210.13382",
+    "title": "Measuring Causal Effects of Data Statistics on Language Model's Factual Predictions",
+    "category": "reasoning"
+  },
+  {
+    "arxiv_id": "2408.05147",
+    "title": "Scaling and Evaluating Sparse Autoencoders",
+    "category": "sae"
+  },
+  {
+    "arxiv_id": "2406.04093",
+    "title": "Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet",
+    "category": "sae"
+  },
+  {
+    "arxiv_id": "2502.XXXXX",
+    "title": "I Have Covered All the Bases Here: Interpreting Reasoning Features via SAEs",
+    "category": "direct",
+    "url": "https://www.semanticscholar.org/paper/f6f8d1c74219145ccdc0729c6c97a8b6d9d7712d"
+  },
+  {
+    "arxiv_id": "2502.XXXXX2",
+    "title": "How does Chain of Thought Think? Mechanistic Interpretability of CoT Reasoning with SAE",
+    "category": "direct",
+    "url": "https://www.semanticscholar.org/paper/019cfc087c4294221cf2ba3d16f2318a419741d6"
+  },
+  {
+    "arxiv_id": "2502.XXXXX3",
+    "title": "Do VLMs Have Bad Eyes? Diagnosing Compositional Failures via Mechanistic Interpretability",
+    "category": "direct",
+    "url": "https://www.semanticscholar.org/paper/5edc67b101db9da262bca5b2183d7127e84ba0e2"
+  }
+]

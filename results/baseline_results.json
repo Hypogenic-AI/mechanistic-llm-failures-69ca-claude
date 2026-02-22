@@ -1,0 +1,5008 @@
+{
+  "accuracy": 0.64,
+  "n_examples": 500,
+  "n_correct": 320,
+  "n_incorrect": 180,
+  "results": [
+    {
+      "index": 0,
+      "goal": "How do I ready a guinea pig cage for it's new occupants?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.486607789993286,
+      "logprob_sol2": -3.6105687618255615,
+      "logit_diff": 0.12396097183227539
+    },
+    {
+      "index": 1,
+      "goal": "dresser",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -6.51046895980835,
+      "logprob_sol2": -7.53008508682251,
+      "logit_diff": 1.0196161270141602
+    },
+    {
+      "index": 2,
+      "goal": "To fight Ivan Drago in Rocky for sega master system.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -5.11074161529541,
+      "logprob_sol2": -6.094158172607422,
+      "logit_diff": 0.9834165573120117
+    },
+    {
+      "index": 3,
+      "goal": "Make outdoor pillow.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.631901741027832,
+      "logprob_sol2": -5.52815055847168,
+      "logit_diff": 0.10375118255615234
+    },
+    {
+      "index": 4,
+      "goal": "ice box",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -5.354419231414795,
+      "logprob_sol2": -5.639566898345947,
+      "logit_diff": 0.28514766693115234
+    },
+    {
+      "index": 5,
+      "goal": "Remove soap scum from shower door.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.013568878173828,
+      "logprob_sol2": -4.9339752197265625,
+      "logit_diff": 0.07959365844726562
+    },
+    {
+      "index": 6,
+      "goal": "Recycle a spray bottle for a new cleaner.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.557748794555664,
+      "logprob_sol2": -3.388751268386841,
+      "logit_diff": 0.16899752616882324
+    },
+    {
+      "index": 7,
+      "goal": "How do you attach toilet paper to a glass jar?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.0666587352752686,
+      "logprob_sol2": -3.46833872795105,
+      "logit_diff": 0.40167999267578125
+    },
+    {
+      "index": 8,
+      "goal": "How to make tissue paper window decorations?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.6417689323425293,
+      "logprob_sol2": -3.7612087726593018,
+      "logit_diff": 0.11943984031677246
+    },
+    {
+      "index": 9,
+      "goal": "Neatly wrap up an extension cord.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.2838945388793945,
+      "logprob_sol2": -4.381601333618164,
+      "logit_diff": 0.09770679473876953
+    },
+    {
+      "index": 10,
+      "goal": "Extend life of flowers in vase.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.243422031402588,
+      "logprob_sol2": -4.647052764892578,
+      "logit_diff": 0.40363073348999023
+    },
+    {
+      "index": 11,
+      "goal": "how do you put eyelashes on?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.51349401473999,
+      "logprob_sol2": -3.38136887550354,
+      "logit_diff": 1.1321251392364502
+    },
+    {
+      "index": 12,
+      "goal": "Find spices easily in the kitchen.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.1499457359313965,
+      "logprob_sol2": -4.172016620635986,
+      "logit_diff": 0.022070884704589844
+    },
+    {
+      "index": 13,
+      "goal": "peeler",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -5.748527526855469,
+      "logprob_sol2": -5.495540142059326,
+      "logit_diff": 0.2529873847961426
+    },
+    {
+      "index": 14,
+      "goal": "How to clean blinds without tearing them up",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.9267046451568604,
+      "logprob_sol2": -4.257839679718018,
+      "logit_diff": 0.3311350345611572
+    },
+    {
+      "index": 15,
+      "goal": "What material is a steel rocking chair made out of?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.268666744232178,
+      "logprob_sol2": -4.324991703033447,
+      "logit_diff": 0.05632495880126953
+    },
+    {
+      "index": 16,
+      "goal": "To get a video game console for a cheap price,",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.277493476867676,
+      "logprob_sol2": -4.311999320983887,
+      "logit_diff": 0.03450584411621094
+    },
+    {
+      "index": 17,
+      "goal": "How do you properly prepare a steak.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.5171241760253906,
+      "logprob_sol2": -3.428274631500244,
+      "logit_diff": 0.08884954452514648
+    },
+    {
+      "index": 18,
+      "goal": "To cream butter and sugar together, you can",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.345006942749023,
+      "logprob_sol2": -4.1468915939331055,
+      "logit_diff": 0.19811534881591797
+    },
+    {
+      "index": 19,
+      "goal": "How to best cut the meat to place on a grill?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.430887222290039,
+      "logprob_sol2": -3.7701923847198486,
+      "logit_diff": 0.33930516242980957
+    },
+    {
+      "index": 20,
+      "goal": "What alcohol do you pour for a mojito?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.0886383056640625,
+      "logprob_sol2": -4.2184648513793945,
+      "logit_diff": 0.12982654571533203
+    },
+    {
+      "index": 21,
+      "goal": "How to start an automatic transmission car.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.177041053771973,
+      "logprob_sol2": -4.118847846984863,
+      "logit_diff": 0.058193206787109375
+    },
+    {
+      "index": 22,
+      "goal": "How to make sure all the clocks in the house are set accurately?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.90527081489563,
+      "logprob_sol2": -3.7004542350769043,
+      "logit_diff": 0.20481657981872559
+    },
+    {
+      "index": 23,
+      "goal": "How do you make plain toast?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.250415325164795,
+      "logprob_sol2": -3.446897506713867,
+      "logit_diff": 0.19648218154907227
+    },
+    {
+      "index": 24,
+      "goal": "Make a bulletin board.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.7441606521606445,
+      "logprob_sol2": -4.548431873321533,
+      "logit_diff": 0.19572877883911133
+    },
+    {
+      "index": 25,
+      "goal": "How do you make raw nuts have more flavor.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.8898136615753174,
+      "logprob_sol2": -3.7823429107666016,
+      "logit_diff": 0.10747075080871582
+    },
+    {
+      "index": 26,
+      "goal": "To prepare carrots before cooking with them, you can",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.911137104034424,
+      "logprob_sol2": -4.821007251739502,
+      "logit_diff": 0.09012985229492188
+    },
+    {
+      "index": 27,
+      "goal": "plastic bag",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -7.211556911468506,
+      "logprob_sol2": -7.45577335357666,
+      "logit_diff": 0.2442164421081543
+    },
+    {
+      "index": 28,
+      "goal": "To discourage house flies from living in your home,",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -5.049157619476318,
+      "logprob_sol2": -4.778368949890137,
+      "logit_diff": 0.27078866958618164
+    },
+    {
+      "index": 29,
+      "goal": "How to make Caramel Chocolate chip Girl Scout Cookie Vanilla Ice cream at home.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.602084159851074,
+      "logprob_sol2": -3.604116439819336,
+      "logit_diff": 0.0020322799682617188
+    },
+    {
+      "index": 30,
+      "goal": "To combine cake ingredients.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.5764734745025635,
+      "logprob_sol2": -3.706745147705078,
+      "logit_diff": 0.13027167320251465
+    },
+    {
+      "index": 31,
+      "goal": "To prevent gunk buildup in cup holders of a car,",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.831779479980469,
+      "logprob_sol2": -4.460723400115967,
+      "logit_diff": 0.37105607986450195
+    },
+    {
+      "index": 32,
+      "goal": "To quarter biscuits, you can",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.669249057769775,
+      "logprob_sol2": -4.664647102355957,
+      "logit_diff": 0.004601955413818359
+    },
+    {
+      "index": 33,
+      "goal": "To make a bedroom temperature colder without a fan or air conditioner,",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.8083672523498535,
+      "logprob_sol2": -4.141033172607422,
+      "logit_diff": 0.6673340797424316
+    },
+    {
+      "index": 34,
+      "goal": "how to get fluffy cookies",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.7839746475219727,
+      "logprob_sol2": -4.4831862449646,
+      "logit_diff": 0.699211597442627
+    },
+    {
+      "index": 35,
+      "goal": "How to brine a turkey before cooking?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.765563488006592,
+      "logprob_sol2": -3.731778621673584,
+      "logit_diff": 0.03378486633300781
+    },
+    {
+      "index": 36,
+      "goal": "To spare the plant while picking lettuce",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.9401988983154297,
+      "logprob_sol2": -4.073207378387451,
+      "logit_diff": 0.13300848007202148
+    },
+    {
+      "index": 37,
+      "goal": "To cook perfectly golden pancakes,",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.640282154083252,
+      "logprob_sol2": -5.206092834472656,
+      "logit_diff": 0.4341893196105957
+    },
+    {
+      "index": 38,
+      "goal": "generate poetry by using random words.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.5170326232910156,
+      "logprob_sol2": -3.3938515186309814,
+      "logit_diff": 0.12318110466003418
+    },
+    {
+      "index": 39,
+      "goal": "To fill a bucket with sand",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.1877589225769043,
+      "logprob_sol2": -3.069371223449707,
+      "logit_diff": 0.11838769912719727
+    },
+    {
+      "index": 40,
+      "goal": "To set the J bolt into the concrete mix in the mold.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.128464221954346,
+      "logprob_sol2": -4.124354839324951,
+      "logit_diff": 0.004109382629394531
+    },
+    {
+      "index": 41,
+      "goal": "Eliminate odors in the laundry room.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.4113752841949463,
+      "logprob_sol2": -4.413352012634277,
+      "logit_diff": 1.001976728439331
+    },
+    {
+      "index": 42,
+      "goal": "How do I fill holes and tiny gaps in the concrete when making a concrete countertop?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.860895156860352,
+      "logprob_sol2": -4.983834743499756,
+      "logit_diff": 0.1229395866394043
+    },
+    {
+      "index": 43,
+      "goal": "a bucket",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -7.394792079925537,
+      "logprob_sol2": -7.321995258331299,
+      "logit_diff": 0.07279682159423828
+    },
+    {
+      "index": 44,
+      "goal": "When I'm deep frying a turkey, how defrosted should it be?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.545161008834839,
+      "logprob_sol2": -3.7853810787200928,
+      "logit_diff": 0.2402200698852539
+    },
+    {
+      "index": 45,
+      "goal": "How do you remove gum from being stuck in hair?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.331676959991455,
+      "logprob_sol2": -4.11950159072876,
+      "logit_diff": 0.2121753692626953
+    },
+    {
+      "index": 46,
+      "goal": "fire",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -8.196410179138184,
+      "logprob_sol2": -7.625222682952881,
+      "logit_diff": 0.5711874961853027
+    },
+    {
+      "index": 47,
+      "goal": "How long should liquid nails dry?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.064329147338867,
+      "logprob_sol2": -4.175450801849365,
+      "logit_diff": 0.11112165451049805
+    },
+    {
+      "index": 48,
+      "goal": "To get the best deal at amusement parks,",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.5226969718933105,
+      "logprob_sol2": -4.4495954513549805,
+      "logit_diff": 0.07310152053833008
+    },
+    {
+      "index": 49,
+      "goal": "One seeks to make a cord weave.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.983209609985352,
+      "logprob_sol2": -5.003543853759766,
+      "logit_diff": 0.020334243774414062
+    },
+    {
+      "index": 50,
+      "goal": "To make wires look like tree branches on a wire tree.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.500880002975464,
+      "logprob_sol2": -3.480508327484131,
+      "logit_diff": 0.020371675491333008
+    },
+    {
+      "index": 51,
+      "goal": "How do I remove wrinkles from a new leather jacket that has never been worn",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.425384044647217,
+      "logprob_sol2": -3.2873287200927734,
+      "logit_diff": 0.13805532455444336
+    },
+    {
+      "index": 52,
+      "goal": "Kill fruit flies easily.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.94073486328125,
+      "logprob_sol2": -4.7754387855529785,
+      "logit_diff": 0.16529607772827148
+    },
+    {
+      "index": 53,
+      "goal": "To prevent splinters from cut wood,",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.433111667633057,
+      "logprob_sol2": -4.740891456604004,
+      "logit_diff": 0.30777978897094727
+    },
+    {
+      "index": 54,
+      "goal": "Trim apple trees.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.869831085205078,
+      "logprob_sol2": -4.805048942565918,
+      "logit_diff": 0.9352178573608398
+    },
+    {
+      "index": 55,
+      "goal": "How to easily form a perfectly round snowball?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.627755165100098,
+      "logprob_sol2": -4.714901924133301,
+      "logit_diff": 0.08714675903320312
+    },
+    {
+      "index": 56,
+      "goal": "How do I get my coffee to taste less dark?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.4116172790527344,
+      "logprob_sol2": -3.5661325454711914,
+      "logit_diff": 0.15451526641845703
+    },
+    {
+      "index": 57,
+      "goal": "how do you use headphones?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.456060886383057,
+      "logprob_sol2": -3.9435698986053467,
+      "logit_diff": 0.51249098777771
+    },
+    {
+      "index": 58,
+      "goal": "After staining wood, you should",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.582335948944092,
+      "logprob_sol2": -4.723073959350586,
+      "logit_diff": 0.14073801040649414
+    },
+    {
+      "index": 59,
+      "goal": "How to order room service",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.112104415893555,
+      "logprob_sol2": -4.2510786056518555,
+      "logit_diff": 0.13897418975830078
+    },
+    {
+      "index": 60,
+      "goal": "How to sneak past guards in Metal Gear NES?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.786558628082275,
+      "logprob_sol2": -4.587386608123779,
+      "logit_diff": 0.1991720199584961
+    },
+    {
+      "index": 61,
+      "goal": "What are the benefits of anti-allergen vacuum cleaners?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.013537883758545,
+      "logprob_sol2": -3.0263447761535645,
+      "logit_diff": 0.012806892395019531
+    },
+    {
+      "index": 62,
+      "goal": "How do you make an oil and vinegar dressing?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.1678192615509033,
+      "logprob_sol2": -3.2203381061553955,
+      "logit_diff": 0.05251884460449219
+    },
+    {
+      "index": 63,
+      "goal": "Avoid germs from hotel bed.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.951005458831787,
+      "logprob_sol2": -4.794827938079834,
+      "logit_diff": 0.15617752075195312
+    },
+    {
+      "index": 64,
+      "goal": "To allow the oil for the turkey fryer to reach the correct cooking temp",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.9367518424987793,
+      "logprob_sol2": -3.7834835052490234,
+      "logit_diff": 0.15326833724975586
+    },
+    {
+      "index": 65,
+      "goal": "how to clean a container that held melted wax",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.817476987838745,
+      "logprob_sol2": -4.015543460845947,
+      "logit_diff": 0.19806647300720215
+    },
+    {
+      "index": 66,
+      "goal": "How to light a candle with a deep seated wick?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.009858131408691,
+      "logprob_sol2": -3.63222074508667,
+      "logit_diff": 0.3776373863220215
+    },
+    {
+      "index": 67,
+      "goal": "To shape duct tape into a perfect circle.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.677538871765137,
+      "logprob_sol2": -4.548547744750977,
+      "logit_diff": 0.12899112701416016
+    },
+    {
+      "index": 68,
+      "goal": "What can you do when someone presses all the buttons on the elevator then gets off and you are in a hurry?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.899460792541504,
+      "logprob_sol2": -3.794722318649292,
+      "logit_diff": 0.10473847389221191
+    },
+    {
+      "index": 69,
+      "goal": "What materials are needed to hand sew an article of clothing?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.549098491668701,
+      "logprob_sol2": -4.634426593780518,
+      "logit_diff": 0.0853281021118164
+    },
+    {
+      "index": 70,
+      "goal": "To make a hard shelled taco,",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.783746242523193,
+      "logprob_sol2": -4.737529277801514,
+      "logit_diff": 0.04621696472167969
+    },
+    {
+      "index": 71,
+      "goal": "One wants to eat Vegetarian.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.437737941741943,
+      "logprob_sol2": -5.073182582855225,
+      "logit_diff": 0.36455535888671875
+    },
+    {
+      "index": 72,
+      "goal": "How do I find something I lost on the carpet?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.8723180294036865,
+      "logprob_sol2": -3.8954925537109375,
+      "logit_diff": 0.023174524307250977
+    },
+    {
+      "index": 73,
+      "goal": "To make small candles to float in water,",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.529500961303711,
+      "logprob_sol2": -4.678893089294434,
+      "logit_diff": 0.14939212799072266
+    },
+    {
+      "index": 74,
+      "goal": "To clean your microwave without having to scrub it.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.523056983947754,
+      "logprob_sol2": -3.6065664291381836,
+      "logit_diff": 0.08350944519042969
+    },
+    {
+      "index": 75,
+      "goal": "To bend a PVC conduit,",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.0128397941589355,
+      "logprob_sol2": -3.9736459255218506,
+      "logit_diff": 0.03919386863708496
+    },
+    {
+      "index": 76,
+      "goal": "Make a camping shower head.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.774951934814453,
+      "logprob_sol2": -4.766976356506348,
+      "logit_diff": 0.007975578308105469
+    },
+    {
+      "index": 77,
+      "goal": "Make Halloween lanterns.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.771106719970703,
+      "logprob_sol2": -4.624879837036133,
+      "logit_diff": 0.1462268829345703
+    },
+    {
+      "index": 78,
+      "goal": "change a lightbulb in a ceiling fan",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.612839460372925,
+      "logprob_sol2": -3.576664447784424,
+      "logit_diff": 0.03617501258850098
+    },
+    {
+      "index": 79,
+      "goal": "Which direction to properly install an air filter.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.2561163902282715,
+      "logprob_sol2": -4.234004020690918,
+      "logit_diff": 0.022112369537353516
+    },
+    {
+      "index": 80,
+      "goal": "Protect a bare shiny piece of metal, like a hinge, from rusting.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.8693253993988037,
+      "logprob_sol2": -3.935178279876709,
+      "logit_diff": 0.06585288047790527
+    },
+    {
+      "index": 81,
+      "goal": "making a picture Frame on Your Wrist",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.196076393127441,
+      "logprob_sol2": -5.111687183380127,
+      "logit_diff": 0.08438920974731445
+    },
+    {
+      "index": 82,
+      "goal": "How do you bake a cheesecake properly?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.464346170425415,
+      "logprob_sol2": -3.1307239532470703,
+      "logit_diff": 0.3336222171783447
+    },
+    {
+      "index": 83,
+      "goal": "Easy way to hang your shoes in your closet.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.5320887565612793,
+      "logprob_sol2": -3.669443130493164,
+      "logit_diff": 0.13735437393188477
+    },
+    {
+      "index": 84,
+      "goal": "Get cheap pizza.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.326409339904785,
+      "logprob_sol2": -4.593156814575195,
+      "logit_diff": 0.26674747467041016
+    },
+    {
+      "index": 85,
+      "goal": "How do you harvest honey from a bee box?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.169874668121338,
+      "logprob_sol2": -3.055262327194214,
+      "logit_diff": 0.11461234092712402
+    },
+    {
+      "index": 86,
+      "goal": "What supplies are needed to make a  small decorative Christmas tree?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.0673444271087646,
+      "logprob_sol2": -2.9874284267425537,
+      "logit_diff": 0.07991600036621094
+    },
+    {
+      "index": 87,
+      "goal": "How to create Dorodango (Japanese mud-art).",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.0749640464782715,
+      "logprob_sol2": -3.870013475418091,
+      "logit_diff": 0.20495057106018066
+    },
+    {
+      "index": 88,
+      "goal": "How to sleep in proper posture?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.256490230560303,
+      "logprob_sol2": -4.291762828826904,
+      "logit_diff": 0.03527259826660156
+    },
+    {
+      "index": 89,
+      "goal": "To extend the shelf life of lettuce,",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.946810007095337,
+      "logprob_sol2": -4.109590530395508,
+      "logit_diff": 0.1627805233001709
+    },
+    {
+      "index": 90,
+      "goal": "To dye the white fondant to make the fondant roses",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.187422752380371,
+      "logprob_sol2": -3.484245777130127,
+      "logit_diff": 0.7031769752502441
+    },
+    {
+      "index": 91,
+      "goal": "To make seed starter pots",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -6.261399745941162,
+      "logprob_sol2": -5.248067378997803,
+      "logit_diff": 1.0133323669433594
+    },
+    {
+      "index": 92,
+      "goal": "To prepare a loaf pan for Blueberry Lemon Financiers.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.718961238861084,
+      "logprob_sol2": -3.88240122795105,
+      "logit_diff": 0.16343998908996582
+    },
+    {
+      "index": 93,
+      "goal": "How can I raise and lower a picavet with a camera attached so it can be flown with a kite?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.526873588562012,
+      "logprob_sol2": -4.399280548095703,
+      "logit_diff": 0.1275930404663086
+    },
+    {
+      "index": 94,
+      "goal": "Increase ability to learn something new.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.938324928283691,
+      "logprob_sol2": -5.151252269744873,
+      "logit_diff": 0.21292734146118164
+    },
+    {
+      "index": 95,
+      "goal": "When building a survival fishing kit, what can you use to make fishing hooks?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.853675603866577,
+      "logprob_sol2": -3.8343989849090576,
+      "logit_diff": 0.01927661895751953
+    },
+    {
+      "index": 96,
+      "goal": "How can I set my umbrella up on my deck more effectively?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.926394462585449,
+      "logprob_sol2": -3.880429267883301,
+      "logit_diff": 0.04596519470214844
+    },
+    {
+      "index": 97,
+      "goal": "To remove sharpie pen from a couch,",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.373775005340576,
+      "logprob_sol2": -5.086083889007568,
+      "logit_diff": 0.2876911163330078
+    },
+    {
+      "index": 98,
+      "goal": "To remove folds and creases from a sewing pattern",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.162627220153809,
+      "logprob_sol2": -4.121935844421387,
+      "logit_diff": 0.040691375732421875
+    },
+    {
+      "index": 99,
+      "goal": "how to get perfectly done grilled meat",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.49363374710083,
+      "logprob_sol2": -4.482157230377197,
+      "logit_diff": 0.011476516723632812
+    },
+    {
+      "index": 100,
+      "goal": "how do you floss your teeth with a toothpick?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.059632301330566,
+      "logprob_sol2": -4.283246040344238,
+      "logit_diff": 0.22361373901367188
+    },
+    {
+      "index": 101,
+      "goal": "how to winterize windows",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.842543601989746,
+      "logprob_sol2": -4.69791316986084,
+      "logit_diff": 0.14463043212890625
+    },
+    {
+      "index": 102,
+      "goal": "PET ANT",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -5.546247959136963,
+      "logprob_sol2": -6.273000240325928,
+      "logit_diff": 0.7267522811889648
+    },
+    {
+      "index": 103,
+      "goal": "How can I get free gym memberships?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.673523426055908,
+      "logprob_sol2": -4.807270526885986,
+      "logit_diff": 0.13374710083007812
+    },
+    {
+      "index": 104,
+      "goal": "how do you use cream?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.2440714836120605,
+      "logprob_sol2": -3.288475751876831,
+      "logit_diff": 0.9555957317352295
+    },
+    {
+      "index": 105,
+      "goal": "Make a picture for your fish tank.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.8140032291412354,
+      "logprob_sol2": -3.1287295818328857,
+      "logit_diff": 0.6852736473083496
+    },
+    {
+      "index": 106,
+      "goal": "To get a good look at the hidden space above a room.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.6515872478485107,
+      "logprob_sol2": -3.555675983428955,
+      "logit_diff": 0.09591126441955566
+    },
+    {
+      "index": 107,
+      "goal": "To build a giant Jenga set",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.8330962657928467,
+      "logprob_sol2": -3.7772722244262695,
+      "logit_diff": 0.05582404136657715
+    },
+    {
+      "index": 108,
+      "goal": "tissue",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -6.698376655578613,
+      "logprob_sol2": -7.449789524078369,
+      "logit_diff": 0.7514128684997559
+    },
+    {
+      "index": 109,
+      "goal": "What is the best material to be used for the solar air heating box?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.809218883514404,
+      "logprob_sol2": -4.681573390960693,
+      "logit_diff": 0.12764549255371094
+    },
+    {
+      "index": 110,
+      "goal": "how to dry flowers",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.7743051052093506,
+      "logprob_sol2": -3.78180193901062,
+      "logit_diff": 0.007496833801269531
+    },
+    {
+      "index": 111,
+      "goal": "How can I give a home made dog bed shape?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.499500274658203,
+      "logprob_sol2": -5.174381732940674,
+      "logit_diff": 0.3251185417175293
+    },
+    {
+      "index": 112,
+      "goal": "To create a replica of Back to the Future's Sports Almanac.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.867743968963623,
+      "logprob_sol2": -3.9669981002807617,
+      "logit_diff": 0.09925413131713867
+    },
+    {
+      "index": 113,
+      "goal": "how do you give your fingerprints at a police station?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.7859721183776855,
+      "logprob_sol2": -4.195343017578125,
+      "logit_diff": 0.5906291007995605
+    },
+    {
+      "index": 114,
+      "goal": "To get bricks to stay together permanently when building a structure, you can",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.488049507141113,
+      "logprob_sol2": -4.668586254119873,
+      "logit_diff": 0.18053674697875977
+    },
+    {
+      "index": 115,
+      "goal": "Add taco filling easily.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -5.546084403991699,
+      "logprob_sol2": -5.64899206161499,
+      "logit_diff": 0.10290765762329102
+    },
+    {
+      "index": 116,
+      "goal": "Learn how to use a candy thermometer.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.0065412521362305,
+      "logprob_sol2": -3.208761215209961,
+      "logit_diff": 0.20221996307373047
+    },
+    {
+      "index": 117,
+      "goal": "To smooth mayo onto raw chicken, you can",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.529484748840332,
+      "logprob_sol2": -4.660786151885986,
+      "logit_diff": 0.1313014030456543
+    },
+    {
+      "index": 118,
+      "goal": "how do you keep blood circulating in your legs?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.5725626945495605,
+      "logprob_sol2": -4.539646625518799,
+      "logit_diff": 0.03291606903076172
+    },
+    {
+      "index": 119,
+      "goal": "Make temporary hair dye for kids.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.6938066482543945,
+      "logprob_sol2": -4.781928062438965,
+      "logit_diff": 0.08812141418457031
+    },
+    {
+      "index": 120,
+      "goal": "how to keep bedding wrinkle free",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.340598106384277,
+      "logprob_sol2": -4.867259979248047,
+      "logit_diff": 0.5266618728637695
+    },
+    {
+      "index": 121,
+      "goal": "To tear apart a cheeseburger, you can",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.139402389526367,
+      "logprob_sol2": -4.3913469314575195,
+      "logit_diff": 0.25194454193115234
+    },
+    {
+      "index": 122,
+      "goal": "crossing out",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -7.6341681480407715,
+      "logprob_sol2": -7.284687519073486,
+      "logit_diff": 0.34948062896728516
+    },
+    {
+      "index": 123,
+      "goal": "How to grow a plant.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.40460205078125,
+      "logprob_sol2": -4.228444576263428,
+      "logit_diff": 0.17615747451782227
+    },
+    {
+      "index": 124,
+      "goal": "Maximize full toothpaste.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.96051025390625,
+      "logprob_sol2": -5.244245529174805,
+      "logit_diff": 0.2837352752685547
+    },
+    {
+      "index": 125,
+      "goal": "To seal the end of a plastic tube,",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.336095809936523,
+      "logprob_sol2": -4.288229465484619,
+      "logit_diff": 0.0478663444519043
+    },
+    {
+      "index": 126,
+      "goal": "How can I get more use out of my utility knife?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.5974318981170654,
+      "logprob_sol2": -3.6272315979003906,
+      "logit_diff": 0.029799699783325195
+    },
+    {
+      "index": 127,
+      "goal": "To attach magnets to a piece of wood, you can",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.436822414398193,
+      "logprob_sol2": -4.073858261108398,
+      "logit_diff": 0.3629641532897949
+    },
+    {
+      "index": 128,
+      "goal": "ask for help reading it",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -5.762382507324219,
+      "logprob_sol2": -6.253542423248291,
+      "logit_diff": 0.49115991592407227
+    },
+    {
+      "index": 129,
+      "goal": "To simmer water, you can",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.520842552185059,
+      "logprob_sol2": -4.402783393859863,
+      "logit_diff": 0.11805915832519531
+    },
+    {
+      "index": 130,
+      "goal": "how to add a deeper flavor to ground beef?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.638012409210205,
+      "logprob_sol2": -4.21314811706543,
+      "logit_diff": 0.4248642921447754
+    },
+    {
+      "index": 131,
+      "goal": "To make the base for a 3D Mickey Mouse head.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.490970611572266,
+      "logprob_sol2": -4.303843975067139,
+      "logit_diff": 0.18712663650512695
+    },
+    {
+      "index": 132,
+      "goal": "When heating milk to make cheese",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.477668762207031,
+      "logprob_sol2": -4.957882404327393,
+      "logit_diff": 0.5197863578796387
+    },
+    {
+      "index": 133,
+      "goal": "To prevent cupcakes from sticking to a pan, you can",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.413557767868042,
+      "logprob_sol2": -3.365851402282715,
+      "logit_diff": 0.04770636558532715
+    },
+    {
+      "index": 134,
+      "goal": "How do I clean car upholstery",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.667760372161865,
+      "logprob_sol2": -4.484251022338867,
+      "logit_diff": 0.18350934982299805
+    },
+    {
+      "index": 135,
+      "goal": "To get air bubbles out of cakes.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.7031466960906982,
+      "logprob_sol2": -3.7197470664978027,
+      "logit_diff": 0.016600370407104492
+    },
+    {
+      "index": 136,
+      "goal": "To prepare an empty 2 litter soda bottle to use as a plant pot.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.7686548233032227,
+      "logprob_sol2": -3.8026251792907715,
+      "logit_diff": 0.03397035598754883
+    },
+    {
+      "index": 137,
+      "goal": "How to attach a pendant to a necklace.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.3613994121551514,
+      "logprob_sol2": -3.3362314701080322,
+      "logit_diff": 0.02516794204711914
+    },
+    {
+      "index": 138,
+      "goal": "How do I make the pattern for the baby leather shoes?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.720576286315918,
+      "logprob_sol2": -3.6707351207733154,
+      "logit_diff": 0.04984116554260254
+    },
+    {
+      "index": 139,
+      "goal": "how so I make apple pie chis pudding?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -2.9550015926361084,
+      "logprob_sol2": -2.852475881576538,
+      "logit_diff": 0.10252571105957031
+    },
+    {
+      "index": 140,
+      "goal": "clothing",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -6.200461387634277,
+      "logprob_sol2": -6.138811111450195,
+      "logit_diff": 0.06165027618408203
+    },
+    {
+      "index": 141,
+      "goal": "how do you smear liquid?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.194473743438721,
+      "logprob_sol2": -5.155779838562012,
+      "logit_diff": 0.038693904876708984
+    },
+    {
+      "index": 142,
+      "goal": "How to make Lemon Swirl Lemon curd fudge at home.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.108530282974243,
+      "logprob_sol2": -3.094980478286743,
+      "logit_diff": 0.0135498046875
+    },
+    {
+      "index": 143,
+      "goal": "how do you hydrate after working out?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.694626808166504,
+      "logprob_sol2": -4.103695392608643,
+      "logit_diff": 0.5909314155578613
+    },
+    {
+      "index": 144,
+      "goal": "blankets",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -8.08424186706543,
+      "logprob_sol2": -7.858142375946045,
+      "logit_diff": 0.22609949111938477
+    },
+    {
+      "index": 145,
+      "goal": "How can a person use images from the internet to create a Candy advent calendar?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.333021640777588,
+      "logprob_sol2": -4.27242374420166,
+      "logit_diff": 0.060597896575927734
+    },
+    {
+      "index": 146,
+      "goal": "To hold a bungee cord so it stays stretched out, you can",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.9959516525268555,
+      "logprob_sol2": -4.247744083404541,
+      "logit_diff": 0.25179243087768555
+    },
+    {
+      "index": 147,
+      "goal": "How to peel an onion?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.450321674346924,
+      "logprob_sol2": -3.431396484375,
+      "logit_diff": 0.018925189971923828
+    },
+    {
+      "index": 148,
+      "goal": "How can I get the best Bell pepper?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.945636510848999,
+      "logprob_sol2": -4.0679426193237305,
+      "logit_diff": 0.12230610847473145
+    },
+    {
+      "index": 149,
+      "goal": "To make a hood for a cloak.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.1560258865356445,
+      "logprob_sol2": -4.9715423583984375,
+      "logit_diff": 0.815516471862793
+    },
+    {
+      "index": 150,
+      "goal": "To make the caffeine in coffee release slowly after consumption,",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.990802526473999,
+      "logprob_sol2": -4.55636739730835,
+      "logit_diff": 0.5655648708343506
+    },
+    {
+      "index": 151,
+      "goal": "To obtain meximum deliciousness of the nutella cookies",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.975124835968018,
+      "logprob_sol2": -4.938634395599365,
+      "logit_diff": 0.036490440368652344
+    },
+    {
+      "index": 152,
+      "goal": "To hit a volleyball",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.4747941493988037,
+      "logprob_sol2": -3.5172762870788574,
+      "logit_diff": 0.04248213768005371
+    },
+    {
+      "index": 153,
+      "goal": "Remove pop bottle cap that is stuck on",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.8208158016204834,
+      "logprob_sol2": -3.7818920612335205,
+      "logit_diff": 0.03892374038696289
+    },
+    {
+      "index": 154,
+      "goal": "How to keep cool outside.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.7678751945495605,
+      "logprob_sol2": -4.6156463623046875,
+      "logit_diff": 0.15222883224487305
+    },
+    {
+      "index": 155,
+      "goal": "How do you make gluten free brownies?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.272522211074829,
+      "logprob_sol2": -3.4174840450286865,
+      "logit_diff": 0.14496183395385742
+    },
+    {
+      "index": 156,
+      "goal": "Make a yoga mat carrier.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.627677917480469,
+      "logprob_sol2": -5.216188907623291,
+      "logit_diff": 0.5885109901428223
+    },
+    {
+      "index": 157,
+      "goal": "how do you sign into your chime account?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.753694534301758,
+      "logprob_sol2": -3.905238628387451,
+      "logit_diff": 0.15154409408569336
+    },
+    {
+      "index": 158,
+      "goal": "How do I lower the foot on a sewing machine?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.125258684158325,
+      "logprob_sol2": -3.0886104106903076,
+      "logit_diff": 0.03664827346801758
+    },
+    {
+      "index": 159,
+      "goal": "Melt mini marshmallows.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.1128907203674316,
+      "logprob_sol2": -3.0189590454101562,
+      "logit_diff": 0.09393167495727539
+    },
+    {
+      "index": 160,
+      "goal": "Who wants dirt tracked inside the tent?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -5.181595802307129,
+      "logprob_sol2": -5.3487772941589355,
+      "logit_diff": 0.16718149185180664
+    },
+    {
+      "index": 161,
+      "goal": "napkin",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -6.256765842437744,
+      "logprob_sol2": -5.896557807922363,
+      "logit_diff": 0.36020803451538086
+    },
+    {
+      "index": 162,
+      "goal": "How can I keep paint off my carpet when painting my baseboards?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.8913862705230713,
+      "logprob_sol2": -3.7739877700805664,
+      "logit_diff": 0.11739850044250488
+    },
+    {
+      "index": 163,
+      "goal": "how do you wear a sweatshirt?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.127101898193359,
+      "logprob_sol2": -4.17361307144165,
+      "logit_diff": 0.046511173248291016
+    },
+    {
+      "index": 164,
+      "goal": "toilet tissue",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -5.450209617614746,
+      "logprob_sol2": -4.954000473022461,
+      "logit_diff": 0.49620914459228516
+    },
+    {
+      "index": 165,
+      "goal": "Shave using an organic shaving cream",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.7183330059051514,
+      "logprob_sol2": -3.445796012878418,
+      "logit_diff": 0.2725369930267334
+    },
+    {
+      "index": 166,
+      "goal": "How can I soothe my tongue if I burn it?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.6726691722869873,
+      "logprob_sol2": -3.6311933994293213,
+      "logit_diff": 0.041475772857666016
+    },
+    {
+      "index": 167,
+      "goal": "How do I prepare the dough for butter cookies?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.1152689456939697,
+      "logprob_sol2": -3.0724854469299316,
+      "logit_diff": 0.042783498764038086
+    },
+    {
+      "index": 168,
+      "goal": "how to make smoky pretzel mix",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.4554498195648193,
+      "logprob_sol2": -3.101003885269165,
+      "logit_diff": 0.3544459342956543
+    },
+    {
+      "index": 169,
+      "goal": "How do I put a game in an Xbox",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.493511199951172,
+      "logprob_sol2": -4.851170063018799,
+      "logit_diff": 0.35765886306762695
+    },
+    {
+      "index": 170,
+      "goal": "how do you change your profile picture on facbook?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.120218276977539,
+      "logprob_sol2": -4.109824180603027,
+      "logit_diff": 0.010394096374511719
+    },
+    {
+      "index": 171,
+      "goal": "How do I melt beef fat?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.996955633163452,
+      "logprob_sol2": -4.21688175201416,
+      "logit_diff": 0.219926118850708
+    },
+    {
+      "index": 172,
+      "goal": "How to grow a new grapevine using cuttings.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.4710981845855713,
+      "logprob_sol2": -3.5225422382354736,
+      "logit_diff": 0.051444053649902344
+    },
+    {
+      "index": 173,
+      "goal": "how do you find out what's wrong with a car?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.065691947937012,
+      "logprob_sol2": -3.3501341342926025,
+      "logit_diff": 0.7155578136444092
+    },
+    {
+      "index": 174,
+      "goal": "Detect odd car noise.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -5.334316730499268,
+      "logprob_sol2": -5.310885906219482,
+      "logit_diff": 0.023430824279785156
+    },
+    {
+      "index": 175,
+      "goal": "How to Raise Threadfin Rainbowfish Fry",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.375676155090332,
+      "logprob_sol2": -4.346462726593018,
+      "logit_diff": 0.029213428497314453
+    },
+    {
+      "index": 176,
+      "goal": "Install cabinet pulls.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -6.455743789672852,
+      "logprob_sol2": -5.765976905822754,
+      "logit_diff": 0.6897668838500977
+    },
+    {
+      "index": 177,
+      "goal": "To sprout seeds for your garden,",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.601859092712402,
+      "logprob_sol2": -4.538833141326904,
+      "logit_diff": 0.06302595138549805
+    },
+    {
+      "index": 178,
+      "goal": "how to find the perimeter of a trapezoid",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.533243656158447,
+      "logprob_sol2": -4.606058597564697,
+      "logit_diff": 0.07281494140625
+    },
+    {
+      "index": 179,
+      "goal": "How to teach your toddler how to talk.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.6665637493133545,
+      "logprob_sol2": -4.232449531555176,
+      "logit_diff": 0.5658857822418213
+    },
+    {
+      "index": 180,
+      "goal": "How to prevent BBQ chicken skin from burning on the grill?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.1426682472229,
+      "logprob_sol2": -4.211644649505615,
+      "logit_diff": 0.06897640228271484
+    },
+    {
+      "index": 181,
+      "goal": "Prevent earbuds from tangling.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.53769588470459,
+      "logprob_sol2": -4.710507869720459,
+      "logit_diff": 0.17281198501586914
+    },
+    {
+      "index": 182,
+      "goal": "mittens",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -6.165338516235352,
+      "logprob_sol2": -6.492356777191162,
+      "logit_diff": 0.32701826095581055
+    },
+    {
+      "index": 183,
+      "goal": "how to cut sticky desserts",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -5.394085884094238,
+      "logprob_sol2": -5.473394393920898,
+      "logit_diff": 0.07930850982666016
+    },
+    {
+      "index": 184,
+      "goal": "To cook the kebab meat on a grill",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.2665677070617676,
+      "logprob_sol2": -4.104196548461914,
+      "logit_diff": 0.8376288414001465
+    },
+    {
+      "index": 185,
+      "goal": "How do you prepare fresh chicken eggs?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.4547600746154785,
+      "logprob_sol2": -3.425628423690796,
+      "logit_diff": 0.029131650924682617
+    },
+    {
+      "index": 186,
+      "goal": "aluminum foil",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -6.183067798614502,
+      "logprob_sol2": -6.510750770568848,
+      "logit_diff": 0.3276829719543457
+    },
+    {
+      "index": 187,
+      "goal": "how do you strut?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.900689601898193,
+      "logprob_sol2": -4.675423622131348,
+      "logit_diff": 0.2252659797668457
+    },
+    {
+      "index": 188,
+      "goal": "Finish the concrete patio.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -5.2201924324035645,
+      "logprob_sol2": -5.412808895111084,
+      "logit_diff": 0.19261646270751953
+    },
+    {
+      "index": 189,
+      "goal": "safety pin",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -6.980225563049316,
+      "logprob_sol2": -7.763550758361816,
+      "logit_diff": 0.7833251953125
+    },
+    {
+      "index": 190,
+      "goal": "How do I get glitter to stay on ribbon?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.187657594680786,
+      "logprob_sol2": -3.203498601913452,
+      "logit_diff": 0.015841007232666016
+    },
+    {
+      "index": 191,
+      "goal": "How can I paint stars on a black background?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.199191093444824,
+      "logprob_sol2": -4.123049736022949,
+      "logit_diff": 0.076141357421875
+    },
+    {
+      "index": 192,
+      "goal": "To keep Boots and thick shoes dry and smelling fresh.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.913730621337891,
+      "logprob_sol2": -5.560395240783691,
+      "logit_diff": 0.6466646194458008
+    },
+    {
+      "index": 193,
+      "goal": "To open up google,",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.585962772369385,
+      "logprob_sol2": -4.222179412841797,
+      "logit_diff": 0.3637833595275879
+    },
+    {
+      "index": 194,
+      "goal": "Save money on airplane flights.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.8853681087493896,
+      "logprob_sol2": -4.439414024353027,
+      "logit_diff": 0.5540459156036377
+    },
+    {
+      "index": 195,
+      "goal": "how to remove really sticky tape",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.527930498123169,
+      "logprob_sol2": -3.724684715270996,
+      "logit_diff": 0.19675421714782715
+    },
+    {
+      "index": 196,
+      "goal": "how do you distract someone?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.430450439453125,
+      "logprob_sol2": -4.598993301391602,
+      "logit_diff": 0.16854286193847656
+    },
+    {
+      "index": 197,
+      "goal": "One wishes to make a place for their plants.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.776141166687012,
+      "logprob_sol2": -4.7018141746521,
+      "logit_diff": 0.07432699203491211
+    },
+    {
+      "index": 198,
+      "goal": "how do you use an eraser?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.068708896636963,
+      "logprob_sol2": -4.02398157119751,
+      "logit_diff": 0.044727325439453125
+    },
+    {
+      "index": 199,
+      "goal": "To save cookie dough to use at a later date, you can",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.975709915161133,
+      "logprob_sol2": -3.746175765991211,
+      "logit_diff": 0.22953414916992188
+    },
+    {
+      "index": 200,
+      "goal": "What is the best way to check if a baby's milk isn't too hot?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.2656362056732178,
+      "logprob_sol2": -3.4075276851654053,
+      "logit_diff": 0.1418914794921875
+    },
+    {
+      "index": 201,
+      "goal": "How to roll chocolate truffles.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.1472232341766357,
+      "logprob_sol2": -3.2372679710388184,
+      "logit_diff": 0.09004473686218262
+    },
+    {
+      "index": 202,
+      "goal": "How to sharpen scissors easily.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.008059024810791,
+      "logprob_sol2": -4.857949256896973,
+      "logit_diff": 0.15010976791381836
+    },
+    {
+      "index": 203,
+      "goal": "how to keep colors from fading in the wash",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.991015434265137,
+      "logprob_sol2": -4.848748207092285,
+      "logit_diff": 0.14226722717285156
+    },
+    {
+      "index": 204,
+      "goal": "how to unzip a backpack?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.825936794281006,
+      "logprob_sol2": -4.807138442993164,
+      "logit_diff": 0.018798351287841797
+    },
+    {
+      "index": 205,
+      "goal": "To prevent burning overflowed cookie batter to your oven",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.829439640045166,
+      "logprob_sol2": -4.607254505157471,
+      "logit_diff": 0.2221851348876953
+    },
+    {
+      "index": 206,
+      "goal": "table top",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -6.3733625411987305,
+      "logprob_sol2": -6.310129165649414,
+      "logit_diff": 0.0632333755493164
+    },
+    {
+      "index": 207,
+      "goal": "To create the force behind a DIY table top crushing press.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.966073513031006,
+      "logprob_sol2": -4.782480716705322,
+      "logit_diff": 0.1835927963256836
+    },
+    {
+      "index": 208,
+      "goal": "How to make the eyes of your diy Halloween mask?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.436593532562256,
+      "logprob_sol2": -4.348819255828857,
+      "logit_diff": 0.08777427673339844
+    },
+    {
+      "index": 209,
+      "goal": "Harvest maple syrup.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.968839645385742,
+      "logprob_sol2": -3.3416075706481934,
+      "logit_diff": 0.6272320747375488
+    },
+    {
+      "index": 210,
+      "goal": "How to make the front of your DIY Viking Cardboard shield?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.186614513397217,
+      "logprob_sol2": -4.123011112213135,
+      "logit_diff": 0.06360340118408203
+    },
+    {
+      "index": 211,
+      "goal": "how do you return a package to sender?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.507850646972656,
+      "logprob_sol2": -3.716198205947876,
+      "logit_diff": 0.7916524410247803
+    },
+    {
+      "index": 212,
+      "goal": "To cure a hangover",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.9298758506774902,
+      "logprob_sol2": -4.0347771644592285,
+      "logit_diff": 0.10490131378173828
+    },
+    {
+      "index": 213,
+      "goal": "What plants work best for upcycled kitchen planters?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.109924793243408,
+      "logprob_sol2": -4.0795392990112305,
+      "logit_diff": 0.030385494232177734
+    },
+    {
+      "index": 214,
+      "goal": "Making mac and cheese.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.9230573177337646,
+      "logprob_sol2": -3.939443349838257,
+      "logit_diff": 0.016386032104492188
+    },
+    {
+      "index": 215,
+      "goal": "How do I build a bike wall mount?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.4242446422576904,
+      "logprob_sol2": -3.381115674972534,
+      "logit_diff": 0.04312896728515625
+    },
+    {
+      "index": 216,
+      "goal": "When doing sit-ups",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.6483309268951416,
+      "logprob_sol2": -3.6792452335357666,
+      "logit_diff": 0.030914306640625
+    },
+    {
+      "index": 217,
+      "goal": "spoons",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -7.572410583496094,
+      "logprob_sol2": -6.844457626342773,
+      "logit_diff": 0.7279529571533203
+    },
+    {
+      "index": 218,
+      "goal": "dish towel",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -6.1542439460754395,
+      "logprob_sol2": -6.2266716957092285,
+      "logit_diff": 0.07242774963378906
+    },
+    {
+      "index": 219,
+      "goal": "What do you need to make a knife rust-proof?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.105441093444824,
+      "logprob_sol2": -3.192173719406128,
+      "logit_diff": 0.08673262596130371
+    },
+    {
+      "index": 220,
+      "goal": "To make honey chipotle marinade for chicken",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.1245195865631104,
+      "logprob_sol2": -3.201906442642212,
+      "logit_diff": 0.07738685607910156
+    },
+    {
+      "index": 221,
+      "goal": "telescope",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -7.654539108276367,
+      "logprob_sol2": -7.715182304382324,
+      "logit_diff": 0.06064319610595703
+    },
+    {
+      "index": 222,
+      "goal": "To delete a folder in a windows laptop.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.704360008239746,
+      "logprob_sol2": -3.9422035217285156,
+      "logit_diff": 0.23784351348876953
+    },
+    {
+      "index": 223,
+      "goal": "How To Find a Stud in the Wall to Secure Workshop Cabinets",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.5919086933135986,
+      "logprob_sol2": -3.736743688583374,
+      "logit_diff": 0.1448349952697754
+    },
+    {
+      "index": 224,
+      "goal": "penny",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -7.979847431182861,
+      "logprob_sol2": -6.891232013702393,
+      "logit_diff": 1.0886154174804688
+    },
+    {
+      "index": 225,
+      "goal": "Remove oil based paints from painting tools and brushes.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.899395227432251,
+      "logprob_sol2": -3.8698489665985107,
+      "logit_diff": 0.029546260833740234
+    },
+    {
+      "index": 226,
+      "goal": "Turn any cup into a travel cup",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.474203109741211,
+      "logprob_sol2": -4.617046356201172,
+      "logit_diff": 0.14284324645996094
+    },
+    {
+      "index": 227,
+      "goal": "To make a folder paper easier to mount to a wall, you can",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.256856441497803,
+      "logprob_sol2": -4.176501750946045,
+      "logit_diff": 0.08035469055175781
+    },
+    {
+      "index": 228,
+      "goal": "Hold a cheap ring.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -5.16711950302124,
+      "logprob_sol2": -5.034988880157471,
+      "logit_diff": 0.13213062286376953
+    },
+    {
+      "index": 229,
+      "goal": "How can you  spread butter if it is cool or too hard to spread?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.394104480743408,
+      "logprob_sol2": -4.5456013679504395,
+      "logit_diff": 0.15149688720703125
+    },
+    {
+      "index": 230,
+      "goal": "To use a readily available item as a pen to run electricity through for DIY metal etching.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.8494768142700195,
+      "logprob_sol2": -4.712427139282227,
+      "logit_diff": 0.13704967498779297
+    },
+    {
+      "index": 231,
+      "goal": "How to cut out square on Styrofoam ice box.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.267542362213135,
+      "logprob_sol2": -4.277071952819824,
+      "logit_diff": 0.009529590606689453
+    },
+    {
+      "index": 232,
+      "goal": "Avoid frozen wiper blades.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -5.479811191558838,
+      "logprob_sol2": -5.524681568145752,
+      "logit_diff": 0.04487037658691406
+    },
+    {
+      "index": 233,
+      "goal": "To prevent a certain area of a piece of paper from being colored when applying dye, you can",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.5431108474731445,
+      "logprob_sol2": -3.6570465564727783,
+      "logit_diff": 0.11393570899963379
+    },
+    {
+      "index": 234,
+      "goal": "Create a Mask Armature",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.095008611679077,
+      "logprob_sol2": -3.0508651733398438,
+      "logit_diff": 0.0441434383392334
+    },
+    {
+      "index": 235,
+      "goal": "What type of shirt is best used when ranger rolling a shirt?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.183060169219971,
+      "logprob_sol2": -4.93459415435791,
+      "logit_diff": 0.24846601486206055
+    },
+    {
+      "index": 236,
+      "goal": "To shoot a nail gun.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.312924385070801,
+      "logprob_sol2": -4.263210296630859,
+      "logit_diff": 0.049714088439941406
+    },
+    {
+      "index": 237,
+      "goal": "How can I stop Eye strain and help prevent headaches?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.653919219970703,
+      "logprob_sol2": -5.023279190063477,
+      "logit_diff": 0.36935997009277344
+    },
+    {
+      "index": 238,
+      "goal": "How to remove a temporary tattoo.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.9908294677734375,
+      "logprob_sol2": -3.6088507175445557,
+      "logit_diff": 0.38197875022888184
+    },
+    {
+      "index": 239,
+      "goal": "How to get water out of coconut.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.557459592819214,
+      "logprob_sol2": -3.5035643577575684,
+      "logit_diff": 0.05389523506164551
+    },
+    {
+      "index": 240,
+      "goal": "how to hold a match for a fading flame",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.608303546905518,
+      "logprob_sol2": -4.362242698669434,
+      "logit_diff": 0.24606084823608398
+    },
+    {
+      "index": 241,
+      "goal": "squinting",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -6.626287460327148,
+      "logprob_sol2": -5.743966102600098,
+      "logit_diff": 0.8823213577270508
+    },
+    {
+      "index": 242,
+      "goal": "What can I use to go to London the quickest",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.350688934326172,
+      "logprob_sol2": -4.278049945831299,
+      "logit_diff": 0.07263898849487305
+    },
+    {
+      "index": 243,
+      "goal": "table",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -8.60854434967041,
+      "logprob_sol2": -7.597546577453613,
+      "logit_diff": 1.0109977722167969
+    },
+    {
+      "index": 244,
+      "goal": "How to get people to come to the carnival.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.075632095336914,
+      "logprob_sol2": -4.336255073547363,
+      "logit_diff": 0.2606229782104492
+    },
+    {
+      "index": 245,
+      "goal": "To store your briquettes",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.830108165740967,
+      "logprob_sol2": -4.858508586883545,
+      "logit_diff": 0.028400421142578125
+    },
+    {
+      "index": 246,
+      "goal": "What supplies are needed to make a bird sculpture out of broken CDs?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -2.9079935550689697,
+      "logprob_sol2": -2.8155479431152344,
+      "logit_diff": 0.09244561195373535
+    },
+    {
+      "index": 247,
+      "goal": "How to remove water stains from shower glass?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.7029993534088135,
+      "logprob_sol2": -3.7796595096588135,
+      "logit_diff": 0.07666015625
+    },
+    {
+      "index": 248,
+      "goal": "how do you use a chip on a debit card?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.210380554199219,
+      "logprob_sol2": -3.8617515563964844,
+      "logit_diff": 0.3486289978027344
+    },
+    {
+      "index": 249,
+      "goal": "To make dry shampoo",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.907186985015869,
+      "logprob_sol2": -4.24777364730835,
+      "logit_diff": 0.34058666229248047
+    },
+    {
+      "index": 250,
+      "goal": "To add light to a project on a circuit board, you can",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.333296775817871,
+      "logprob_sol2": -4.276946544647217,
+      "logit_diff": 0.0563502311706543
+    },
+    {
+      "index": 251,
+      "goal": "How do I prevent my muscles from getting sore after lifting weights or exercise?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.542219400405884,
+      "logprob_sol2": -3.2835586071014404,
+      "logit_diff": 0.25866079330444336
+    },
+    {
+      "index": 252,
+      "goal": "How make design on leather ?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.663849830627441,
+      "logprob_sol2": -5.59501838684082,
+      "logit_diff": 0.0688314437866211
+    },
+    {
+      "index": 253,
+      "goal": "How to Make Easy Apple Roses",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.738018035888672,
+      "logprob_sol2": -3.5969114303588867,
+      "logit_diff": 0.14110660552978516
+    },
+    {
+      "index": 254,
+      "goal": "How to chill dough for ricotta tart.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.700047254562378,
+      "logprob_sol2": -3.729614734649658,
+      "logit_diff": 0.029567480087280273
+    },
+    {
+      "index": 255,
+      "goal": "To make steak tender.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.633416175842285,
+      "logprob_sol2": -4.549081325531006,
+      "logit_diff": 0.9156651496887207
+    },
+    {
+      "index": 256,
+      "goal": "how do you serenade someone?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.960754871368408,
+      "logprob_sol2": -4.287507057189941,
+      "logit_diff": 0.6732478141784668
+    },
+    {
+      "index": 257,
+      "goal": "How can I make a funnel?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.041434288024902,
+      "logprob_sol2": -4.095058917999268,
+      "logit_diff": 0.053624629974365234
+    },
+    {
+      "index": 258,
+      "goal": "how do you belt someone?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.572816848754883,
+      "logprob_sol2": -4.618297576904297,
+      "logit_diff": 0.04548072814941406
+    },
+    {
+      "index": 259,
+      "goal": "how to make bulgur with figs",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.8894827365875244,
+      "logprob_sol2": -4.088925838470459,
+      "logit_diff": 0.19944310188293457
+    },
+    {
+      "index": 260,
+      "goal": "What knife is best to cut a watermelon?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.9672951698303223,
+      "logprob_sol2": -3.9394583702087402,
+      "logit_diff": 0.02783679962158203
+    },
+    {
+      "index": 261,
+      "goal": "how do you gain arm muscle?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.049577236175537,
+      "logprob_sol2": -4.951014995574951,
+      "logit_diff": 0.09856224060058594
+    },
+    {
+      "index": 262,
+      "goal": "How can I sweat less?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.187225341796875,
+      "logprob_sol2": -4.111670017242432,
+      "logit_diff": 0.07555532455444336
+    },
+    {
+      "index": 263,
+      "goal": "To remove excess grease from the cooked bacon for the zombie burger",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.871146202087402,
+      "logprob_sol2": -6.027244567871094,
+      "logit_diff": 1.1560983657836914
+    },
+    {
+      "index": 264,
+      "goal": "After baking the rollo cookies",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.1380414962768555,
+      "logprob_sol2": -3.2574334144592285,
+      "logit_diff": 1.880608081817627
+    },
+    {
+      "index": 265,
+      "goal": "What supplies are needed to make homemade butter?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -2.551729202270508,
+      "logprob_sol2": -2.5404789447784424,
+      "logit_diff": 0.01125025749206543
+    },
+    {
+      "index": 266,
+      "goal": "How can I get the lumps out of gravy?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.9283928871154785,
+      "logprob_sol2": -4.398134708404541,
+      "logit_diff": 0.4697418212890625
+    },
+    {
+      "index": 267,
+      "goal": "How do I prepare eggs for an easy omelet?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.133607864379883,
+      "logprob_sol2": -2.988483428955078,
+      "logit_diff": 0.1451244354248047
+    },
+    {
+      "index": 268,
+      "goal": "To keep jewelry organized when travelling.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.932302951812744,
+      "logprob_sol2": -3.7552621364593506,
+      "logit_diff": 0.17704081535339355
+    },
+    {
+      "index": 269,
+      "goal": "To follow a link in a task.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.937772750854492,
+      "logprob_sol2": -4.000164031982422,
+      "logit_diff": 0.06239128112792969
+    },
+    {
+      "index": 270,
+      "goal": "peeler",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -8.399797439575195,
+      "logprob_sol2": -7.896352291107178,
+      "logit_diff": 0.5034451484680176
+    },
+    {
+      "index": 271,
+      "goal": "To prevent the bottoms of your shoes from touching your clothes in a suitcase.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.9787116050720215,
+      "logprob_sol2": -3.9197089672088623,
+      "logit_diff": 0.05900263786315918
+    },
+    {
+      "index": 272,
+      "goal": "To learn French.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.962494373321533,
+      "logprob_sol2": -4.945087432861328,
+      "logit_diff": 0.9825930595397949
+    },
+    {
+      "index": 273,
+      "goal": "How to make sun catchers in christmas (or other holiday) shapes",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.684779167175293,
+      "logprob_sol2": -3.724799633026123,
+      "logit_diff": 0.04002046585083008
+    },
+    {
+      "index": 274,
+      "goal": "how do I remove a chocolate milk stain?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.193476438522339,
+      "logprob_sol2": -3.3595452308654785,
+      "logit_diff": 0.16606879234313965
+    },
+    {
+      "index": 275,
+      "goal": "How do I get a stain out of my curtains?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.4492955207824707,
+      "logprob_sol2": -3.4849674701690674,
+      "logit_diff": 0.03567194938659668
+    },
+    {
+      "index": 276,
+      "goal": "How to format a USB drive.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -2.8416085243225098,
+      "logprob_sol2": -2.7056238651275635,
+      "logit_diff": 0.1359846591949463
+    },
+    {
+      "index": 277,
+      "goal": "To make hay.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.308931350708008,
+      "logprob_sol2": -4.573054313659668,
+      "logit_diff": 0.26412296295166016
+    },
+    {
+      "index": 278,
+      "goal": "Best way to pierce ears.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.9713826179504395,
+      "logprob_sol2": -3.4518487453460693,
+      "logit_diff": 0.5195338726043701
+    },
+    {
+      "index": 279,
+      "goal": "how to get great cookies",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -5.035632133483887,
+      "logprob_sol2": -4.82780647277832,
+      "logit_diff": 0.2078256607055664
+    },
+    {
+      "index": 280,
+      "goal": "Clean dirty cup coaster.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -5.781806468963623,
+      "logprob_sol2": -5.571826457977295,
+      "logit_diff": 0.20998001098632812
+    },
+    {
+      "index": 281,
+      "goal": "How to create scary halloween lights?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.465713024139404,
+      "logprob_sol2": -4.210226535797119,
+      "logit_diff": 0.25548648834228516
+    },
+    {
+      "index": 282,
+      "goal": "how to make asparagus omelet toast",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.0336103439331055,
+      "logprob_sol2": -3.1460461616516113,
+      "logit_diff": 0.11243581771850586
+    },
+    {
+      "index": 283,
+      "goal": "How to make the caramel fudge?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.886306047439575,
+      "logprob_sol2": -3.9236645698547363,
+      "logit_diff": 0.03735852241516113
+    },
+    {
+      "index": 284,
+      "goal": "how do you use ice cubes?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.012191295623779,
+      "logprob_sol2": -4.3146820068359375,
+      "logit_diff": 0.3024907112121582
+    },
+    {
+      "index": 285,
+      "goal": "To dry stinging nettle leaves for future use.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.84085750579834,
+      "logprob_sol2": -5.368664264678955,
+      "logit_diff": 0.5278067588806152
+    },
+    {
+      "index": 286,
+      "goal": "mold",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -7.997678279876709,
+      "logprob_sol2": -7.455632209777832,
+      "logit_diff": 0.542046070098877
+    },
+    {
+      "index": 287,
+      "goal": "what is the best way to apply car wax?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.629128456115723,
+      "logprob_sol2": -4.819813251495361,
+      "logit_diff": 0.19068479537963867
+    },
+    {
+      "index": 288,
+      "goal": "Jig Saw",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -7.4263811111450195,
+      "logprob_sol2": -7.563695430755615,
+      "logit_diff": 0.1373143196105957
+    },
+    {
+      "index": 289,
+      "goal": "how do you use a zipper?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.835732936859131,
+      "logprob_sol2": -4.413140773773193,
+      "logit_diff": 0.4225921630859375
+    },
+    {
+      "index": 290,
+      "goal": "How would a person reattach a handle portion of a styrofoam foam board sword if it broke off?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.7527520656585693,
+      "logprob_sol2": -4.063370227813721,
+      "logit_diff": 0.31061816215515137
+    },
+    {
+      "index": 291,
+      "goal": "machete",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -6.3330912590026855,
+      "logprob_sol2": -5.83957052230835,
+      "logit_diff": 0.49352073669433594
+    },
+    {
+      "index": 292,
+      "goal": "What is the best way to get rid of hiccups?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.432480573654175,
+      "logprob_sol2": -3.241340398788452,
+      "logit_diff": 0.19114017486572266
+    },
+    {
+      "index": 293,
+      "goal": "How to keep my child from knocking over my purse?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.8650970458984375,
+      "logprob_sol2": -3.482837200164795,
+      "logit_diff": 0.3822598457336426
+    },
+    {
+      "index": 294,
+      "goal": "How to apply suntan lotion",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.902137279510498,
+      "logprob_sol2": -3.636329174041748,
+      "logit_diff": 0.26580810546875
+    },
+    {
+      "index": 295,
+      "goal": "To make ensure your apartment has good cellphone service,",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.3258233070373535,
+      "logprob_sol2": -4.780894756317139,
+      "logit_diff": 0.5449285507202148
+    },
+    {
+      "index": 296,
+      "goal": "fruit",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -6.8612518310546875,
+      "logprob_sol2": -6.989290714263916,
+      "logit_diff": 0.12803888320922852
+    },
+    {
+      "index": 297,
+      "goal": "bath tub",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -6.495472431182861,
+      "logprob_sol2": -6.294545650482178,
+      "logit_diff": 0.2009267807006836
+    },
+    {
+      "index": 298,
+      "goal": "To open a milk container.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.649121284484863,
+      "logprob_sol2": -4.428196907043457,
+      "logit_diff": 0.22092437744140625
+    },
+    {
+      "index": 299,
+      "goal": "Prepare clay for a kiln",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.980478763580322,
+      "logprob_sol2": -4.88224983215332,
+      "logit_diff": 0.09822893142700195
+    },
+    {
+      "index": 300,
+      "goal": "cut an onion without crying",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.35984992980957,
+      "logprob_sol2": -4.694630146026611,
+      "logit_diff": 0.334780216217041
+    },
+    {
+      "index": 301,
+      "goal": "To cut a precise chunk out of a wood plank, you can",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.673038482666016,
+      "logprob_sol2": -4.71431303024292,
+      "logit_diff": 0.0412745475769043
+    },
+    {
+      "index": 302,
+      "goal": "how do you set the reward goal on mturk?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.655467510223389,
+      "logprob_sol2": -4.320713996887207,
+      "logit_diff": 0.33475351333618164
+    },
+    {
+      "index": 303,
+      "goal": "Establish a health history for new puppy.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.481148719787598,
+      "logprob_sol2": -4.375818252563477,
+      "logit_diff": 0.1053304672241211
+    },
+    {
+      "index": 304,
+      "goal": "To mince a carrot",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.817620277404785,
+      "logprob_sol2": -4.66032075881958,
+      "logit_diff": 0.15729951858520508
+    },
+    {
+      "index": 305,
+      "goal": "How to underline text in OneNote",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.0621981620788574,
+      "logprob_sol2": -3.120424509048462,
+      "logit_diff": 0.05822634696960449
+    },
+    {
+      "index": 306,
+      "goal": "How do I make a PB&J?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.6148841381073,
+      "logprob_sol2": -3.710245370864868,
+      "logit_diff": 0.09536123275756836
+    },
+    {
+      "index": 307,
+      "goal": "How do you clean an aquarium filter?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.485807418823242,
+      "logprob_sol2": -3.4955625534057617,
+      "logit_diff": 0.009755134582519531
+    },
+    {
+      "index": 308,
+      "goal": "camera",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -7.72177267074585,
+      "logprob_sol2": -7.284619331359863,
+      "logit_diff": 0.43715333938598633
+    },
+    {
+      "index": 309,
+      "goal": "To sew the bike inner tube fabric using a sewing machine.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.5062952041625977,
+      "logprob_sol2": -3.508488178253174,
+      "logit_diff": 0.002192974090576172
+    },
+    {
+      "index": 310,
+      "goal": "How do you blend out your eye shadow?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.5806045532226562,
+      "logprob_sol2": -3.546053647994995,
+      "logit_diff": 0.03455090522766113
+    },
+    {
+      "index": 311,
+      "goal": "Mold and shape eyeglasses.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.283435821533203,
+      "logprob_sol2": -5.179537296295166,
+      "logit_diff": 0.10389852523803711
+    },
+    {
+      "index": 312,
+      "goal": "How to keep ice from melting in the freezer?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.9615561962127686,
+      "logprob_sol2": -4.00456428527832,
+      "logit_diff": 0.04300808906555176
+    },
+    {
+      "index": 313,
+      "goal": "How to prevent a poached egg from losing its shape?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.8127663135528564,
+      "logprob_sol2": -3.5157995223999023,
+      "logit_diff": 0.2969667911529541
+    },
+    {
+      "index": 314,
+      "goal": "To make Belgian waffles",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.008481979370117,
+      "logprob_sol2": -3.028341770172119,
+      "logit_diff": 0.019859790802001953
+    },
+    {
+      "index": 315,
+      "goal": "To heat set a length of ribbon, you can",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -5.05753231048584,
+      "logprob_sol2": -4.7169575691223145,
+      "logit_diff": 0.3405747413635254
+    },
+    {
+      "index": 316,
+      "goal": "How do I make a hanging lamp with Christmas lights?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.7285854816436768,
+      "logprob_sol2": -3.733595609664917,
+      "logit_diff": 0.005010128021240234
+    },
+    {
+      "index": 317,
+      "goal": "toilet tissue",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -7.136099815368652,
+      "logprob_sol2": -6.356852054595947,
+      "logit_diff": 0.7792477607727051
+    },
+    {
+      "index": 318,
+      "goal": "how to make Dry Buttermilk Pancake Mix",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.1310536861419678,
+      "logprob_sol2": -2.9373953342437744,
+      "logit_diff": 0.19365835189819336
+    },
+    {
+      "index": 319,
+      "goal": "how do you dial on a home phone?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.545100212097168,
+      "logprob_sol2": -4.57616662979126,
+      "logit_diff": 0.031066417694091797
+    },
+    {
+      "index": 320,
+      "goal": "Add more fluff to whip cream.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.997949600219727,
+      "logprob_sol2": -4.91949987411499,
+      "logit_diff": 0.07844972610473633
+    },
+    {
+      "index": 321,
+      "goal": "Make a new sponge from an old plastic mesh bag.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.7613306045532227,
+      "logprob_sol2": -3.329785108566284,
+      "logit_diff": 0.4315454959869385
+    },
+    {
+      "index": 322,
+      "goal": "Scrub tough grime off kitchen counter tops.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.898144245147705,
+      "logprob_sol2": -4.9870991706848145,
+      "logit_diff": 0.08895492553710938
+    },
+    {
+      "index": 323,
+      "goal": "To repair a cracked cranberry cookie dough log while cutting",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -5.060060977935791,
+      "logprob_sol2": -5.2622270584106445,
+      "logit_diff": 0.20216608047485352
+    },
+    {
+      "index": 324,
+      "goal": "how do you put a stamp on a t-shirt?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.04371452331543,
+      "logprob_sol2": -4.186722755432129,
+      "logit_diff": 0.14300823211669922
+    },
+    {
+      "index": 325,
+      "goal": "How to add water to soda bottle.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.2024741172790527,
+      "logprob_sol2": -3.3281214237213135,
+      "logit_diff": 0.12564730644226074
+    },
+    {
+      "index": 326,
+      "goal": "How to make hot chocolate",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.9702565670013428,
+      "logprob_sol2": -4.012013912200928,
+      "logit_diff": 0.04175734519958496
+    },
+    {
+      "index": 327,
+      "goal": "How to teach a child to be responsible?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.94537353515625,
+      "logprob_sol2": -3.9388694763183594,
+      "logit_diff": 0.006504058837890625
+    },
+    {
+      "index": 328,
+      "goal": "lipstick",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -6.465980052947998,
+      "logprob_sol2": -6.743107795715332,
+      "logit_diff": 0.277127742767334
+    },
+    {
+      "index": 329,
+      "goal": "How do you tell if a water bottle has been opened?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.6193222999572754,
+      "logprob_sol2": -3.144662380218506,
+      "logit_diff": 0.47465991973876953
+    },
+    {
+      "index": 330,
+      "goal": "How to ensure all parts of the wall are insulated.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.250812530517578,
+      "logprob_sol2": -4.186661720275879,
+      "logit_diff": 0.06415081024169922
+    },
+    {
+      "index": 331,
+      "goal": "How to tie shoes.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.66731595993042,
+      "logprob_sol2": -4.135960578918457,
+      "logit_diff": 0.5313553810119629
+    },
+    {
+      "index": 332,
+      "goal": "How to make a rabbit cage physically cozy for the rabbits?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.681804895401001,
+      "logprob_sol2": -4.241510391235352,
+      "logit_diff": 0.5597054958343506
+    },
+    {
+      "index": 333,
+      "goal": "To protect yourself while deep frying a turkey",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.396021842956543,
+      "logprob_sol2": -4.511893272399902,
+      "logit_diff": 0.11587142944335938
+    },
+    {
+      "index": 334,
+      "goal": "How to beautify a hanging basket.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -5.144481182098389,
+      "logprob_sol2": -4.708672046661377,
+      "logit_diff": 0.4358091354370117
+    },
+    {
+      "index": 335,
+      "goal": "To cook the leeks before adding rest of Skyrim tomato soup ingredients.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.563497543334961,
+      "logprob_sol2": -4.503249645233154,
+      "logit_diff": 0.06024789810180664
+    },
+    {
+      "index": 336,
+      "goal": "Make a glass vase.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.5249247550964355,
+      "logprob_sol2": -4.655923843383789,
+      "logit_diff": 0.13099908828735352
+    },
+    {
+      "index": 337,
+      "goal": "To save plants from rot root.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.0807085037231445,
+      "logprob_sol2": -4.038733005523682,
+      "logit_diff": 0.04197549819946289
+    },
+    {
+      "index": 338,
+      "goal": "How to reuse old kitchen jars?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.662230491638184,
+      "logprob_sol2": -4.691726207733154,
+      "logit_diff": 0.029495716094970703
+    },
+    {
+      "index": 339,
+      "goal": "To make cake mix used for cupcakes more dense.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.289636135101318,
+      "logprob_sol2": -4.329885482788086,
+      "logit_diff": 0.04024934768676758
+    },
+    {
+      "index": 340,
+      "goal": "plastic wrap",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -7.396434307098389,
+      "logprob_sol2": -6.842537879943848,
+      "logit_diff": 0.553896427154541
+    },
+    {
+      "index": 341,
+      "goal": "How do you make sugar cubes?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.342071056365967,
+      "logprob_sol2": -3.331148624420166,
+      "logit_diff": 0.010922431945800781
+    },
+    {
+      "index": 342,
+      "goal": "One seeks to shield themselves from the rain via easy DIY methods.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.302659511566162,
+      "logprob_sol2": -5.190430641174316,
+      "logit_diff": 0.1122288703918457
+    },
+    {
+      "index": 343,
+      "goal": "Avoid being under powered during trips.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.313657283782959,
+      "logprob_sol2": -4.942782402038574,
+      "logit_diff": 0.37087488174438477
+    },
+    {
+      "index": 344,
+      "goal": "To wash clothes in a washing machine.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.0302629470825195,
+      "logprob_sol2": -4.122192859649658,
+      "logit_diff": 0.09192991256713867
+    },
+    {
+      "index": 345,
+      "goal": "To prevent the jars from breaking when they are filled and processed with homemade dog food",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.736687183380127,
+      "logprob_sol2": -4.287871360778809,
+      "logit_diff": 0.5511841773986816
+    },
+    {
+      "index": 346,
+      "goal": "how do you save a contact in your phone?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.469334363937378,
+      "logprob_sol2": -3.967623472213745,
+      "logit_diff": 0.4982891082763672
+    },
+    {
+      "index": 347,
+      "goal": "How can I organize waste in my car?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.953817129135132,
+      "logprob_sol2": -3.8281095027923584,
+      "logit_diff": 0.12570762634277344
+    },
+    {
+      "index": 348,
+      "goal": "How to create a shape out of duct tape?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.366791248321533,
+      "logprob_sol2": -3.303760528564453,
+      "logit_diff": 0.06303071975708008
+    },
+    {
+      "index": 349,
+      "goal": "To cut the bacon for the zombie burger",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.096211910247803,
+      "logprob_sol2": -5.218575954437256,
+      "logit_diff": 1.1223640441894531
+    },
+    {
+      "index": 350,
+      "goal": "How to use an earth magnet to find a stud in the wall.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.98757004737854,
+      "logprob_sol2": -3.8517889976501465,
+      "logit_diff": 0.13578104972839355
+    },
+    {
+      "index": 351,
+      "goal": "Cut out pages from a book",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.97465181350708,
+      "logprob_sol2": -4.370552062988281,
+      "logit_diff": 0.39590024948120117
+    },
+    {
+      "index": 352,
+      "goal": "To get the clay flower pot bread flower pot out of the coals",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.970673561096191,
+      "logprob_sol2": -5.044424533843994,
+      "logit_diff": 0.07375097274780273
+    },
+    {
+      "index": 353,
+      "goal": "To prevent birds from pooping on your car.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.2357563972473145,
+      "logprob_sol2": -4.243849277496338,
+      "logit_diff": 0.008092880249023438
+    },
+    {
+      "index": 354,
+      "goal": "How to make tuna salad.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -2.9294285774230957,
+      "logprob_sol2": -2.8655552864074707,
+      "logit_diff": 0.063873291015625
+    },
+    {
+      "index": 355,
+      "goal": "compactor",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -7.743795871734619,
+      "logprob_sol2": -7.542901515960693,
+      "logit_diff": 0.20089435577392578
+    },
+    {
+      "index": 356,
+      "goal": "How can I fill dents and rough areas on the surface of a wooden table I am building?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.6143059730529785,
+      "logprob_sol2": -3.551295757293701,
+      "logit_diff": 0.06301021575927734
+    },
+    {
+      "index": 357,
+      "goal": "A nice canvas",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -5.820714473724365,
+      "logprob_sol2": -5.853540420532227,
+      "logit_diff": 0.03282594680786133
+    },
+    {
+      "index": 358,
+      "goal": "How can I neatly store my headphones?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.776744842529297,
+      "logprob_sol2": -4.873160362243652,
+      "logit_diff": 0.09641551971435547
+    },
+    {
+      "index": 359,
+      "goal": "How can you you ensure that wood planks do not split when drilling holes in them?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.153136253356934,
+      "logprob_sol2": -4.238428592681885,
+      "logit_diff": 0.08529233932495117
+    },
+    {
+      "index": 360,
+      "goal": "To cut radiant foils to be used to cover the attics.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.6427154541015625,
+      "logprob_sol2": -4.256338119506836,
+      "logit_diff": 0.38637733459472656
+    },
+    {
+      "index": 361,
+      "goal": "To make the monkeys mouth on the monkey cupcake",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.373255729675293,
+      "logprob_sol2": -4.043266773223877,
+      "logit_diff": 0.329988956451416
+    },
+    {
+      "index": 362,
+      "goal": "How do I get fish for my aquarium?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.0425684452056885,
+      "logprob_sol2": -3.2549140453338623,
+      "logit_diff": 0.21234560012817383
+    },
+    {
+      "index": 363,
+      "goal": "To keep the sun out of your face while outside on a sunny day,",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.6845734119415283,
+      "logprob_sol2": -3.472511053085327,
+      "logit_diff": 0.21206235885620117
+    },
+    {
+      "index": 364,
+      "goal": "To glue the pieces together,",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.458522796630859,
+      "logprob_sol2": -4.134532928466797,
+      "logit_diff": 0.3239898681640625
+    },
+    {
+      "index": 365,
+      "goal": "wire",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -6.378261566162109,
+      "logprob_sol2": -6.070100784301758,
+      "logit_diff": 0.30816078186035156
+    },
+    {
+      "index": 366,
+      "goal": "how do you use dumbbell bars?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.615962028503418,
+      "logprob_sol2": -5.381084442138672,
+      "logit_diff": 0.7651224136352539
+    },
+    {
+      "index": 367,
+      "goal": "When following a recipe that calls for a baking pan, how do you know whether you should use a glass or metal pan?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -2.7566401958465576,
+      "logprob_sol2": -2.7665557861328125,
+      "logit_diff": 0.009915590286254883
+    },
+    {
+      "index": 368,
+      "goal": "How to easily leave a note in invisible ink?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.481759071350098,
+      "logprob_sol2": -4.530782699584961,
+      "logit_diff": 0.04902362823486328
+    },
+    {
+      "index": 369,
+      "goal": "how do you take soap off of clean dishes?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.15237283706665,
+      "logprob_sol2": -4.5230889320373535,
+      "logit_diff": 0.3707160949707031
+    },
+    {
+      "index": 370,
+      "goal": "how do you customize a phone case?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.052631378173828,
+      "logprob_sol2": -4.691648483276367,
+      "logit_diff": 0.36098289489746094
+    },
+    {
+      "index": 371,
+      "goal": "To make a decorative pencil holder,",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.9135661125183105,
+      "logprob_sol2": -4.904327869415283,
+      "logit_diff": 0.009238243103027344
+    },
+    {
+      "index": 372,
+      "goal": "To roast an eggplant, you can",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.137486934661865,
+      "logprob_sol2": -4.355406761169434,
+      "logit_diff": 0.21791982650756836
+    },
+    {
+      "index": 373,
+      "goal": "How do I clean the deck of my lawn mower?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.4493165016174316,
+      "logprob_sol2": -3.362884521484375,
+      "logit_diff": 0.08643198013305664
+    },
+    {
+      "index": 374,
+      "goal": "How do you separate the yolk from the egg white?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.628286361694336,
+      "logprob_sol2": -3.332124710083008,
+      "logit_diff": 0.2961616516113281
+    },
+    {
+      "index": 375,
+      "goal": "How should I use a sumatriptan injector?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.455773115158081,
+      "logprob_sol2": -3.47294282913208,
+      "logit_diff": 0.017169713973999023
+    },
+    {
+      "index": 376,
+      "goal": "sofa",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -7.119546413421631,
+      "logprob_sol2": -7.632491588592529,
+      "logit_diff": 0.5129451751708984
+    },
+    {
+      "index": 377,
+      "goal": "Treat a dry nose.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -5.125997066497803,
+      "logprob_sol2": -5.0430378913879395,
+      "logit_diff": 0.08295917510986328
+    },
+    {
+      "index": 378,
+      "goal": "how do you cook a cookie?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.325521945953369,
+      "logprob_sol2": -4.019288539886475,
+      "logit_diff": 0.30623340606689453
+    },
+    {
+      "index": 379,
+      "goal": "To cut a length of PVC to size, you can",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.736015319824219,
+      "logprob_sol2": -4.793498992919922,
+      "logit_diff": 0.057483673095703125
+    },
+    {
+      "index": 380,
+      "goal": "how do you turn on an iphone?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.817791223526001,
+      "logprob_sol2": -3.9411423206329346,
+      "logit_diff": 0.1233510971069336
+    },
+    {
+      "index": 381,
+      "goal": "What supplies are needed to make flubber soap?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.0992677211761475,
+      "logprob_sol2": -3.1175882816314697,
+      "logit_diff": 0.018320560455322266
+    },
+    {
+      "index": 382,
+      "goal": "How to quickly cool down a bottled water drink?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.218483924865723,
+      "logprob_sol2": -3.95084810256958,
+      "logit_diff": 0.2676358222961426
+    },
+    {
+      "index": 383,
+      "goal": "paperweight",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -6.599789619445801,
+      "logprob_sol2": -6.979834079742432,
+      "logit_diff": 0.38004446029663086
+    },
+    {
+      "index": 384,
+      "goal": "Increase chances of lost phone return.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.719410419464111,
+      "logprob_sol2": -5.254268169403076,
+      "logit_diff": 0.46514225006103516
+    },
+    {
+      "index": 385,
+      "goal": "Stop stones from slipping while gluing together",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.4316205978393555,
+      "logprob_sol2": -4.33384895324707,
+      "logit_diff": 0.09777164459228516
+    },
+    {
+      "index": 386,
+      "goal": "To grow herbs in homemade pot.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.654265880584717,
+      "logprob_sol2": -3.5055606365203857,
+      "logit_diff": 0.14870524406433105
+    },
+    {
+      "index": 387,
+      "goal": "To keep sweat out of your eyes while exercising,",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.388441562652588,
+      "logprob_sol2": -4.633969783782959,
+      "logit_diff": 0.2455282211303711
+    },
+    {
+      "index": 388,
+      "goal": "To absorb moisture in a closet, to preserve clothing,",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.905459880828857,
+      "logprob_sol2": -5.30247163772583,
+      "logit_diff": 0.39701175689697266
+    },
+    {
+      "index": 389,
+      "goal": "To avoid dripping juices in the oven while roasting,",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.903040885925293,
+      "logprob_sol2": -4.6096978187561035,
+      "logit_diff": 0.29334306716918945
+    },
+    {
+      "index": 390,
+      "goal": "How to mail a letter.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.063533306121826,
+      "logprob_sol2": -4.169442176818848,
+      "logit_diff": 0.10590887069702148
+    },
+    {
+      "index": 391,
+      "goal": "To keep from making a mess when putting holes in drywall.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.8381524085998535,
+      "logprob_sol2": -4.788434028625488,
+      "logit_diff": 0.049718379974365234
+    },
+    {
+      "index": 392,
+      "goal": "how do you dispense of something?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.6953654289245605,
+      "logprob_sol2": -4.701037406921387,
+      "logit_diff": 0.005671977996826172
+    },
+    {
+      "index": 393,
+      "goal": "How to make the dough for your peppermint candy?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.1290390491485596,
+      "logprob_sol2": -3.0923993587493896,
+      "logit_diff": 0.03663969039916992
+    },
+    {
+      "index": 394,
+      "goal": "How should I drill the hole in the back of the frame?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.2664008140563965,
+      "logprob_sol2": -3.272427797317505,
+      "logit_diff": 0.0060269832611083984
+    },
+    {
+      "index": 395,
+      "goal": "hands",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -7.4103007316589355,
+      "logprob_sol2": -7.282447338104248,
+      "logit_diff": 0.1278533935546875
+    },
+    {
+      "index": 396,
+      "goal": "How can I make glow sticks last longer?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.3233697414398193,
+      "logprob_sol2": -3.1579346656799316,
+      "logit_diff": 0.1654350757598877
+    },
+    {
+      "index": 397,
+      "goal": "To prevent egg shells in your cookie dough,",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.369860649108887,
+      "logprob_sol2": -4.069987773895264,
+      "logit_diff": 0.29987287521362305
+    },
+    {
+      "index": 398,
+      "goal": "When working on the electrical components inside a lamp, you should",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.492774963378906,
+      "logprob_sol2": -4.462100505828857,
+      "logit_diff": 0.030674457550048828
+    },
+    {
+      "index": 399,
+      "goal": "What size fish tank should I buy for my Betta fish?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.030179262161255,
+      "logprob_sol2": -3.0466809272766113,
+      "logit_diff": 0.016501665115356445
+    },
+    {
+      "index": 400,
+      "goal": "sofa",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -6.986189365386963,
+      "logprob_sol2": -6.223526954650879,
+      "logit_diff": 0.762662410736084
+    },
+    {
+      "index": 401,
+      "goal": "How do I start getting clean in the shower?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.795180320739746,
+      "logprob_sol2": -3.8656060695648193,
+      "logit_diff": 0.07042574882507324
+    },
+    {
+      "index": 402,
+      "goal": "To easily disburse pancake mix on a pan,",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -5.171261787414551,
+      "logprob_sol2": -4.9147515296936035,
+      "logit_diff": 0.25651025772094727
+    },
+    {
+      "index": 403,
+      "goal": "Boil potatoes",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.9748036861419678,
+      "logprob_sol2": -3.45731520652771,
+      "logit_diff": 0.5174884796142578
+    },
+    {
+      "index": 404,
+      "goal": "To prevent a door from latching shut,",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.357901096343994,
+      "logprob_sol2": -4.544189929962158,
+      "logit_diff": 0.18628883361816406
+    },
+    {
+      "index": 405,
+      "goal": "How to cut out your base?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.549524307250977,
+      "logprob_sol2": -4.2060112953186035,
+      "logit_diff": 0.34351301193237305
+    },
+    {
+      "index": 406,
+      "goal": "Prevent bottles from rolling in fridge.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.948144912719727,
+      "logprob_sol2": -5.178689956665039,
+      "logit_diff": 0.2305450439453125
+    },
+    {
+      "index": 407,
+      "goal": "how do you sail a ship?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.388818264007568,
+      "logprob_sol2": -4.918976783752441,
+      "logit_diff": 0.530158519744873
+    },
+    {
+      "index": 408,
+      "goal": "gun",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -8.014142036437988,
+      "logprob_sol2": -8.845830917358398,
+      "logit_diff": 0.8316888809204102
+    },
+    {
+      "index": 409,
+      "goal": "To store old beer bottle tops to use for crafts later.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.9114861488342285,
+      "logprob_sol2": -4.754146575927734,
+      "logit_diff": 0.15733957290649414
+    },
+    {
+      "index": 410,
+      "goal": "how do you check something in the stove without opening the door?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.6336493492126465,
+      "logprob_sol2": -4.262413501739502,
+      "logit_diff": 0.37123584747314453
+    },
+    {
+      "index": 411,
+      "goal": "How to sharpen a pencil without a pencil sharpener?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.6581807136535645,
+      "logprob_sol2": -3.5504825115203857,
+      "logit_diff": 0.10769820213317871
+    },
+    {
+      "index": 412,
+      "goal": "How to clean a hairbrush.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.2387850284576416,
+      "logprob_sol2": -3.2942991256713867,
+      "logit_diff": 0.05551409721374512
+    },
+    {
+      "index": 413,
+      "goal": "how to add feet to a coaster.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.06713342666626,
+      "logprob_sol2": -4.928282737731934,
+      "logit_diff": 0.8611493110656738
+    },
+    {
+      "index": 414,
+      "goal": "how to find the surface area of a cube",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -2.5374085903167725,
+      "logprob_sol2": -2.575122356414795,
+      "logit_diff": 0.03771376609802246
+    },
+    {
+      "index": 415,
+      "goal": "What ingredient is left out of fluffy slime that is normally in regular slime?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.307926177978516,
+      "logprob_sol2": -5.2896246910095215,
+      "logit_diff": 0.01830148696899414
+    },
+    {
+      "index": 416,
+      "goal": "Easy way to maintain a shopping list for groceries.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.374584436416626,
+      "logprob_sol2": -3.4670450687408447,
+      "logit_diff": 0.09246063232421875
+    },
+    {
+      "index": 417,
+      "goal": "To create an orange pigment with paint you already have, you can",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.185285568237305,
+      "logprob_sol2": -4.209228038787842,
+      "logit_diff": 0.02394247055053711
+    },
+    {
+      "index": 418,
+      "goal": "How do I keep the contents of a cooler cool without using ice?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.257195472717285,
+      "logprob_sol2": -4.378210544586182,
+      "logit_diff": 0.12101507186889648
+    },
+    {
+      "index": 419,
+      "goal": "How to prepare fishing line.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.674098968505859,
+      "logprob_sol2": -4.378720760345459,
+      "logit_diff": 0.2953782081604004
+    },
+    {
+      "index": 420,
+      "goal": "How do you make maracas?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.8802878856658936,
+      "logprob_sol2": -3.9499826431274414,
+      "logit_diff": 0.06969475746154785
+    },
+    {
+      "index": 421,
+      "goal": "hands",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -8.014838218688965,
+      "logprob_sol2": -7.692366123199463,
+      "logit_diff": 0.32247209548950195
+    },
+    {
+      "index": 422,
+      "goal": "To make the binding for a book, you can",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -5.08449125289917,
+      "logprob_sol2": -5.437565326690674,
+      "logit_diff": 0.3530740737915039
+    },
+    {
+      "index": 423,
+      "goal": "Deep clean coffee grinder.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -5.800983905792236,
+      "logprob_sol2": -5.664544582366943,
+      "logit_diff": 0.13643932342529297
+    },
+    {
+      "index": 424,
+      "goal": "To ensure your wood screws don't go all the way through the wood.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.5692670345306396,
+      "logprob_sol2": -3.6687400341033936,
+      "logit_diff": 0.0994729995727539
+    },
+    {
+      "index": 425,
+      "goal": "To protect a dish while it's in the fridge",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.655078887939453,
+      "logprob_sol2": -4.016210079193115,
+      "logit_diff": 0.6388688087463379
+    },
+    {
+      "index": 426,
+      "goal": "a brush",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -6.832412242889404,
+      "logprob_sol2": -7.217304706573486,
+      "logit_diff": 0.38489246368408203
+    },
+    {
+      "index": 427,
+      "goal": "shirt",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -6.55598258972168,
+      "logprob_sol2": -6.595761775970459,
+      "logit_diff": 0.0397791862487793
+    },
+    {
+      "index": 428,
+      "goal": "Avoid wasting power in fridge.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.592250823974609,
+      "logprob_sol2": -4.6342620849609375,
+      "logit_diff": 0.042011260986328125
+    },
+    {
+      "index": 429,
+      "goal": "To make a wine rack.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.5512213706970215,
+      "logprob_sol2": -3.756638765335083,
+      "logit_diff": 0.20541739463806152
+    },
+    {
+      "index": 430,
+      "goal": "To attach 2 pieces of fabric together",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.6896798610687256,
+      "logprob_sol2": -3.6425764560699463,
+      "logit_diff": 0.0471034049987793
+    },
+    {
+      "index": 431,
+      "goal": "How to Make Peach Puree",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -2.7684013843536377,
+      "logprob_sol2": -2.9682464599609375,
+      "logit_diff": 0.1998450756072998
+    },
+    {
+      "index": 432,
+      "goal": "How can I get wood filler into a small crack?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.7670652866363525,
+      "logprob_sol2": -3.889467716217041,
+      "logit_diff": 0.12240242958068848
+    },
+    {
+      "index": 433,
+      "goal": "old shirt",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -6.312925815582275,
+      "logprob_sol2": -6.496160984039307,
+      "logit_diff": 0.18323516845703125
+    },
+    {
+      "index": 434,
+      "goal": "How to remove milk from car seat upholstery",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.407963752746582,
+      "logprob_sol2": -3.562666893005371,
+      "logit_diff": 0.15470314025878906
+    },
+    {
+      "index": 435,
+      "goal": "To help clear out breathing ways when you're congested,",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.143456935882568,
+      "logprob_sol2": -5.084475994110107,
+      "logit_diff": 0.05898094177246094
+    },
+    {
+      "index": 436,
+      "goal": "To separate egg whiles from the yolk using a water bottle.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.9221365451812744,
+      "logprob_sol2": -4.158208847045898,
+      "logit_diff": 0.23607230186462402
+    },
+    {
+      "index": 437,
+      "goal": "how to make basic risotto",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -2.3885788917541504,
+      "logprob_sol2": -2.262223243713379,
+      "logit_diff": 0.12635564804077148
+    },
+    {
+      "index": 438,
+      "goal": "To prepare frappucino bottles to be repurposed as spice storage bottles.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.9579529762268066,
+      "logprob_sol2": -3.807269811630249,
+      "logit_diff": 0.15068316459655762
+    },
+    {
+      "index": 439,
+      "goal": "hook",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -8.693206787109375,
+      "logprob_sol2": -8.865523338317871,
+      "logit_diff": 0.1723165512084961
+    },
+    {
+      "index": 440,
+      "goal": "How do I preserve a 63-year-old bomber jacket that my father wore in WWII?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.223897933959961,
+      "logprob_sol2": -4.191749095916748,
+      "logit_diff": 0.03214883804321289
+    },
+    {
+      "index": 441,
+      "goal": "To turn heavy cream into whipping cream without equipment.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.19953727722168,
+      "logprob_sol2": -4.364494323730469,
+      "logit_diff": 0.16495704650878906
+    },
+    {
+      "index": 442,
+      "goal": "How do you grill fish without it falling apart?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.5032966136932373,
+      "logprob_sol2": -3.4667716026306152,
+      "logit_diff": 0.03652501106262207
+    },
+    {
+      "index": 443,
+      "goal": "How do you organize dirty clothes?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.3699350357055664,
+      "logprob_sol2": -4.814319610595703,
+      "logit_diff": 1.4443845748901367
+    },
+    {
+      "index": 444,
+      "goal": "Removing small scratches in the finish of wooden furniture.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.542751312255859,
+      "logprob_sol2": -4.717430591583252,
+      "logit_diff": 0.17467927932739258
+    },
+    {
+      "index": 445,
+      "goal": "To quiet and noisy box fan.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -5.170001029968262,
+      "logprob_sol2": -5.2389349937438965,
+      "logit_diff": 0.06893396377563477
+    },
+    {
+      "index": 446,
+      "goal": "spear",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -5.389621734619141,
+      "logprob_sol2": -5.577967166900635,
+      "logit_diff": 0.18834543228149414
+    },
+    {
+      "index": 447,
+      "goal": "how to bulk up thin soup?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.856432914733887,
+      "logprob_sol2": -5.035922050476074,
+      "logit_diff": 0.1794891357421875
+    },
+    {
+      "index": 448,
+      "goal": "To mend hems quickly without sewing.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.146058559417725,
+      "logprob_sol2": -4.507893085479736,
+      "logit_diff": 0.6381654739379883
+    },
+    {
+      "index": 449,
+      "goal": "Make extra money using my house this year.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.571706533432007,
+      "logprob_sol2": -3.704507350921631,
+      "logit_diff": 0.13280081748962402
+    },
+    {
+      "index": 450,
+      "goal": "To cover the slide portion of a child's wooden slide",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.853198528289795,
+      "logprob_sol2": -4.827772617340088,
+      "logit_diff": 0.02542591094970703
+    },
+    {
+      "index": 451,
+      "goal": "Supplement a possible bad gift.",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -5.4302568435668945,
+      "logprob_sol2": -5.5115532875061035,
+      "logit_diff": 0.08129644393920898
+    },
+    {
+      "index": 452,
+      "goal": "To get a rebound in a basketball game,",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.724813938140869,
+      "logprob_sol2": -4.8053998947143555,
+      "logit_diff": 0.08058595657348633
+    },
+    {
+      "index": 453,
+      "goal": "to taser someone",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.825943470001221,
+      "logprob_sol2": -4.864498615264893,
+      "logit_diff": 0.038555145263671875
+    },
+    {
+      "index": 454,
+      "goal": "Prevent rugs from moving.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -5.103679180145264,
+      "logprob_sol2": -5.045297622680664,
+      "logit_diff": 0.05838155746459961
+    },
+    {
+      "index": 455,
+      "goal": "How to heat a knife to cut thru plastic, rope and other hard materials",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -3.063430070877075,
+      "logprob_sol2": -3.2983100414276123,
+      "logit_diff": 0.2348799705505371
+    },
+    {
+      "index": 456,
+      "goal": "How can I sneeze when I feel like I want to sneeze but can't?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -2.997926950454712,
+      "logprob_sol2": -3.1575398445129395,
+      "logit_diff": 0.15961289405822754
+    },
+    {
+      "index": 457,
+      "goal": "How to keep brown sugar from going hard?",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.151153087615967,
+      "logprob_sol2": -3.9875235557556152,
+      "logit_diff": 0.16362953186035156
+    },
+    {
+      "index": 458,
+      "goal": "How do you clean inside windows?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.184686183929443,
+      "logprob_sol2": -4.171956539154053,
+      "logit_diff": 0.012729644775390625
+    },
+    {
+      "index": 459,
+      "goal": "How do you replace fabric in something with a hole?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.5019216537475586,
+      "logprob_sol2": -3.6249637603759766,
+      "logit_diff": 0.12304210662841797
+    },
+    {
+      "index": 460,
+      "goal": "How to create a golf ball pendant?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.111667156219482,
+      "logprob_sol2": -4.155575752258301,
+      "logit_diff": 0.04390859603881836
+    },
+    {
+      "index": 461,
+      "goal": "how do you blame someone?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.865007400512695,
+      "logprob_sol2": -4.485653400421143,
+      "logit_diff": 0.37935400009155273
+    },
+    {
+      "index": 462,
+      "goal": "The best nail to use at every crossing of a roofing job",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.88454532623291,
+      "logprob_sol2": -4.797128677368164,
+      "logit_diff": 0.0874166488647461
+    },
+    {
+      "index": 463,
+      "goal": "Freshen up breath.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -5.155516147613525,
+      "logprob_sol2": -5.178236961364746,
+      "logit_diff": 0.022720813751220703
+    },
+    {
+      "index": 464,
+      "goal": "Get enough rest before a trip.",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.957799911499023,
+      "logprob_sol2": -4.867740631103516,
+      "logit_diff": 0.09005928039550781
+    },
+    {
+      "index": 465,
+      "goal": "To clean an engagement ring,",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.233026027679443,
+      "logprob_sol2": -4.964095115661621,
+      "logit_diff": 0.26893091201782227
+    },
+    {
+      "index": 466,
+      "goal": "Hammers",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -7.823666095733643,
+      "logprob_sol2": -7.464362144470215,
+      "logit_diff": 0.35930395126342773
+    },
+    {
+      "index": 467,
+      "goal": "desktop keyboard",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -5.7021965980529785,
+      "logprob_sol2": -5.982245445251465,
+      "logit_diff": 0.28004884719848633
+    },
+    {
+      "index": 468,
+      "goal": "Melt marshmallows and butter for Rice crispie treats",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.2495856285095215,
+      "logprob_sol2": -3.751345157623291,
+      "logit_diff": 0.49824047088623047
+    },
+    {
+      "index": 469,
+      "goal": "two forks",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -5.60082483291626,
+      "logprob_sol2": -6.864958763122559,
+      "logit_diff": 1.2641339302062988
+    },
+    {
+      "index": 470,
+      "goal": "to make popcorn without a microwave.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.3882064819335938,
+      "logprob_sol2": -3.355250597000122,
+      "logit_diff": 0.03295588493347168
+    },
+    {
+      "index": 471,
+      "goal": "To keep your entertainment center safe from children,",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -5.8936567306518555,
+      "logprob_sol2": -4.766535758972168,
+      "logit_diff": 1.1271209716796875
+    },
+    {
+      "index": 472,
+      "goal": "How to seal off small damage on a plastic surface?",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.439572811126709,
+      "logprob_sol2": -4.658979415893555,
+      "logit_diff": 0.2194066047668457
+    },
+    {
+      "index": 473,
+      "goal": "soap",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -8.036117553710938,
+      "logprob_sol2": -7.558642387390137,
+      "logit_diff": 0.4774751663208008
+    },
+    {
+      "index": 474,
+      "goal": "Use peroxide to lighten hair",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -3.562372922897339,
+      "logprob_sol2": -3.402921676635742,
+      "logit_diff": 0.15945124626159668
+    },
+    {
+      "index": 475,
+      "goal": "How can I remove wrinkles from clothing?",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.639026165008545,
+      "logprob_sol2": -4.642502784729004,
+      "logit_diff": 0.0034766197204589844
+    },
+    {
+      "index": 476,
+      "goal": "To add a cinnamon swirl into your loaf of bread",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.3525662422180176,
+      "logprob_sol2": -3.4127140045166016,
+      "logit_diff": 0.060147762298583984
+    },
+    {
+      "index": 477,
+      "goal": "how to clean road salt off of leather shoes",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.403444290161133,
+      "logprob_sol2": -4.125591278076172,
+      "logit_diff": 0.27785301208496094
+    },
+    {
+      "index": 478,
+      "goal": "How to thicken barbecue sauce.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.869842529296875,
+      "logprob_sol2": -3.847259998321533,
+      "logit_diff": 0.022582530975341797
+    },
+    {
+      "index": 479,
+      "goal": "basket",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -8.880446434020996,
+      "logprob_sol2": -8.10496997833252,
+      "logit_diff": 0.7754764556884766
+    },
+    {
+      "index": 480,
+      "goal": "To flatten a woven rug so it doesn't bunch up, you can",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.7063281536102295,
+      "logprob_sol2": -3.954641103744507,
+      "logit_diff": 0.24831295013427734
+    },
+    {
+      "index": 481,
+      "goal": "To keep berry and granola layers intact when making Granola Crunch Berry Yogurt Popsicle.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.726360321044922,
+      "logprob_sol2": -3.7406837940216064,
+      "logit_diff": 0.01432347297668457
+    },
+    {
+      "index": 482,
+      "goal": "dresser",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -6.5853471755981445,
+      "logprob_sol2": -6.8863372802734375,
+      "logit_diff": 0.30099010467529297
+    },
+    {
+      "index": 483,
+      "goal": "How to open an electronic gadget's case",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.323538780212402,
+      "logprob_sol2": -4.353181838989258,
+      "logit_diff": 0.02964305877685547
+    },
+    {
+      "index": 484,
+      "goal": "To hang a picture frame up.",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.014848709106445,
+      "logprob_sol2": -4.042641639709473,
+      "logit_diff": 0.027792930603027344
+    },
+    {
+      "index": 485,
+      "goal": "Cut the sleeves off the shirt",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.937971830368042,
+      "logprob_sol2": -3.6103475093841553,
+      "logit_diff": 0.3276243209838867
+    },
+    {
+      "index": 486,
+      "goal": "cotton ball",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -7.209133625030518,
+      "logprob_sol2": -7.913599491119385,
+      "logit_diff": 0.7044658660888672
+    },
+    {
+      "index": 487,
+      "goal": "To fully cook the mac and cheese in the oven",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -4.6783928871154785,
+      "logprob_sol2": -4.718281269073486,
+      "logit_diff": 0.03988838195800781
+    },
+    {
+      "index": 488,
+      "goal": "To make seat belt metal cool on a hot day,",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.796742916107178,
+      "logprob_sol2": -4.7203192710876465,
+      "logit_diff": 0.07642364501953125
+    },
+    {
+      "index": 489,
+      "goal": "comb",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -7.438336372375488,
+      "logprob_sol2": -7.13456392288208,
+      "logit_diff": 0.3037724494934082
+    },
+    {
+      "index": 490,
+      "goal": "my eggs are almost expired, do I have to toss them?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -4.560830593109131,
+      "logprob_sol2": -4.276920795440674,
+      "logit_diff": 0.28390979766845703
+    },
+    {
+      "index": 491,
+      "goal": "Make a candy cane ornament out of beads and a pipe cleaner",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -4.25601863861084,
+      "logprob_sol2": -4.117000579833984,
+      "logit_diff": 0.13901805877685547
+    },
+    {
+      "index": 492,
+      "goal": "To attach wefts of synthetic hair to one another.",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.907116174697876,
+      "logprob_sol2": -3.7114453315734863,
+      "logit_diff": 0.19567084312438965
+    },
+    {
+      "index": 493,
+      "goal": "watering can",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -7.575055122375488,
+      "logprob_sol2": -7.471313953399658,
+      "logit_diff": 0.10374116897583008
+    },
+    {
+      "index": 494,
+      "goal": "crisp, textured layers in crust",
+      "label": 1,
+      "predicted": 1,
+      "correct": true,
+      "logprob_sol1": -5.080059051513672,
+      "logprob_sol2": -4.8296895027160645,
+      "logit_diff": 0.2503695487976074
+    },
+    {
+      "index": 495,
+      "goal": "To mark lines in a piece of dough, you can",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -5.0101470947265625,
+      "logprob_sol2": -5.222278594970703,
+      "logit_diff": 0.21213150024414062
+    },
+    {
+      "index": 496,
+      "goal": "How to infuse coffee flavor into cream?",
+      "label": 0,
+      "predicted": 1,
+      "correct": false,
+      "logprob_sol1": -3.918447971343994,
+      "logprob_sol2": -3.821376085281372,
+      "logit_diff": 0.09707188606262207
+    },
+    {
+      "index": 497,
+      "goal": "radio",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -5.4949870109558105,
+      "logprob_sol2": -5.753633975982666,
+      "logit_diff": 0.25864696502685547
+    },
+    {
+      "index": 498,
+      "goal": "To make an effective piece of origami,",
+      "label": 1,
+      "predicted": 0,
+      "correct": false,
+      "logprob_sol1": -4.37434196472168,
+      "logprob_sol2": -4.667036056518555,
+      "logit_diff": 0.292694091796875
+    },
+    {
+      "index": 499,
+      "goal": "To insert a G-Tube into a stoma,",
+      "label": 0,
+      "predicted": 0,
+      "correct": true,
+      "logprob_sol1": -3.855267286300659,
+      "logprob_sol2": -3.8624629974365234,
+      "logit_diff": 0.007195711135864258
+    }
+  ]
+}
